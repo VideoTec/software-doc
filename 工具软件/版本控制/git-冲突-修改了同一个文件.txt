@@ -1,0 +1,8 @@
+远程和本地修改了同一个文件，
+git pull 
+然后造成冲突，怎么修改
+
+在编辑器中修改完后，
+git add -A
+git commit -m 'merge'
+就可正常了

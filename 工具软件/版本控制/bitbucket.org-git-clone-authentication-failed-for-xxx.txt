@@ -1,0 +1,18 @@
+bitbucket.org 第一次 push - mac平台
+
+localhost:~ wangxiang$ git clone https://wangxiang@bitbucket.org/wangxiang83/ios-example.git workspace/ios-example
+
+Cloning into 'workspace/ios-example'...
+
+Password for 'https://wangxiang@bitbucket.org': 
+
+fatal: Authentication failed for 'https://wangxiang@bitbucket.org/wangxiang83/ios-example.git/'
+
+最后查明原因是：URL中的用户名写错了
+https://wangxiang@bitbucket.org/wangxiang83/ios-example.git
+应该是
+https://wangxiang83@bitbucket.org/wangxiang83/ios-example.git
+
+http://stackoverflow.com/questions/20953940/authentication-failed-to-bitbucket
+If you got authentication issues with the GIT console you can try your auth this way :
+https://<username>:<password>@bitbucket.org/<username>/<repo>.git

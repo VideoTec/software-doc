@@ -1,0 +1,6 @@
+http://stackoverflow.com/questions/2198377/how-to-clear-previous-output-in-terminal-in-mac-os-x
+mac os 终端里清屏使用下面的快捷键
+
+To clear the terminal manually:
+Apple+K
+Command+K for newer keyboards

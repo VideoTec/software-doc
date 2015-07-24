@@ -1,0 +1,5 @@
+http://www.gitguys.com/topics/git-show-branch-to-see-branches-and-their-commits/?lang=zh
+
+ git show-branch 命令显示分支和提交历史:
+ 
+ git show-branch 显示从所有分支开始的commit, 直到这些分支有了一个共同的祖先

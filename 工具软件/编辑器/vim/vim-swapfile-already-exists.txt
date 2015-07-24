@@ -1,0 +1,28 @@
+非正常关闭文件时，会出现下面的提示：
+
+(1) Another program may be editing the same file.
+    If this is the case, be careful not to end up with two
+    different instances of the same file when making changes.
+    Quit, or continue with caution.
+
+(2) An edit session for this file crashed.
+    If this is the case, use ":recover" or "vim -r mainfrm.c"
+    to recover the changes (see ":help recovery").
+    If you did this already, delete the swap file ".mainfrm.c.swp"
+    to avoid this message.
+
+
+swap file ".mainfrm.c.swp" already exists!
+[]pen Read-Only, (E)dit anyway,(R)ecover, (D)elete it, (Q)uit, (A)bort:
+
+需要手动删除这个文件才行。
+ls -a 才能看到 .mainfrm.c.swp
+
+出现这个提示的原因有两个：
+See the VIM recovery manual entry. You shouldn't be seeing these files normally, unless
+
+your VIM instance is crashing
+you're inadvertently running two VIM instances against the same file
+I quite often do the latter, running 2 VIMs against the same file, in two terminals, without realising it. The 'swap file' message is the indicator that I'm doing this.
+
+Perhaps you've got a VIM session running (backgrounded?) that you've forgotten about ?

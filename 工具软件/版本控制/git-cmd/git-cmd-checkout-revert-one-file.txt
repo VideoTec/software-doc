@@ -1,0 +1,38 @@
+git checkout -- filename
+
+If you have an uncommitted change (its only in your working copy) that you wish to revert (in SVN terms) to the copy in your latest commit
+
+git reset 能够取消 add -A 操作。
+git checkout 只取消，工作目录里的修改。
+
+https://marklodato.github.io/visual-git-guide/index-zh-cn.html
+git-cmd-checkout-reset-图解.svg
+
+---------------------------------------------------
+10:53 2015/7/15 恢复删除的文件 --- 因为打错文件名，造成恢复不了的错误，郁闷！
+---------------------------------------------------
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+deleted:    res/layout/beside_activity_vedio_capture.xml
+
+git-checkout 失败
+$ git checkout -- res/layout/beside_activity_video_capture.xml
+error: pathspec 'res/layout/beside_activity_video_capture.xml' did not match any file(s) known to git.
+
+git-reset 失败 - 没有效果
+git reset HEAD res/layout/beside_activity_video_capture.xml
+
+!!!!!最后找到原因：
+git checkout -- res/layout/beside_activity_video_capture.xml 文件名写错了
+
+
+类似问题
+http://stackoverflow.com/questions/9591407/unstage-a-deleted-file-in-git
+git checkout -- never unstage, it just discards non-staged changes
+
+Once you have staged a file 
+(often with git add, though some other commands implicitly stage the changes as well, 
+like git rm) 
+you can back out that change with git reset -- <file>

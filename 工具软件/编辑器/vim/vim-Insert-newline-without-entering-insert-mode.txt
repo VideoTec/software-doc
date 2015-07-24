@@ -1,0 +1,16 @@
+添加新行，但不是进入插入模式
+
+Insert newline without entering insert mode
+
+As you all may know with 'o' or 'O' you can insert a new line after/before the current line. 
+But both commands enter the insert mode, which may sometimes not be what you want. 
+I put this in my vimrc-file to insert a new-line after the current line by pressing Enter 
+(Shift-Enter for inserting a line before the current line):
+
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
+If you want to stay in the line where you have been before use the following maps:
+
+nmap <S-Enter> O<Esc>j
+nmap <CR> o<Esc>k

@@ -1,0 +1,8 @@
+从远程分支签出本地分支
+git checkout -b libavmaster origin/master
+
+查看本地分支与远程分支的，关系
+git branch -vv
+
+更改本地分支的，远程分支
+git branch -u libav/10

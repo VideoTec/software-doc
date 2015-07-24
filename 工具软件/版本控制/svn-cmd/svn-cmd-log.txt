@@ -1,0 +1,2 @@
+svn log -v
+svn log -r73  第73个提交的LOG

@@ -1,0 +1,112 @@
+CA.crt
+CA.crt问题，你可以把这个文件删除，然后goagent会为你生成一个独一无二的新CA.crt
+
+certs 目录下一批网站的证书
+
+--------------------------------------------------------------
+https://code.google.com/p/goagent/issues/detail?id=8031
+http://www.williamlong.info/archives/3882.html
+--------------------------------------------------------------
+goagent是个代理，好比就是个web服务器，
+你通过他浏览https的加密网页的时候，要做认证再转发给你的浏览器。
+如果不加证书，你的浏览器认为这个https网站是伪造的，不让你打开。
+特别是chrome/firefox，要求中转的代理网站浏览https网页是必须要证书，否则不给打开。
+这个是浏览器自身的防止钓鱼攻击的安全手段。不是goagent自己发明的。
+这个证书也是goagent找国际上发证书的机构申请的，要花钱的。
+
+GAE已经计划支持Socket了，不知goagent能否完全透传HTTPS流量，免去安装证书的过程？
+ GAE 的限制 （免费 app 无法使用 socket 接口）
+
+GoAgent 主要包含两个部分：
+一个在用户计算机上运行的本地代理程序 proxy.py，以及
+一个在 GAE 上运行的远程代理程序 gae.py
+
+首先 proxy.py 将浏览器的 HTTP 请求进行编码并转发给 gae.py，
+gae.py 完成收到的请求然后将结果进行编码后返回给 proxy.py，
+最后 proxy.py 将结果转发给浏览器来完成 “翻墙” 过程
+
+proxy.py 无法进行透明转发，
+只能作为中间人先和浏览器完成连接，
+然后获得其中的明文请求以后在转发给 gae.py
+
+当收到 CONNECT 请求（这意味着浏览器正在浏览一个 HTTPS 网站）， 
+proxy.py 首先利用 GoAgent CA 签发一个假的证书来和浏览器完成握手，
+从用户的角度，
+所有的 HTTPS 网站的证书都是由事先导入的 “GoAgent CA” 认证的，所以不会报警
+
+有些浏览器会对少数网站的证书进行特别的检查（Certificate Pinning），
+这种情况下 "GoAgent CA” 所签发的证书可能会触发证书不安全的报警。
+
+GoAgent 的这种工作方式导致 HTTPS 不再是浏览器到网站的端到端安全通信，
+而变成了 proxy.py 到 GAE，以及 GAE 到网站两段独立的 HTTPS 连接，
+GAE 能够看到请求和应答的明文
+
+测试页面
+https://goagent-cert-test.bamsoftware.com/
+这个页面使用了一个由公开的 GoAgent CA 签发的证书。
+如果你的浏览器没有受到影响，会显示报警信息；
+如果没有看到报警，则表明你的浏览器导入了公开的 GoAgent CA 证书，存在严重安全风险
+
+GoAgent 本身带有生成证书文件 CA.crt 的功能。
+只需要删除 local/CA.crt 文件就能保证 GoAgent 所导入的证书是唯一的，
+不会被网络上的攻击者利用来进行攻击
+
+默认情况下，GoAgent 会通过 HTTPS 来保护
+本地 proxy.py 和 GAE 服务器上的 gae.py 之间的通信 
+（在配置文件 proxy.ini 中相关的设置默认为 gae.mode=https）
+
+GoAgent 不会要求对 GAE 服务器的证书进行验证（gae.validate=0），
+这导致本地 proxy.py 和 App Engine 服务器之间的通信存在 HTTPS 中间人攻击的风险。
+
+gae.validate 配置项同样控制 
+App Engine 上的 gae.py 是否对网站服务器的证书进行验证，
+默认配置下这一配置为 0 导致 gae.py 也不会对网站证书进行验证，
+使得 gae.py 和网站之间的通信同样存在 HTTPS 中间人攻击的风险
+
+配置启用证书验证（gae.validate=1）
+
+即使修改配置启用证书验证（gae.validate=1），
+GoAgent 对 App Engine 服务器证书的验证也并不严格：
+在 proxy.py 中只是对证书的 organizationName 进行了粗略的检查
+（是否为 “Google ” 开头），而没有对主机名（hostname）进行匹配
+如果有人能够申请到 organizationName 字段以 “Google ” 开头的证书，
+仍然能够成功进行HTTPS 中间人攻击
+
+RC4 只能起到防止其他 GoAgent 用户共享服务端流量的目的，
+无法提供更多的保护来防止网络攻击
+GoAgent 还提供了一个可选功能
+通过 RC4 和一个共享密钥来对 proxy.py 和 gae.py 之间的数据进行进一步的混淆。
+启用这一功能需要在 proxy.ini 中设置 gae.password，以及 gae.options=rc4，
+并在 gae.py 中设置 __password__ 变量
+
+
+删除前 ca.crt 指纹
+2a 1f c4 f4 a4 f7 27 f1 aa 0c 90 d7 43 63 ac fb 6f da 20 bf
+
+删除后 ca.crt 指纹
+a0 1f c2 af ad 5d 95 0f 92 a0 79 2d dc 74 3c 83 33 f9 55 cf
+
+虽然 指纹变了，但是仍然是，受信任的根证书，因为，goagent 启动时，
+会把 ca.crt 添加到 受信任的根证书
+-----------------------------------------
+https://code.google.com/p/goagent/issues/detail?id=11091
+https://wiki.archlinux.org/index.php/GoAgent_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29
+-----------------------------------------
+中间人攻击问题，你可以在proxy.ini中将validate = 0设置为validate = 1 即可避免中间人攻击
+设置 validate 只能保证客户端到 GAE 服务器之间没有问题。
+已经有证据表明 GAE 服务器在 UrlFetch 时
+并不会验证对方服务器证书的有效性
+（php.net 被入侵、证书被吊销的时候，GoAgent 仍能正常访问）。
+虽然这个很难被利用
+
+validate[英][ˈvælɪdeɪt] [美][ˈvælɪˌdet] vt.使合法化，使有法律效力；使生效；批准，确认；证实
+
+http://blog.netsh.org/posts/goagent-https-ssl-error_1013.netsh.html
+使用GoAgent时会出现一个问题，那就是在查看https网站时，会出现SSL错误，提示
+“该网站的安全证书不受信任，
+...但服务器出示的证书是由您计算机的操作系统不信任的实体所颁发。
+这可能表明服务器已自行生成了安全凭据，
+Google Chrome 浏览器认为其中的身份信息不可靠；
+也可能表明攻击者正试图拦截您的通信内容。”
+
+问题的关键在于，因为软件原因，GoAgent传输内容同时提供的安全证书并未被计算机所信任

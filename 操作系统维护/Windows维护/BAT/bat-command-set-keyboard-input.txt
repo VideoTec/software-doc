@@ -1,0 +1,31 @@
+@echo off
+echo Input you QQ number ......
+set /p QQ=
+echo Your QQ number is %QQ%.
+set QQ=
+pause
+
+这样我输入 QQ号12345
+那么将得到输出:
+Your QQ number is 12345.
+set QQ=的意思是取消变量QQ的定义
+
+14:35 2015/5/14
+可以直接这样写：
+set /p KEY= 请按回车键
+
+14:42 2015/5/14
+一个重要的问题
+set /p KEY= 请按回车键 等号左边不能加空格
+
+
+@echo off
+set /p choice2=Pause after finishing the build? (y for yes, others for no)[n]
+if "%choice2%"=="y" goto YES 
+goto NO
+:YES
+echo YES
+goto END
+:NO
+echo no
+:END

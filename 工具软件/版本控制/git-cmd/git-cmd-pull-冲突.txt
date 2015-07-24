@@ -1,0 +1,21 @@
+git pull 冲突
+
+$ git pull
+Password for 'https://wangxiang83@bitbucket.org':
+Updating 53343f6..5d97771
+error: Your local changes to the following files would be overwritten by merge:
+        OpenSLTest/src/com/example/opensltest/MainActivity.java
+Please, commit your changes or stash them before you can merge.
+Aborting
+
+怎么直接忽略本地修改，使用远程库的？
+
+场景：甲修改了文件A并且push到了git server上，这时乙也在修改文件A，他想看一下甲修改了什么，于是从git server上pull下来，但是会遇到这样的提示：
+error: Your local changes to the following files would be overwritten by merge:
+文件A
+Please, commit your changes or stash them before you can merge.
+可是乙不想把他未完成的修改commit，请问这个时候要怎么操作?或者可以先把文件A暂存起来？并且可以在日后push的不保留记录？
+
+git stash
+git pull
+git stash pop

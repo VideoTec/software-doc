@@ -1,0 +1,7 @@
+http://superuser.com/questions/153109/is-there-a-way-to-manage-tabs-efficiently-in-notepad
+
+What about Doc Switcher?
+
+Go to menu: Settings --> Preferences... --> General --> Document List Panel and select the checkbox Show.
+
+A vertical list of all open tabs opens on the left. I'm talking about Notepad++ version 6.3. Don't know about earlier.

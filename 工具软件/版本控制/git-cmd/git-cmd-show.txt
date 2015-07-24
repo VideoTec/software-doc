@@ -1,0 +1,12 @@
+git-show - Show various types of objects
+
+http://blog.longwin.com.tw/2009/05/git-learn-initial-command-2009/
+Git show
+
+git show ebff # 查 log 是 commit ebff810c461ad1924fc422fd1d01db23d858773b 的內容
+git show v1 # 查 tag:v1 的修改內容
+git show v1:test.txt # 查 tag:v1 的 test.txt 檔案修改內容
+git show HEAD # 此版本修改的資料
+git show HEAD^ # 前一版修改的資料
+git show HEAD^^ # 前前一版修改的資料
+git show HEAD~4 # 前前前前一版修改的資料

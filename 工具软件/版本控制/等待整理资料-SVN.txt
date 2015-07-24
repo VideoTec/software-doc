@@ -1,0 +1,33 @@
+
+SVN树冲突
+什么操作，造成，树冲突？
+当工作目录修改删除过时更新 使用svn更新就容易发生树冲突“Tree Confilict”
+
+怎么解决树冲突？
+svn resolve --accept working removed_directory
+
+svn revert --depth infinity
+svn revert --depth infinity
+
+	  
+	  
+http://stackoverflow.com/questions/2906892/unadd-a-file-to-svn-before-commit
+svn revert --recursive folder_name
+	  
+	  
+	  
+You can add a directory without adding its contents:
+$ svn add --depth=empty otherdir
+A         otherdir
+添加MFTP工程文件夹，
+svn add --depth=empty mftp  错误，没有--depth选项
+svn, version 1.4.2 (r22196)
+svn add --help，修改成下面的
+svn add -N mftp
+	  
+	  
+POST of '/svn/IPC/!svn/me': 403 Forbidden (https://cavaliers98.oicp.net)
+http://my.oschina.net/alphajay/blog/193551
+
+
+svn 与 eclipse 的 .metadata目录

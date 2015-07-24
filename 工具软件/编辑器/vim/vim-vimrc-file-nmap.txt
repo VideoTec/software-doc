@@ -1,0 +1,56 @@
+在 vimrc 文件里添加，自定义命令
+
+nmap <S-Enter> O<Esc> 注意：map 前不用加引号
+nmap <CR> o<Esc>
+
+map clear
+
+map <S-F7> O<Esc>     这个映射可用
+nmap <S-Enter> O<Esc> 这个映射不可用，为什么  2015.4.18
+nmap <CR> o<Esc>      这个映射也可以
+
+------------------------------
+http://vimdoc.sourceforge.net/htmldoc/intro.html#keycodes
+映射特殊字符
+------------------------------
+<Nul>		zero			CTRL-@	  0 (stored as 10) *<Nul>*
+
+<BS>		backspace		CTRL-H	  8	*backspace*
+
+<Tab>		tab			CTRL-I	  9	*tab* *Tab*
+
+							*linefeed*
+<NL>		linefeed		CTRL-J	 10 (used for <Nul>)
+
+<FF>		formfeed		CTRL-L	 12	*formfeed*
+
+<CR>		carriage return		CTRL-M	 13	*carriage-return*
+
+<Return>	same as <CR>				*<Return>*
+
+<Enter>		same as <CR>				*<Enter>*
+
+<Esc>		escape			CTRL-[	 27	*escape* *<Esc>*
+
+<Space>		space				 32	*space*
+
+<lt>		less-than		<	 60	*<lt>*
+
+<Bslash>	backslash		\	 92	*backslash* *<Bslash>*
+
+------------------------------
+vim中为什么有那么多map？nnoremap, vnoremap
+------------------------------
+前缀代表生效范围
+inoremap就只在插入(insert)模式下生效
+vnoremap只在visual模式下生效
+nnoremap就在normal模式下(狂按esc后的模式)生效
+
+这样可以减少快捷键所用到的键位组合的个数
+一个组合可以有多种用途 就不用费劲心思思考 该映射哪个没被绑定过的键了
+
+noremap是不会递归的映射 (大概是no recursion)
+例如
+noremap Y y
+noremap y Y
+不会出现问题

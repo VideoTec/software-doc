@@ -1,0 +1,8 @@
+@echo off 
+set "str=this is a test" 
+REM 检测变量%str%是否等于test，如果相等，显示OK，否则显示NO 
+if "%str%"=="test" (echo OK) else echo NO 
+pause>nul 
+
+1. REM 必须大写？不分大小写
+2. 如果不加，@echo off，注释也会打印出来 

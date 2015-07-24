@@ -1,0 +1,268 @@
+计划：
+1）远程分支，本地分支，git pull,git fetch,git remote,git rebase,fast-forward
+2）libav 和 bitbucket/libav  和 本地库  三者之间的处理：
+   git rebase libavmaster
+   git push --force （强制推送，会修改远程库中的，历史提交）
+
+
+关于GIT远程库的问题
+1， 方便的浏览库里面的文件（在不安装GIT，不全部从库中取出来的情况下）
+2， 只修改其中的某个文件，并且，提交
+
+关于1，解决方法是，WEB-BROWSE。
+关于2,  设置用户的权限。
+
+
+
+
+
+git 远程库中，所有分支与tags
+git push libav --tags  把本地所有分支，记录，传到libav远程库。
+
+git checkout --track origin/branch-name
+git push 默认，就把所有分支传到远程库
+
+
+从远程分支签出本地分支
+git checkout -b libavmaster origin/master
+
+查看本地分支与远程分支的，关系
+git branch -vv
+
+更改本地分支的，远程分支
+git branch -u libav/10
+
+
+
+
+git 删除最近的一次提交（如果想恢复到远程库中的状态，可以重新track远程分支 git checkout --track origin/serverfix git checkout -b sf origin/serverfix）
+git reset 和 git revert有什么区别？
+
+git reset --hard HEAD  让工作目录回到上次提交时的状态(last committed state)
+git checkout -- hello.rb 恢复一个文件
+
+
+
+
+
+GIT 版本控制常规方法
+本地开发的，两个 ‘长生命周期’ 分支： master, develop
+本地开发的，多个 ‘短生命周期’ 分支：feature(分两种), hotfix,release 
+
+git merge --no-ff myfeature
+git branch -d myfeature
+
+git merge --no-ff release-1.2
+git tag -a 1.2
+git branch -d release-1.2
+
+git checkout -b hotfix-1.2.1 master
+git commit -a -m "Bumped version number to 1.2.1"
+git commit -m "Fixed severe production problem"
+git merge --no-ff hotfix-1.2.1
+git tag -a 1.2.1
+git branch -d hotfix-1.2.1
+
+when a release branch currently exists, the hotfix changes need to be merged into that release branch, instead of develop.
+
+
+
+
+
+
+
+git 删除所有本地文件重新，checkout,怎么做？
+
+
+
+
+
+
+
+git config --global core.autocrlf false
+关闭控制台后，重新启动，再git config --list才能看出结果
+
+
+
+
+
+
+
+
+
+
+
+提取补丁，及 打补丁
+git diff master > file.patch
+git apply file.patch
+git apply --check path
+
+git diff 和git format-patch生成的patch一个重要不同之处，实际使用中会发现git diff一次只会生成一个patch文件，不管差别了多少个提交，都是一个；而git format-patch是根据提交的节点来的，一个节点一个patch
+
+
+
+git log –graph
+使用git log –graph 命令，可以查看自己仓库的当前分支提交ID的树状图
+git log –pretty=raw命令，可以查看commit之间的父子关系
+
+
+
+
+GIT查找删除了的分支
+Yes, you should be able to do git reflog and find the SHA1 for the commit at the tip of your deleted branch, then just git checkout [sha]. And once you're at that commit, you can just git checkout -b [branchname] to make a recreate the branch from there.
+
+
+
+
+
+
+
+
+
+
+
+git track
+git checkout --track origin/branch-name
+git branch --track origin/branch-name
+
+git checkout --track -b haml origin/haml
+git checkout -t origin/haml
+
+看下面两个的区别
+git checkout -b branch origin/branch
+git checkout --track origin/branch
+
+Tracking means that a local branch has its upstream set to a remote branch
+
+
+
+
+git pull origin master 
+把origin的master分支，下载并合并到当前分支
+
+
+
+
+
+
+
+
+
+
+
+GIT创建远程分支  为本地分支指定up-stream
+git push origin develop              会在origin远程库中，创建一个develop分支。
+git branch -u origin/develop  本地分支origin，与远程库的develop分支，关联上。
+
+注意下面的意思：
+git checkout --track origin/develop 
+会在本地创建一个新分支，develop，并与远程分支 origin/develop相关联。
+
+git set push.default 有三个值
+
+
+
+
+
+
+
+
+
+
+git merge/patch的冲突解决
+先编辑冲突，然后git commit提交。
+注：对于git来讲，编辑冲突跟平时的修改代码没什么差异。修改完成后，都是要把修改添加到缓存，然后commit。
+
+
+
+
+
+
+
+
+
+
+git rebase master 时产生冲突
+when you have resolved this problem, run "git rebase --continue".
+If you prefer to skip this patch, run "git rebase --skip" instead.
+o check out the original branch and stop rebasing, run "git rebase --abort".
+
+
+git status 查看冲突
+编辑解决冲突
+git add -u  把修改后内容，加入缓存
+git rebase --continue
+
+注意：git rebase时不用commit。
+
+
+
+	  
+	  
+	  git merge 的时候不添加新的提交的方法
+	  Note the output while doing the merge - it is saying Fast Forward
+	  Another variant of the merge is to use -no-ff option (it stands for no fast-forward)
+	  On the other hand, fast-forward merge keeps the changesets in a linear history, making it easier to use other tools (log, blame, bisect). 
+	  git merge 时，是否，产生新提交，由系统确定。
+	  （-no-ff）生成新的merge-commit时：会在git log --graph输出里，看到分支合并。
+	  （fast-forward）不生成新的merge-commit时：git log --graph里是一条线。
+	  
+	  
+	  git rebase 后，与远程分支的，历史不一样了，怎么，提交？（git push --force 覆盖了服务器上的历史）git rebase libavmaster后，下面的情况：
+Switched to branch 'master'
+Your branch and 'origin/master' have diverged,
+and have 13 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+  
+  git rebase origin/master 
+  git pull --rebase
+	  
+	  
+	  
+	  git reset --hard origin/master
+	  
+	  
+	  一个提交，应用到不同的分支上？
+	  两个分支，一直并行下去
+	  
+	  
+git-remote-show-origin.png	  
+	  git remote show origin
+	  Local branches configured for 'git pull':  与之相关的命令
+
+
+
+
+Local refs configured for 'git push':
+
+
+。
+
+
+
+
+
+
+
+《git 控制行结束符的方法: config .gitattributes等等》
+.gitattributes设置文件与行结束的设置
+warning: CRLF will be replaced by LF in msvc/TestLibav/TestLibav.vcxproj.
+The file will have its original line endings in your working directory.
+行结束符的设置：
+指定工程文件，不改，其它文件改 或者 工程文件修改的警告不要出
+git config core.crlf false  这种情况下，应该不会更改行结束符了。为什么会出警告？出什么警告？原因出在.gitattributes file
+E:\libav\.gitattributes 下面的设置，造成了这个问题。
+http://www.rtuin.nl/2013/02/how-to-make-git-ignore-different-line-endings/
+* -crlf
+This tells git to ignore the line endings for all files. And does not change the files in your working directory. 
+Even if you have the core.autocrlf set to true, false, or input.
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+* text=auto  如果去掉这一行，就正常了，不会提示，CRLF will be replaced by LF。
+# Declare files that will always have CRLF line endings on checkout.
+*.sln text eol=crlf 加上上面一行，可以指定特定文件的，行结束符。
+
+git checkout更改不同的分支时，原分支中未跟踪的文件能否也删除？git checkout untracked files
+git clean -fdx
+

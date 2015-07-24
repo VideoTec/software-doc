@@ -1,0 +1,49 @@
+在GIT目录里，打开GUI时，提示压缩数据库。
+This repository currently has approximately 1216 loose objects.
+To maintain optimal performance it is strongly recommended that you compress the database.
+Compress the database now?
+
+问题一：
+怎么压缩数据库，命令行是：
+packing up the objects - this is done with the git gc command.
+There can be multiple packfiles, they can be repacked if neccesary (git repack) or 
+unpacked back into loose files (git unpack-objects) relatively easily
+
+gc 指垃圾收集 (garbage collect)，此命令会做很多工作：
+收集所有松散对象并将它们存入 packfile，合并这些 packfile 进一个大的 packfile，
+将不被任何 commit 引用并且已存在一段时间 (数月) 的对象删除
+
+git gc --auto
+个命令一般什么都不干。
+如果有 7,000 个左右的松散对象或是 
+50 个以上的 packfile，Git 才会真正调用 gc 命令。
+可能通过修改配置中的 gc.auto 和 gc.autopacklimit 来调整这两个阈值
+
+问题二：
+怎么检测这个问题，命令行是：
+git count-objects
+
+$ git count-objects -v
+count: 1128
+size: 76575
+in-pack: 0
+packs: 0
+size-pack: 0
+prune-packable: 0
+garbage: 0
+size-garbage: 0
+
+$ git count-objects -H
+1128 objects, 74.78 MiB
+
+问题三：
+http://schacon.github.io/gitbook/7_how_git_stores_objects.html
+什么是loose objects?
+Loose objects are the simpler format. It is simply the compressed data stored in a single file on disk. Every object written to a seperate file
+什么是Packed Objects？
+This is a format where Git will only save the part that has changed in the second file, with a pointer to the file it is similar to.
+
+问题四：怎么禁止弹出这个提示？
+So if you use Git v1.7.9 or newer, you can disable the warning dialog with the following command:
+
+git config --global gui.gcwarning false

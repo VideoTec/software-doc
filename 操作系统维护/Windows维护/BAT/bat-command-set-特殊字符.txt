@@ -1,0 +1,32 @@
+14:50 2015/5/14
+代码：
+set OUTPUT=>c:\logcat.txt 2>&1
+echo %OUTPUT%
+
+escape[英][ɪˈskeɪp] [美][ɪˈskep] 逃脱
+转义字符的英文为 Escape character
+
+修改
+set "OUTPUT=^>c:\\logcat\.txt 2^>^&1"  ECHO %OUTPUT% 输出 >c:\\logcat\.txt 2>&1
+set "OUTPUT=^>c:\logcat.txt 2^>^&1"    ECHO %OUTPUT% 输出 >c:\logcat.txt 2>&1
+                                       注意：ECHO "%OUTPUT%" 输出 ^>c:\logcat.txt 2^>^&1
+
+特殊问题
+set "OUTPUT=^>c:\logcat.txt 2^>^&1"
+if "%KEY%"=="O" (
+  call ndk-build V=0 NDK_DEBUG=0 >c:\logcat.txt 2>&1  这句会翻译成 1>c:\logcat.txt 2>&1
+) else (
+  call ndk-build V=0 NDK_DEBUG=0 %OUTPUT%             这句会翻译成 >c:\logcat.txt 2>&1
+)
+
+参考
+http://www.robvanderwoude.com/escapechars.php
+
+测试结果
+echo ^>  可以正常输出 >
+
+set t=^>
+echo %t%  命令语法不正确 相当于 echo > 的结果
+
+set "t=^>"
+echo %t%  可以正常输出 >

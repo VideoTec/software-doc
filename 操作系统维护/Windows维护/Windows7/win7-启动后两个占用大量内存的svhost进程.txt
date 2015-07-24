@@ -1,0 +1,25 @@
+9:47 2015/5/15
+
+电脑启动后特别慢，发现有两个占内在特大的 svchost.exe 进程
+
+使用 processexplorer 分析知道
+
+svhost.exe -> dwm.exe
+svhost.exe -> wuauclt.exe 这里刚开始还 googleupdate，系统运行一段时间后
+              只剩下 wuauclt.exe 且服务占用的内存也小了
+
+
+Desktop Window Manager (dwm.exe) 
+参考
+http://www.cnblogs.com/technology/archive/2011/07/21/dwm_exe.html
+是窗口管理器的组成部分, 
+是它给了你Vista系统(同 Windows7)非常棒效果: 
+设置窗体的透明度, 动态的任务栏预览, 甚至是3D任务切换
+
+关掉 dwm.exe 的唯一方法是停止这个服务运行.
+在控制面板或者开始菜单中打开"服务", 
+然后找到列表里的 "Desktop Window Manager Session Manager", 
+然后点击"停止"按钮,
+注意在点了"停止"按钮后你会切换到系统的基本主题(Basic Theme)
+
+停止服务后，对应的 svchost.exe 还存在且仍然占用很高的内存

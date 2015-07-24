@@ -1,0 +1,59 @@
+名词解释
+GGC节点 - Google Global Cache
+https://peering.google.com/about/ggc.html
+
+gvs - google video server
+
+googlevideo.com 的域名和ip有对应关系，而且关系很推断。
+你找到1000个gvs(goolgevideo的服务器ip)，但不知道各自是对应哪个域名。
+你需要访问的域名，不知道哪个ip能够提供服务。
+因此gvs目前完全无法发挥作用，只能通过GAE转发
+
+https://github.com/XX-net/XX-Net/issues/491
+根据这个原理,经过测试gvs的ip也可以用于google服务,不过由于是googlevideo的证书会报证书错误,但服务的确可用.
+chrome在加上--cipher-suite-blacklist=0x009c,0xc02f --ignore-certificate-errors参数之后59.18.34.36就能传输数据了.
+不过强烈不建议为了用Google一直这么用,代价太大了.而且除了chrome别的Google软件肯定也会出问题.当成临时临时方案倒还可以.如果能写个插件出来让这种方法只用于chrome平台的google服务,再处理一下证书问题应该还不错
+
+https://code.google.com/p/goagent/issues/detail?id=21362
+旧版本 goagent 也能使用 gvs ip 的详细指导手册
+
+怎么找 gvs-ip?
+https://code.google.com/p/goagent/issues/detail?id=21363
+
+https://code.google.com/p/goagent/issues/detail?id=21394&colspec=ID%20Opened%20Reporter%20Modified%20Summary%20Stars
+终于找到原因了，为什么 GVS IP无法直接应用于HOST文件
+youtube旗下的所有视频全部是通过googlevideo.com这一域名完成的,
+并且服务器(ip地址)和域名是一一对应的,
+某个视频只存在于某些服务器上,并且不能通过(或者是禁止通过)google的内网传输,
+这就意味着单纯地把googlevideo.com泛解析到某一个google的ip地址是无法观看视频的,
+通过写hosts的方法你必须找到所有的域名和所有的ip并且把它们一一对应,这一工作是不可能完成的.
+最可行的办法是可以通过bind来架设本地dns服务器,并把googlevideo这一个域名forward到一个能够返回正确ip地址的服务器
+(例如v2ex dns服务器的3389端口),或者直接使用一些更方便的工具--比如goagent的dns功能.
+由于googlevideo从今年年初开始支持了https方式访问,
+所以通过这种手段可以做到youtube的直连.
+但这种方法如果在ip地址被严厉封锁的时期(比如现在)依然不能观看视频,
+即使可以观看在高峰时期由于拥堵的国际线路视频加载速度也不会十分理想
+(这个需要不同网络环境的测试,我这里电信宽带出口chinanet光缆是这样).
+当然,如果运营商给你的是一个公网ip地址,你还可以通过6to4来连接youtube,但这就是另外的问题了
+
+https://v2ex.com/t/173383
+Google IP 现状
+
+Google IP 分为三类。
+
+第一类是普通的 
+*.google.com *.gstatic.com 类型的IP。
+这类IP数量巨大，而且GGC包括这类IP。虽然大量被封，仍然后非常多可用的。
+
+第二类是 
+*.googleusercontent.com *.googleapis.com 类型的IP。
+这类IP数量非常稀少，大部分都已经被封。特别是GGC并不包含这类IP，所以数量稀少。
+
+第三类是 
+*.googlevideo.com （youtube视频），*.gvt1.com（google play下载）类型的IP。
+这类IP数量巨大，GGC主要就是为了缓存这类的内容而存在。
+但是google选择了由网页（html）指定IP的方式，从而不允许用户或者middle box去指定使用特定的IP（所谓改host）。
+具体详见
+https://peering.google.com/about/faq.html
+http://www.slideshare.net/Netmanias/netmanias20120416ggc-operation-for-you-tube-part-1-kt-en
+http://www.slideshare.net/Netmanias/netmanias20120418ggc-operation-for-you-tube-part-2-lg-u-en

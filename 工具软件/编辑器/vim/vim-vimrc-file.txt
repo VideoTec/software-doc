@@ -1,0 +1,61 @@
+vimrc-file
+
+------------------------------
+vimrc-file 是什么文件？
+------------------------------
+The vimrc file contains optional runtime configuration settings to initialize Vim when it starts. 
+On Unix based systems, the file is named .vimrc, while 
+on Windows systems it is named _vimrc. 
+在windows中，不允许文件名以”.”开头，所以，windows版本的vim，将读取_vimrc来做为自己的配置文件
+
+:help vimrc
+
+You can customize Vim by putting suitable commands in your vimrc. 
+Here is a very simple example:
+
+" Always wrap long lines:
+set wrap
+Lines that begin with " are comments and are not read by vim.
+
+Search for file vimrc_example.vim in your Vim files for another example. 
+:help vimrc-intro 
+:help vimrc_example.vim
+
+To customize Vim for editing a specific file, or a specific type of file,
+you can use modelines, or auto commands, or filetype plugins. 
+
+:help auto-setting 
+:help filetype
+
+参考
+http://easwy.com/blog/archives/advanced-vim-skills-introduce-vimrc/
+vi/vim使用进阶: vimrc初步
+示例的vimrc(名为vimrc_example.vim)通常位于/usr/share/vim/vimXXX/目录下
+
+------------------------------
+Location of vimrc
+------------------------------
+
+In Vim, your home directory is specified with $HOME. 
+On Unix systems, this is your ~ directory. 
+On Windows systems, the best way to find the value of $HOME is from within Vim, as follows.
+
+:version 查查看 vimrc 的路径
+   system vimrc file: "/etc/vimrc"
+   user vimrc file: "$HOME/.vimrc"
+   
+------------------------------
+打开 vimrc
+------------------------------
+:e $MYVIMRC  失败，打不到
+
+------------------------------
+vimrc 修改后，需要使用 source 命令加载才能生效
+------------------------------
+:so $MYVIMRC
+
+------------------------------
+vimrc 里添加 map 键
+------------------------------
+nmap <S-Enter> O<Esc>  注意，nmap 前不用加引号
+nmap <CR> o<Esc>

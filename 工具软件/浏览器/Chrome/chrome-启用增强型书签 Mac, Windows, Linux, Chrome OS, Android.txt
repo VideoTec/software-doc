@@ -1,0 +1,12 @@
+http://www.computerworld.com/article/2852986/chrome-users-attack-new-graphical-bookmarks-manager.html
+
+禁用增强书签的方法：
+
+For now, Chrome users who don't like the new bookmarks manager can restore the list view 
+by typing chrome://flags in the address bar, hitting Enter, 
+then searching for the flag labeled Enable Enhanced Bookmarks and setting it to Disabled. 
+The old-style manager will return after Chrome is restarted.
+
+
+启用增强型书签 Mac, Windows, Linux, Chrome OS, Android
+为增强型书签实验提供一个“关闭”开关 #enhanced-bookmarks-experiment

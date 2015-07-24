@@ -1,0 +1,13 @@
+vim tab 大小
+set ts=4    tabstop 一个tab键所占的列数，linux 内核代码建议每个tab占用8列
+
+vim tab 设置为空格
+:set expandtab 输入tab时自动将其转化为空格
+set noexpandtab / expandtab
+
+set softtabstop=4
+set shiftwidth=4    （<<和>>）时缩进的列数
+
+可以写在 vimrc 文件里
+set expandtab
+set ts=2

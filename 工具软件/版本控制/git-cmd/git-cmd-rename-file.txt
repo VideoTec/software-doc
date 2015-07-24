@@ -1,0 +1,4 @@
+直接通过 系统 重命名文件，在 git add -A 就会把旧文件删除，并添加新文件
+
+可以使用git mv old_file_name new_file_name命令，这样git会自动跟踪rename文件，提交记录显示得很明白，rename前的文件和rename后的文件。
+当然Git也会自动检测，直接修改文件名，然后通过git rm, git add也可以实现。

@@ -1,0 +1,49 @@
+
+
+You can use batch parameters anywhere within a batch file to extract information about your environment settings
+路径：
+cd %~dp0
+
+%0代表批处理本身 d:\qq\a.bat 《BAT变量扩充器: modifier》
+
+ To use a modifier, type the percent (%) character followed by a tilde (~) character, 
+ and then type the appropriate modifier (that is, %~modifier)
+~dp是变量扩充
+d既是扩充到分区号 d: 
+p就是扩充到路径 \qq 
+dp就是扩充到分区号路径 d:\qq
+
+《批处理里中百分号的作用》
+对形式参数的引用 ％0～％9
+变量引用：%var%
+表示两数相除取余数，也就是所谓的模运算 在命令行窗口中，只需要单个的%，在批处理文件中，需要连续两个百分号，写成%%
+转义符号：如果要显示%本身时，需要在前面用%来转义
+
+《批处理数组，循环》
+@echo off
+
+set str=100x200x300y400y500x600y700
+
+for /f "tokens=1,3-5,* delims=x|y" %%a in ("%str%") do (
+	set c1=%%a
+	set c3=%%b
+	set c4=%%c
+	set c5=%%d
+	set c6=%%e
+
+)
+
+echo %c1%, %c3%, %c4%, %c5%, %c6%
+
+pause
+
+《批处理函数》特别注意，call 和 GOTO 后面的空格。（不加空格，也可以正确运行）
+call :copyAVUtilHeaderFiles aes.h
+call :copyAVUtilHeaderFiles adler32.h
+pause
+GOTO :EOF
+
+:copyAVUtilHeaderFiles
+echo fy|xcopy "..\libavutil\%1" "include\libavutil\%1"
+GOTO :EOF
+

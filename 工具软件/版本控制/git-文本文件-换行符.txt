@@ -1,0 +1,18 @@
+E:\doc\Computer software\工具软件\版本控制\.gitattributes
+
+意义解释
+git config --global core.autocrlf input 提交时转换为LF，检出时不转换
+git config --global core.autocrlf true  提交时转换为LF，检出时转换为CRLF
+git config --global core.autocrlf false 提交检出均不转换
+
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+* text=auto
+*.sln txt eol=crlf
+*.txt txt eol=crlf
+*.vcxproj txt eol=crlf
+*.filters txt eol=crlf
+*.c txt eol=lf
+*.cpp txt eol=lf
+*.svg txt eof=lf

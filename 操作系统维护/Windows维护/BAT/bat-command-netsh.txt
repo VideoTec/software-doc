@@ -1,0 +1,7 @@
+NetSH (Network Shell) 是windows系统本身提供的功能强大的网络配置命令行工具。 
+导出配置脚本：netsh -c interface ip dump > c:\interface.txt 
+导入配置脚本：netsh -f c:\interface.txt
+
+netsh interface ip show config
+
+netsh firewall show state

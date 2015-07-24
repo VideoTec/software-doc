@@ -1,0 +1,214 @@
+@echo off
+cd %~dp0
+:BUILD
+call ndk-build V=1 NDK_DEBUG=0 > c:\logcat.txt   会输出到文本里，为什么只输出编译命令行，没有输出编译信息呢？
+pause
+
+因为编译信息是输出到 stderror 上了, 正确的写法是
+call ndk-build V=1 NDK_DEBUG=0 >c:\logcat.txt 2>&1
+
+参考
+http://stackoverflow.com/questions/1420965/redirect-stdout-and-stderr-to-a-single-file
+I'm trying to redirect all output (stdout + stderr) of a dos command to a single file:
+You want:
+dir >a.txt 2>&1  
+一定要注意 2>&1 必须在后面，
+一定要注意 2>&1 没有空格  （奇怪： &和1之间可以加空格: 因为 >& 是一个整体）
+
+Use >CON to send text to the screen, no matter what, even if the batch file's output is redirected.
+
+<　　　从文件或设备（如默认的 con 键盘）中读取命令输入。
+>　　　将命令输出写入到文件或设备（如 prn 打印机）中。 
+>>　　 将命令输出添加到文件末尾而不删除文件中的信息。
+<&　　从后一个句柄读取输入并写入到前一个句柄输出中。
+>&　　将前一个句柄的输出写成后一个句柄的输入。
+|　　　读取前一个命令中的输出作为后一个命令的输入。也称作管道符。
+
+参考：
+http://www.robvanderwoude.com/battech_redirection.php
+Display & Redirect Output
+最关键的一点，屏幕看到的输出，其实是从三个流里来的
+Standard Output
+Standard Error
+Console
+三种不同的重定义命令
+ECHO Hello world>NUL
+redirects all Standard Output to the NUL device, which does nothing but discard it.
+ECHO Hello world 2>NUL
+redirected the Standard Error stream to the NUL device
+
+The output we see in this window may all look alike, but it can actually be the result of 3 different "streams" of text, 3 "processes" that each send their text to thee same window.
+
+Those of you familiar with one of the Unix/Linux shells probably know what these streams are:
+
+Standard Output
+Standard Error
+Console
+
+Standard Output is the stream where all, well, standard output of commands is being sent to.
+The ECHO command sends all its output to Standard Output.
+
+Standard Error is the stream where many (but not all) commands send their error messages.
+
+And some, not many, commands send their output to the screen bypassing Standard Output and Standard Error, they use the Console. 
+By definition Console isn't a stream.
+
+There is another stream, Standard Input: many commands accept input at their Standard Input instead of directly from the keyboard.
+Probably the most familiar example is MORE:
+
+DIR /S | MORE
+where the MORE command accepts DIR's Standard Output at its own Standar Input, 
+chops the stream in blocks of 25 lines (or whatever screen size you may use) and sends it to its own Standard Output.
+
+(Since MORE's Standard Input is used by DIR, MORE must catch its keyboard presses (the "Any Key") directly from the keyboard buffer instead of from Standard Input.)
+
+------------------------------------
+三种流的重定向
+------------------------------------
+Redirection
+
+You may be familiar with "redirection to NUL" to hide command output:
+
+ECHO Hello world>NUL
+will show nothing on screen.
+That's because >NUL redirects all Standard Output to the NUL device, which does nothing but discard it.
+
+Now try this (note the typo):
+
+EHCO Hello world>NUL
+The result may differ for different operating system versions, but in Windows XP I get the following error message:
+
+'EHCO' is not recognized as an internal or external command, operable program or batch file.
+This is a fine demonstration of only Standard Output being redirected to the NUL device, but Standard Error still being displayed.
+
+Redirecting Standard Error in "true" MS-DOS (COMMAND.COM) isn't possible (actually it is, by using the CTTY command, but that would redirect all output including Console, and input, including keyboard).
+In Windows NT 4 and later (CMD.EXE) and in OS/2 (also CMD.EXE) Standard Error can be redirected by using 2> instead of >
+
+A short demonstration. Try this command:
+
+ECHO Hello world 2>NUL
+What you should get is:
+
+Hello world
+You see? The same result you got with ECHO Hello world without the redirection.
+That's because we redirected the Standard Error stream to the NUL device, but the ECHO command sent its output to the Standard Output stream, which was not redirected.
+
+Now make a typo again:
+
+EHCO Hello world 2>NUL
+What did you get? Nothing
+That's because the error message was sent to the Standard Error stream, which was in turn redirected to the NUL device by 2>NUL
+
+When we use > to redirect Standard Output, CMD.EXE interprets this as 1>, as can be seen by writing and running this one-line batch file "test.bat":
+
+DIR > NUL
+
+Now run test.bat in CMD.EXE and watch the result:
+
+C:\>test.bat
+
+C:\>DIR  1>NUL
+
+C:\>_
+It looks like CMD.EXE uses 1 for Standard Output and 2 for Standard Error. We'll see how we can use this later.
+
+Ok, now that we get the idea of this concept of "streams", let's play with it.
+Copy the following code into Notepad and save it as "test.bat":
+
+@ECHO OFF
+ECHO This text goes to Standard Output
+ECHO This text goes to Standard Error 1>&2
+ECHO This text goes to the Console>CON
+Run test.bat in CMD.EXE, and this is what you'll get:
+
+C:\>test.bat
+This text goes to Standard Output
+This text goes to Standard Error
+This text goes to the Console
+
+C:\>_
+Now let's see if we can separate the streams again.
+Run:
+
+test.bat > NUL
+and you should see:
+
+C:\>test.bat
+This text goes to Standard Error
+This text goes to the Console
+
+C:\>_
+We redirected Standard Output to the NUL device, and what was left were Standard Error and Console.
+
+Next, run:
+
+test.bat 2> NUL
+and you should see:
+
+C:\>test.bat
+This text goes to Standard Output
+This text goes to the Console
+
+C:\>_
+We redirected Standard Error to the NUL device, and what was left were Standard Output and Console.
+
+Nothing new so far. But the next one is new:
+
+test.bat > NUL 2>&1
+and you should see:
+
+C:\>test.bat
+This text goes to the Console
+
+C:\>_
+This time we redirected both Standard Output and Standard Error to the NUL device, and what was left was only Console.
+It is said Console cannot be redirected, and I believe that's true. I can assure you I did try!
+
+To get rid of screen output sent directly to the Console, either run the program in a separate window (using the START command), or clear the screen immediately afterwards (CLS).
+In this case, we could also have used test.bat >NUL 2>NUL
+This redirects Standard Output to the NUL device and Standard Error to the same NUL device.
+With the NUL device that's no problem, but when redirecting to a file one of the redirections will lock the file for the other redirection.
+What 2>&1 does, is merge Standard Error into the Standard Output stream, so Standard output and Standard Error will continue as a single stream.
+
+Redirect "all" output to a single file:
+
+Run:
+
+test.bat > test.txt 2>&1
+and you'll get this text on screen (we'll never get rid of this line on screen, as it is sent to the Console and cannot be redirected):
+
+This text goes to the Console
+You should also get a file named test.txt with the following content:
+
+This text goes to Standard Output
+This text goes to Standard Error
+Note:	The commands
+test.bat  > test.txt 2>&1
+test.bat 1> test.txt 2>&1
+test.bat 2> test.txt 1>&2
+all give identical results.
+
+------------------------------------
+用法示例
+------------------------------------
+Use >filename.txt 2>&1 to merge Standard Output and Standard Error and redirect them together to a single file.
+Make sure you place the redirection "commands" in this order.
+
+Use >logfile.txt 2>errorlog.txt to redirect success and error messages to separate log files.
+
+Use >CON to send text to the screen, no matter what, even if the batch file's output is redirected.
+This could be useful when prompting for input even if the batch file's output is being redirected to a file.
+
+Use 1>&2 to send text to Standard Error.
+This can be useful for error messages.
+It's ok to use spaces in redirection commands. Note however, that a space between an ECHO command and a > will be redirected too.
+DIR>filename.txt and DIR > filename.txt are identical, ECHO Hello world>filename.txt and ECHO Hello world > filename.txt are not, even though they are both valid.
+It is not ok to use spaces in >> or 2> or 2>&1 or 1>&2 (before or after is ok).
+In Windows NT 4, early Windows 2000 versions, and OS/2 there used to be some ambiguity with ECHOed lines ending with a 1 or 2, immediately followed by a >:
+ECHO Hello world2>file.txt would result in an empty file file.txt and the text Hello world (without the trailing "2") on screen (CMD.EXE would interpret it as ECHO Hello world 2>file.txt).
+In Windows XP the result is no text on screen and file.txt containing the line Hello world2, including the trailing "2" (CMD.EXE interprets it as ECHO Hello world2 >file.txt).
+To prevent this ambiguity, either use parentheses or insert an extra space yourself:
+ECHO Hello World2 >file.txt
+(ECHO Hello World2)>file.txt
+"Merging" Standard Output and Standard Error with 2>&1 can also be used to pipe a command's output to another command's Standard Input:
+somecommand 2>&1 | someothercommand

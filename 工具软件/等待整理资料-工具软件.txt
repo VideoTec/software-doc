@@ -1,0 +1,46 @@
+Adobe Flash Media Streaming Server 4.0
+Name: Mulder & Scully s/n: 1374-5477-3349-5976-2666-9934 Note: Add the following line in your hosts file located in C:\Windows\system32\drivers\etc\hosts: 127.0.0.1 activate.adobe.com
+
+关于 VIM 的一点学习经验
+http://www.keakon.net/2013/07/11/%E5%85%B3%E4%BA%8EVIM%E7%9A%84%E4%B8%80%E7%82%B9%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C
+
+
+
+三个不错的免费虚拟光驱软件下载
+WinCDEmu是一个轻量级的开源虚拟光驱软件，只有800K大小，鼠标双击映像文件就能把映像文件虚拟为光盘驱动器，再次双击即可取消模拟，或者右键点虚拟光驱选弹出。WinCDEmu支持ISO、CUE、IMG、BIN、RAW等光盘镜像格式
+
+Phantom CD可以把ISO/CUE/BIN等常见的光盘镜像文件加载到虚拟光盘驱动器中，这样不仅省却了每次将CD/DVD光盘插入到光驱中的麻烦，还能保护你的光盘，防止过度读取而废掉
+
+
+SSH 工具及账号
+Tunnelier
+MyEntunnel
+
+http://en.wikipedia.org/wiki/Comparison_of_SSH_clients
+
+http://alidage.org/
+
+
+
+
+
+
+
+
+
+
+请问如何在 Vim 命令模式下实现从光标位置处换行
+比如： 
+wqerqtyuiop 
+光标位于 r
+之后变成
+wqer
+qtyuiop
+
+在q 字母处按 i键，然后ctrl-j
+
+
+
+
+
+

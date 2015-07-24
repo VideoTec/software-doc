@@ -1,0 +1,12 @@
+$ git remote show origin
+Password for 'https://wangxiang83@bitbucket.org':
+* remote origin
+  Fetch URL: https://wangxiang83@bitbucket.org/wangxiang83/videotech.git
+  Push  URL: https://wangxiang83@bitbucket.org/wangxiang83/videotech.git
+  HEAD branch: master
+  Remote branch:
+    master tracked
+  Local branch configured for 'git pull':
+    master merges with remote master
+  Local ref configured for 'git push':
+    master pushes to master (up to date)

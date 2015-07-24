@@ -1,0 +1,41 @@
+chrome Tampermonkey ²å¼þ
+
+The most popular userscript manager for Blink-based browsers
+Tampermonkey is the most popular userscript manager for Google Chrome.
+
+##########################
+        Features 
+##########################
+
+ - manage and edit all your userscripts
+ - enable and disable your scripts with 2 clicks
+ - all GM_* functions including (GM_registerMenuCommand, GM_getResourceText, GM_getResourceURL, GM_notification)
+ - full unsafeWindow access
+ - a lot of tags supported by Greasemonkey and Scriptish (like @resource, @require, ...)
+ - @user-agent tag support to overwrite the useragent string at the pages defined by @include
+ - script synchronization via Chrome Sync 
+ - settings and script export and import functionality
+
+For a full overview please take a look at the FAQ or just install TM. ;)
+
+Thanks for using Tampermonkey. :)
+
+##########################
+          Bugs 
+##########################
+
+Please DON'T report bugs by a review, BUT HERE:
+ - http://tampermonkey.net/bug
+ - https://github.com/derjanb/tampermonkey/issues
+
+##########################
+       Changelog
+##########################
+
+http://tampermonkey.net/changelog.php?ext=dhdg
+
+##########################
+         FAQ 
+##########################
+
+http://tampermonkey.net/faq

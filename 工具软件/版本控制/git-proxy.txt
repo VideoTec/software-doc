@@ -1,0 +1,40 @@
+给Git或者APT设置goagent代理
+
+---------------------------------------------------
+http://www.pktgeek.com/articles/174
+---------------------------------------------------
+
+git系统配置文件的目录是 ：C:\Users\[username]\.gitconfig
+
+解决“fatal: recursion detected in die handler”问题
+
+[https]
+proxy = 127.0.0.1:8087
+sslVerify = false
+postBuffer = 524288000  不知道干什么用的
+[http]
+proxy = 127.0.0.1:8087
+sslVerify = false
+postBuffer = 524288000
+
+---------------------------------------------------
+http://yansu.org/2013/05/20/set-proxy-for-git-or-apt.html
+---------------------------------------------------
+
+export https_proxy="127.0.0.1:8087"
+export http_proxy="127.0.0.1:8087"
+git config --global http.sslVerify false
+
+如果不加 http.sslVerify false 会出下面的错误
+$ git pull
+fatal: unable to access 'https://wangxiang83@bitbucket.org/wangxiang83/doc.git/'
+: SSL certificate problem: unable to get local issuer certificate
+
+---------------------------------------------------
+http://mdjhny.github.io/git-proxy-using-goagent.html
+---------------------------------------------------
+
+C:\Program Files (x86)\Git\bin\curl-ca-bundle.crt
+http.sslcainfo=/bin/curl-ca-bundle.crt
+
+

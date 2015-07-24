@@ -1,0 +1,6 @@
+参考
+http://searchtasks.answersthatwork.com/tasklist.php?File=PassThruSvr
+
+PassThruSvr.exe
+
+HTC Internet Pass-Through Service. Service installed when you install the HTC Sync program which enables the user to sync their HTC phone with their PC, or back up their HTC phone to their PC. This background service detects your HTC phone when you connect it via USB and then allows your phone to connect to the Internet through your PC's Internet connection. This service has effectively two functions : its primary function is to detect your phone and allow HT Sync to work; its secondary function is, if you need it, to allow you to access the Internet through your PC/laptop's Internet connection in cases, for example, where there is no Wi-Fi available, but your PC/laptop is connected to the Internet through a wired connection and you want to minimize your cellphone's Internet access costs by accessing the Internet through the PC rather than through your cellphone's data contract.

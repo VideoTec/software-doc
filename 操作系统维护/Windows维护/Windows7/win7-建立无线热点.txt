@@ -1,0 +1,37 @@
+创建虚拟WIFI网卡
+netsh wlan set hostednetwork mode=allow ssid=wxiang key=feinno@83
+
+启动承载网络
+netsh wlan start hostednetwork
+
+注意：
+创建虚拟网卡后，需要把连接网络的连接，共享给虚拟网卡
+网络适配器属性 -> 共享 -> Internet 连接共享 -> 允许其它网络用户通过此计算机的Internet连接来连接
+选择对应的 家庭网络连接
+
+----------------------------
+笔记本设置wifi热点 并 翻墙
+----------------------------
+goagent 修改
+打开local文件夹，打开proxy.ini,[listen]栏，ip=改成0.0.0.0后保存
+
+android 代理设置（长按WIFI名称，显示高级设置，手动添加代理服务器IP地址和端口号）
+一般是192.168.137.1 8087
+
+android 添加证书
+
+Android 4.0 已经支持用户安装根证书了，只需要将根证书放到sdcard根目录，然后到设置(Settings) – 安全(Security) – 从存储设备安装(Install from storage)就可以了，但是这样安装需要设置锁屏PIN或密码才可以。
+但是，该操作需要每次打开手机输入锁屏PIN或密码，为用户带来很大的麻烦。
+
+这个方法：输入证书存储的密码  无解
+
+----------------------------
+笔记本设置wifi热点
+----------------------------
+
+在笔记本命令行下，利用netsh命令设置无线热点：
+1、netsh wlan show drivers //判断支持的承载网络：是
+2、netsh wlan set hostednetwork mode=allow ssid=热点名字 key=热点密码 //mode=allow启用虚拟WiFi网卡；mode=disallow可以直接禁用虚拟WiFi网卡。
+3、netsh wlan start hostednetwork //启动承载网络
+4、设置Internet共享。
+5、netsh wlan show hostednetwork //显示无线网络信息

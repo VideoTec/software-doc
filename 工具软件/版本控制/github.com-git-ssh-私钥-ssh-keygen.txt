@@ -1,0 +1,61 @@
+http://blog.csdn.net/kongqz/article/details/6338690
+
+直接在 GIT 控制台里运行
+ssh-keygen
+公钥和私钥会，保存在，~/.ssh 文件夹里。
+
+一、概述
+1、就是为了让两个linux机器之间使用ssh不需要用户名和密码。采用了数字签名RSA或者DSA来完成这个操作
+
+2、模型分析
+假设 A （192.168.20.59）为客户机器，B（192.168.20.60）为目标机；
+
+要达到的目的：
+A机器ssh登录B机器无需输入密码；
+加密方式选 rsa|dsa均可以，默认dsa
+
+二、具体操作流程
+
+单向登陆的操作过程（能满足上边的目的）：
+1、登录A机器 
+2、ssh-keygen -t [rsa|dsa]，将会生成密钥文件和私钥文件 id_rsa,id_rsa.pub或id_dsa,id_dsa.pub
+3、将 .pub 文件复制到B机器的 .ssh 目录， 并 cat id_dsa.pub >> ~/.ssh/authorized_keys
+4、大功告成，从A机器登录B机器的目标账户，不再需要密码了；（直接运行 #ssh 192.168.20.60 ）
+ 
+双向登陆的操作过程：
+1、ssh-keygen做密码验证可以使在向对方机器上ssh ,scp不用使用密码.具体方法如下:
+2、两个节点都执行操作：#ssh-keygen -t rsa 
+  然后全部回车,采用默认值.
+
+3、这样生成了一对密钥，存放在用户目录的~/.ssh下。
+将公钥考到对方机器的用户目录下 ，并将其复制到~/.ssh/authorized_keys中
+（操作命令：#cat id_dsa.pub >> ~/.ssh/authorized_keys ）
+
+4、设置文件和目录权限：
+设置authorized_keys权限
+$ chmod 600 authorized_keys 
+设置.ssh目录权限
+$ chmod 700 -R .ssh
+ 
+5、要保证.ssh和authorized_keys都只有用户自己有写权限。否则验证无效。
+（今天就是遇到这个问题，找了好久问题所在），
+其实仔细想想，这样做是为了不会出现系统漏洞。
+我从20.60去访问20.59的时候会提示如下错误：
+
+The authenticity of host '192.168.20.59 (192.168.20.59)' can't be established.
+RSA key fingerprint is 6a:37:c0:e1:09:a4:29:8d:68:d0:ca:21:20:94:be:18.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.20.59' (RSA) to the list of known hosts.
+root@192.168.20.59's password: 
+Permission denied, please try again.
+root@192.168.20.59's password: 
+Permission denied, please try again.
+root@192.168.20.59's password: 
+Permission denied (publickey,gssapi-with-mic,password).
+
+http://blog.csdn.net/leexide/article/details/17252369
+ssh-keygen:生成秘钥
+其中：
+  -t指定算法
+  -f 指定生成秘钥路径
+  -N 指定密码

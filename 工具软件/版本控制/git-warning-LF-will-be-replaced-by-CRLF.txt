@@ -1,0 +1,46 @@
+git 文件的换行符的问题
+
+warning: LF will be replaced by CRLF in libav-test/libav/include/libavcodec/avff
+The file will have its original line endings in your working directory.
+
+修改 .gitattributes 文件才有用。
+* text=lf
+*.svg txt eol=lf
+.gitattributes txt eol=lf   //因为把eol写eof造成，没有效果的，错觉
+
+11:52 2015/7/15
+子文件夹下的 .gitattributes 可用于控制子文件夹
+warning: LF will be replaced by CRLF in Computer software/工具软件/版本控制/git-cmd/git-cmd-checkout-reset-图解.svg.
+The file will have its original line endings in your working directory.
+
+《git 控制行结束符的方法: config .gitattributes等等》
+.gitattributes设置文件与行结束的设置
+warning: CRLF will be replaced by LF in msvc/TestLibav/TestLibav.vcxproj.
+The file will have its original line endings in your working directory.
+行结束符的设置：
+指定工程文件，不改，其它文件改 或者 工程文件修改的警告不要出
+git config core.crlf false  这种情况下，应该不会更改行结束符了。为什么会出警告？出什么警告？原因出在.gitattributes file
+E:\libav\.gitattributes 下面的设置，造成了这个问题。
+http://www.rtuin.nl/2013/02/how-to-make-git-ignore-different-line-endings/
+* -crlf
+This tells git to ignore the line endings for all files. And does not change the files in your working directory. 
+Even if you have the core.autocrlf set to true, false, or input.
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+* text=auto  如果去掉这一行，就正常了，不会提示，CRLF will be replaced by LF。
+# Declare files that will always have CRLF line endings on checkout.
+*.sln text eol=crlf 加上上面一行，可以指定特定文件的，行结束符。
+
+
+git config --global core.autocrlf false
+关闭控制台后，重新启动，再git config --list才能看出结果
+为什么列表里有两个 core.autocrlf 呢？
+
+意义解释
+git config --global core.autocrlf input 提交时转换为LF，检出时不转换
+git config --global core.autocrlf true  提交时转换为LF，检出时转换为CRLF
+git config --global core.autocrlf false 提交检出均不转换
+修改这个配置根本没用，
+还得修改 .gitattributes 文件才有用。
+* text=lf

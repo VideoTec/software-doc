@@ -1,0 +1,4 @@
+git ls-tree only works with git refs, e.g. ls-tree HEAD.
+
+Try git ls-files. You probably want the -s and/or -m flags.
+git ls-files -s will list the files in the index (i.e. files that have been staged)

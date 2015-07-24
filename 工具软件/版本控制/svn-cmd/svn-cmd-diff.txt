@@ -1,0 +1,18 @@
+比较
+
+diff [-c M | -r N[:M]] [TARGET[@REV]...]
+
+diff [-r N[:M]] --old=OLD-TGT[@OLDREV] [--new=NEW-TGT[@NEWREV]] [PATH...]
+
+diff OLD-URL[@OLDREV] NEW-URL[@NEWREV]
+
+用法：
+1. Use just svn diff to display local modifications in a working copy
+2. Display the changes made to TARGETs as they are seen in REV between two revisions
+3. Display the differences between OLD-TGT as it was seen in OLDREV and NEW-TGT as it was seen in NEWREV.
+
+示例：
+svn diff -r 73:72  两版本的比较
+
+Compare revision 3000 to revision 3500 of all the files in trunk using range notation:
+svn diff -r 3000:3500 http://svn.collab.net/repos/svn/trunk

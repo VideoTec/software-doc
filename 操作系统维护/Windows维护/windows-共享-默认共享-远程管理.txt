@@ -1,0 +1,29 @@
+c$ d$ e$
+
+这些默认共享，怎么使用？怎么禁止？
+
+很多装完Windows7的朋友们都发现一个老问题，这个问题在XP时代就已经让人很头疼了，那就是默认共享。
+在Windows 2000/XP/2003系统中，逻辑分区与Windows目录默认为共享，
+这是为管理员管理服务器的方便而设，但却成为了别有用心之徒可趁的安全漏洞。
+因为默认共享的权限很大，可读可写
+
+于是我们从网上邻居访问本机的时候，只需要在共享路径中输入带“$”符号的驱动器符，就可以得到整个分区的最高权限
+
+当然，我们可以从计算机管理中把默认共享删掉。
+但默认共享是系统自动生成的，每次重启系统，默认共享将又会被打开。
+
+好吧，下面教给大家一个方法，可以用来彻底禁用掉默认共享，而且不会破坏正常的手动共享。
+
+1.先手动停止默认共享
+　　打开计算机管理，找到“共享文件夹-共享”，在右边找到需要删除的项目，右键-停止共享-全部确定。
+2修改注册表
+　　运行regedit，依次展开：
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Lanmanserver\Parameters]
+“AutoShareWks”=dword:00000000   15:29 2015/6/24 只用这一个就行
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa]
+“restrictanonymous”=dword:00000001
+
+http://blog.sina.com.cn/s/blog_4b3398110100i2q1.html
+AutoShareWks就是英语单词auto（自动） share（共享） works（工作）的连写和缩写
+如果要启用默认共享，则把此键值删除，或者把其值改为1

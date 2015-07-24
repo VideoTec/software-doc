@@ -1,0 +1,4 @@
+删除分支
+
+-d, --delete          delete fully merged branch
+-D                    delete branch (even if not merged)

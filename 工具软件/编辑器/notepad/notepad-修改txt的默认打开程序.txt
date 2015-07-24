@@ -1,0 +1,16 @@
+10:10 2015/5/21
+在 公司电脑上，右击选择默认打开程序，选择 D:\npp.6.7.4.bin\notepad++.exe
+总是添加不上
+
+通过修改 注册表来 实现 regedt32
+HKEY_CLASSES_ROOT -> txtfile -> shell -> open -> command
+
+在右边可以看到一个默认文件，原来的值为：
+   %SystemRoot%\system32\NOTEPAD.EXE %1
+   双击这个文件，将它改成你所希望的txt文件默认打开方式的程序所在的位置，比如：
+   D:\tools\notepad2\notepad2.exe %1
+
+这次修改前的字符串是
+%SystemRoot%\system32\NOTEPAD.EXE %1
+修改成
+D:\npp.6.7.4.bin\notepad++.exe %1

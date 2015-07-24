@@ -1,0 +1,53 @@
+stash[英][stæʃ] [美][stæʃ] v.隐藏，藏匿；贮藏；〈英〉停止
+
+场景：甲修改了文件A并且push到了git server上，这时乙也在修改文件A，他想看一下甲修改了什么，于是从git server上pull下来，但是会遇到这样的提示：
+error: Your local changes to the following files would be overwritten by merge:
+文件A
+Please, commit your changes or stash them before you can merge.
+可是乙不想把他未完成的修改commit，请问这个时候要怎么操作?或者可以先把文件A暂存起来？并且可以在日后push的不保留记录？
+
+git stash
+git pull
+git stash pop
+
+git stash暂存下来, 当pull或者合并后使用git add -i命令, 进行diff, update, revert等命令
+
+
+经常有这样的事情发生，
+当你正在进行项目中某一部分的工作，里面的东西处于一个比较杂乱的状态，
+而你想转到其他分支上进行一些工作。
+
+问题是，你不想提交进行了一半的工作，否则以后你无法回到这个工作点。
+
+解决这个问题的办法就是git stash命令
+
+参考
+http://stackoverflow.com/questions/15286075/difference-between-git-stash-pop-and-git-stash-apply
+git stash pop throws away the (topmost, by default) stash after applying it, 
+whereas git stash apply leaves it in the stash list for possible later reuse (or you can then git stash drop it).
+
+Another way to look at it: git stash pop is git stash apply && git stash drop.
+
+参考
+http://www.cppblog.com/deercoder/archive/2011/11/13/160007.html
+git stash: 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。
+git stash pop: 从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。
+git stash list: 显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。
+git stash clear: 清空Git栈。此时使用gitg等图形化工具会发现，原来stash的哪些节点都消失了
+
+参考
+http://blog.hanfeisun.info/2012/12/git-stash-adventure/
+正确的做法应该是在git stash后再执行git stash apply，当前的工作目录就恢复回来了。
+
+git stash apply相当于利用过去贮藏(stashed)的工作目录快照，恢复当前的工作目录。
+如果工作目录在贮藏之后发生了变化，恢复时就会产生冲突(conflict)，
+这种情况下git stash apply会对工作目录进行merge操作。
+
+git stash默认只保存跟踪文件的快照，而放任其他文件(untracked files)不管的特点。如果这里在贮藏之后修改了app/views/users的内容，因为git stash之前没有保存过这个文件，用git stash pop或者git stash apply都是没办法恢复的，这种情况只能自认倒霉。想把这些untracked files的进度也保存的话，只需添加-u参数即可
+
+git stash怎么做到既保存了暂存区，又保存了工作目录的呢？打一下git log --graph refs/stash -2这个命令，或者通过man git-stash查看它的文档，可以看到其提交的关系是这样的(W是工作目录，I是暂存区，H就是stash时候所在的版本。)：
+
+                  .----W
+                 /    /
+           -----H----I
+也就是说git stash实际上有两次提交，因此能够同时保存暂存区的快照和工作目录的快照。

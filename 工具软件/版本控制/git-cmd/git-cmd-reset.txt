@@ -1,0 +1,10 @@
+git reset --hard
+this resets all uncommitted changes you’ve made in your working copy
+
+Note that git reset <file> is short for git reset HEAD <file>.
+
+You can use git reset without any file name to undo all due changes. 
+This can come handy when there are too many files to be listed one by one.
+
+和 git checkout . 区别：
+checkout 不重置，已经add的修改，reset可以

@@ -1,0 +1,24 @@
+svn checkout URL[@REV]... [PATH]
+
+用户名 密码
+
+出现下面问题：
+现在主要还是用svn做版本控制，而为了代码在传输过程中的安全性，如果能有HTTPS，我还是会尽量选择用HTTPS。可是最近有一个问题很烦人，由于公司的证书问题，svn在做ca认证的时候发现有错，于是就出现了如下错误提示
+
+C:\Users\wangxiang>svn co https://cavaliers98.oicp.net/svn/IPC/trunk g:\ipc-code --username wangxiang --password wangxiang
+Error validating server certificate for 'https://cavaliers98.oicp.net:443':
+ - The certificate is not issued by a trusted authority. Use the
+   fingerprint to validate the certificate manually!
+ - The certificate hostname does not match.
+Certificate information:
+ - Hostname: blagame-svr
+ - Valid: from Jan 23 10:53:01 2014 GMT until Jan 21 10:53:01 2024 GMT
+ - Issuer:
+ - Fingerprint: 4A:23:3C:25:6C:1B:62:B7:C7:07:F9:F7:61:6B:73:3D:8F:0E:4B:E0
+(R)eject, accept (t)emporarily or accept (p)ermanently?[美][ˈpəmənəntlɪ] 永久地，长期不变地
+
+照理直接按p就可以让svn以后忽略这个问题了，但是很奇怪，即便摁了p，下次操作时还是会提示同样的错误，让人无法蛋定。
+
+在默默忍受了这个问题许久之后，今儿在home列目录时突然发现，咋这么多root的目录，其中就有.subversion，我每次的操作都没有记录，难道就是因为这个导致权限不足无法保存设置么……于是立刻chown了一下，问题果然解决，我勒个去……
+
+总结教训，下次再发现啥软件设置无法保存的情况，先检查检查配置文件或目录的权限再说。不过，话说，这svn也不提示啥的，太无良了 = =|||

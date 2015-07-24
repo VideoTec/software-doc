@@ -1,0 +1,63 @@
+--------------------------------------------------------------
+paragraph[英][ˈpærəgrɑ:f] [美][ˈpærəgræf] 段落；分段符号
+--------------------------------------------------------------
+
+作用：移动光标 到前一个段落 或者 下一个段落
+键： 大括号
+
+--------------------------------------------------------------
+sentence[英][ˈsentəns] [美][ˈsɛntəns] 句子
+--------------------------------------------------------------
+
+作用：移动光标 到前句子的开始，结束位置
+键： 小括号
+
+
+一个句子以 '.'、'!' 或者 '?' 结尾并紧随着一个换行符、空格或者制表符。
+标点和空白字符之间可以出现任何数量的闭括号和引号: ')'、']'、'"' 和 '''。
+另，段落和小节的边界也视为句子的边界。
+如果 'cpoptions' 包含 'J' 标志位，那么标点之后的空格至少要出现两个，
+而且制表符不被视为空白字符。
+
+一个段落从空行或某一个段落宏命令开始，
+段落宏由 'paragraphs' 选项里成对出现的字符所定义。
+它的缺省值为 "IPLPPPQPP TPHPLIPpLpItpplpipbp"，也就是宏 ".IP"、".LP"等 (这些是 nroff 宏，所以句号一定要出现在第一列)。
+小节边界也被视为段落边界。
+注意 空白行 (只包含空白) _不是_ 段落边界。
+注意: 这不包括首列出现的 '{' 或 '}'。如果 'cpoptions' 里包含 '{' 标志位，那么首列的 '{' 用作段落边界 |posix|。
+
+--------------------------------------------------------------
+A sentence 
+--------------------------------------------------------------
+A sentence is defined as ending at a '.', '!' or '?' followed by either the end of a line, or by a space or tab.  
+Any number of closing ')', ']', '"' and ''' characters may appear after the '.', '!' or '?' before the spaces, tabs or end of line. 
+A paragraph and section boundary is also a sentence boundary.
+If the 'J' flag is present in 'cpoptions', at least two spaces have to follow the punctuation mark; <Tab>s are not recognized as white space. 
+The definition of a sentence cannot be changed.
+
+--------------------------------------------------------------
+A paragraph
+--------------------------------------------------------------
+A paragraph begins after each empty line, and also at each of a set of paragraph macros, specified by the pairs of characters in the 'paragraphs' option.  
+The default is "IPLPPPQPP TPHPLIPpLpItpplpipbp", which corresponds to the macros ".IP", ".LP", etc.  
+(These are nroff macros, so the dot must be in the first column). 
+A section boundary is also a paragraph boundary. 
+Note that a blank line (only containing white space) is NOT a paragraph boundary.
+Also note that this does not include a '{' or '}' in the first column.  
+When the '{' flag is in 'cpoptions' then '{' in the first column is used as a paragraph boundary |posix|.
+
+--------------------------------------------------------------
+*section*
+--------------------------------------------------------------
+A section begins after a form-feed (<C-L>) in the first column and at each of a set of section macros, specified by the pairs of characters in the 'sections' option.  The default is "SHNHH HUnhsh", which defines a section to start at the nroff macros ".SH", ".NH", ".H", ".HU", ".nh" and ".sh".
+
+The "]" and "[" commands stop at the '{' or '}' in the first column.  
+This is useful to find the start or end of a function in a C program.  
+Note that the first character of the command determines the search direction and the second character the type of brace found.
+
+If your '{' or '}' are not in the first column, and you would like to use "[[" and "]]" anyway, try these mappings: >
+   :map [[ ?{<CR>w99[{
+   :map ][ /}<CR>b99]}
+   :map ]] j0[[%/{<CR>
+   :map [] k$][%?}<CR>
+[type these literally, see |<>|]

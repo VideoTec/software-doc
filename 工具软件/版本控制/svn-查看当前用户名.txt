@@ -1,0 +1,16 @@
+1. 查看svn 的用户名，密码：
+找到用户名，密码文件，都是明文的，你可以看到
+例：linux
+hjj@hjj-ubuntu:~/.subversion/auth/svn.simple$ ls
+9aad7e9f713353a655cf4365926120c7
+hjj@hjj-ubuntu:~/.subversion/auth/svn.simple$ cat 9aad7e9f713353a655cf4365926120c7
+.....
+
+win7: C:\Users\hjj\AppData\Roaming\Subversion\auth\svn.simple 下，查看文档 ......
+
+2. 删除或重置svn 用户名，密码
+windows 下: TortoiseSVN软件,右键出TortoiseSVN菜单Settings->Saved Data->Authentication data,Clear
+            或者删除 C:\Documents and Settings\Administrator\Application Data\Subversion\auth
+
+             win7: C:\Users\hjj\AppData\Roaming\Subversion\auth
+linux 下： 删除 ~/.subversion/auth （命令：rm -rf ~/.subversion/auth）

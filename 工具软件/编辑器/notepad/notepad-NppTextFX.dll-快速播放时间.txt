@@ -1,0 +1,3 @@
+10:07 2015/4/23
+快速播放时间，需要使用插件，TexFX
+http://sourceforge.net/projects/npp-plugins/files/TextFX/TextFX%20v0.26/

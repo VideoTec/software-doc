@@ -1,0 +1,7 @@
+svn windows 命令行
+http://subversion.apache.org/packages.html
+
+http://sourceforge.net/projects/win32svn/files/1.8.11/
+选择：
+http://sourceforge.net/projects/win32svn/files/1.8.11/apache24/
+svn-win32-1.8.11-ap24.zip 压缩包

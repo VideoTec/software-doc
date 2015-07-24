@@ -1,0 +1,36 @@
+﻿http://notepad-plus-plus.org/
+
+有 zip 包可下载
+2014.01.24 npp.6.7.4.bin.zip
+
+添加键菜单中
+https://believeinmiraclesx.wordpress.com/2012/06/27/notepad-missing-from-context-menu/
+Type ‘regedit’ in run prompt
+
+HKEY_CLASSES_ROOT\*\shell\Edit With Notepad++\command 默认值
+"D:\My Program Files\npp.6.7.4.bin\notepad++.exe" "%1"
+
+语言设置： settings -> preferences -> General -> Localization -> language
+
+取消 拼写 检查：
+把【插件】-【DSpellCheck】-【Spell Check Document Automatically】前面的打钩去掉即可
+
+打开新窗口
+notepad++似乎没有直接的多窗口模式。
+但可以在打开后，把标签拽出窗口（也可以通过标签的右键菜单项），成为新窗口
+
+添加 文本比对插件
+第一种方法，使用插件管理器下载
+PluginManager -> 
+
+第二种方法，
+下载：http://sourceforge.net/projects/npp-compare/ ComparePlugin.v1.5.6.2.bin.zip
+安装：To install copy ComparePlugin.dll into the plugins directory C:\Program Files\Notepad++\Plugins
+      重启，在插件里就可以看到对比插件
+
+添加 查看二进制插件
+http://sourceforge.net/projects/npp-plugins/files/Hex%20Editor/Hex%20Editor%20Plugin%20v0.9.5/
+HexEditor_0_9_5_UNI_dll.zip
+
+添加特殊字符，直接输入 unicode 码的方法？
+应该从输入 法考虑更好点

@@ -1,0 +1,58 @@
+没有 elif 或者 else if
+
+IF 条件 (
+    条件为真的时候的处理
+) else (
+    条件为假的时候的处理
+)
+
+IF abcdef==abcdef (
+    echo abcdef==abcdef
+)
+
+IF EXIST F:\tmp\a.bat (
+    echo EXIST:F:\tmp\a.bat
+)
+
+EQU - 等于（等しい）
+NEQ - 不等于（等しくない）
+LSS - 小于（より小さい）
+LEQ - 小于等于（以下）
+GTR - 大于（より大きい）
+GEQ - 大于等于（以上）
+
+IF a EQU b (
+    echo a EQU b
+)
+
+@echo off 
+set "str=this is a test" 
+REM 检测变量%str%是否等于test，如果相等，显示OK，否则显示NO 
+if "%str%"=="test" (echo OK) else echo NO 
+pause>nul 
+
+检测某个变量是否已经被定义
+@echo off 
+set "str1=ok" 
+set "str2=no" 
+if defined str1 echo str1已经被定义 
+if defined str2 echo str2已经被定义 
+if defined str3 (echo str3已经被定义) else echo str3 没有被定义 
+pause>nul 
+
+
+自己写的批处理
+cd %~dp0
+:BUILD
+call ndk-build V=1 NDK_DEBUG=0
+:WAIT
+set /p KEY=
+cls
+if "%KEY%"=="C" (
+  call ndk-build clean
+  set KEY=
+  goto WAIT
+
+) else (
+  goto BUILD
+)

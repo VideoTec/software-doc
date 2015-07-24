@@ -1,0 +1,7 @@
+mac osx 修改 hosts 文件
+
+sudo vi /etc/hosts 
+
+才发现原来mac os x 下的vim 是不能"+y 复制到剪贴板的
+
+MacVim中直接可以使用command+c和command+v

@@ -1,0 +1,16 @@
+http://www.zhihu.com/question/19579070
+为什么 Mac 没有提供剪切文件功能？
+
+Mac系统的移动设定是：移动（转移）（搬家）
+Windows系统的移动是： 先拷贝，第二步复制，第三步删除原位置文件，这样才有了剪切
+
+Mac OS X 10.7 Lion 里面，cmd+C 复制后，
+第一次可以使用 opt+cmd+V 使用 Move to here 功能。
+以后再按 cmd+V 粘贴复制到别的地方
+
+复制后粘贴的时候用 option+command+v 就剪切了！
+
+http://www.macx.cn/thread-1865359-1-1.html
+这里的复制和win下的复制显然是不一样的，点一下会出现一个一摸一样的副本文件
+”拷贝“才是对应windows下的”复制“。
+”制作替身“是对应windows下的”创建快捷方式“的意思

@@ -1,0 +1,11 @@
+https://appengine.google.com  regcoupans@gmail.com(车G1)
+APPID列表
+goagent20120429|goagent20120430|goagent20120431|goagent20120432|goagent20120433
+goagent20120501|goagent20120502|goagent20120503|goagent20120504|goagent20120505
+
+http://www.samabox.com/projects/chrome/switchy/ - 安装
+https://goagent.googlecode.com/files/SwitchyOptions.bak - 在线导入
+
+上传服务器文件时，需要启动goagent
+
+服务器上的版本 v2.1.11-60-g41459c4 - 20111231

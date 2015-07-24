@@ -1,0 +1,6 @@
+C:\Users\wangxiang>netsh wlan set hostednetwork mode=allow ssid=wxiangpc key=feinno@83
+必须使用管理员权限从命令提示符处运行此命令。
+
+http://ask.zol.com.cn/q/11839.html
+
+在开始 附件 命令行提示符 右击 选择以管理员方式运行

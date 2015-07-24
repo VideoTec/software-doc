@@ -1,0 +1,9 @@
+cd %~dp0
+:BUILD
+call ndk-build V=1 NDK_DEBUG=0
+pause
+cls
+goto BUILD
+
+pause
+将显示下面的消息：. Press any key to continue. . .(或：请按任意键继续. . .) 

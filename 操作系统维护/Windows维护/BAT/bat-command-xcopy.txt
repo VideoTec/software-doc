@@ -1,0 +1,91 @@
+cd %~dp0
+call ndk-build V=1 NDK_DEBUG=0
+echo f | xcopy libs\armeabi\libfvideo.so ..\TestFVideo\libs\armeabi\libfvideo.so /Y
+echo f | xcopy libs\armeabi\libfvideo.so ..\feinnovideo\libs\armeabi\libfvideo.so /Y
+pause
+
+XCOPY source [destination] [/A | /M] [/D[:date]] [/P] [/S [/E]] [/V] [/W]
+                           [/C] [/I] [/Q] [/F] [/L] [/G] [/H] [/R] [/T] [/U]
+                           [/K] [/N] [/O] [/X] [/Y] [/-Y] [/Z]
+                           [/EXCLUDE:file1[+file2][+file3]...]
+  source       指定要复制的文件。
+  destination  指定新文件的位置和/或名称。
+  /A           只复制有存档属性集的文件，
+               但不改变属性。
+  /M           只复制有存档属性集的文件，
+               并关闭存档属性。
+  /D:m-d-y     复制在指定日期或指定日期以后更改的文件。
+               如果没有提供日期，只复制那些源时间
+               比目标时间新的文件。
+  /EXCLUDE:file1[+file2][+file3]...
+               指定含有字符串的文件列表。每一个字符串
+               必须在文件的单独行中。如果有任何
+               字符串与要被复制的文件的绝对路径
+               相符，那个文件将不会得到复制。
+               例如，指定如 \obj\ 或 .obj 的字符串会排除
+               目录 obj 下面的所有文件或带有
+               .obj 扩展名的文件。
+  /P           创建每个目标文件前提示。
+  /S           复制目录和子目录，除了空的。
+  /E           复制目录和子目录，包括空的。
+               与 /S /E 相同。可以用来修改 /T。
+  /V           验证每个新文件。
+  /W           提示您在复制前按键。
+  /C           即使有错误，也继续复制。
+  /I           如果目标不存在，又在复制一个以上的文件，
+               则假定目标一定是一个目录。
+  /Q           复制时不显示文件名。
+  /F           复制时显示完整的源和目标文件名。
+  /L           显示要复制的文件。
+  /G           允许将没有经过加密的文件复制到
+               不支持加密的目标。
+  /H           也复制隐藏和系统文件。
+  /R           覆盖只读文件。
+  /T           创建目录结构，但不复制文件。
+               不包括空目录或子目录。/T /E 包括
+               空目录和子目录。
+  /U           只复制已经存在于目标中的文件。
+  /K           复制属性。一般的 Xcopy 会重置只读属性。
+  /N           用生成的短名复制。
+  /O           复制文件所有权和 ACL 信息。
+  /X           复制文件审核设置(隐含 /O)。
+  /Y           复制文件审核设置(隐含 /O)。
+               现存目标文件。
+  /-Y          导致提示以确认改写一个
+               现存目标文件。
+  /Z            用重新启动模式复制网络文件。
+
+
+命令行开关 /Y 可以预先在 COPYCMD 环境变量中设置。
+这可能被命令行上的 /-Y 改写
+
+上面的 echo f 的作是什么？
+当目标文件不存在时才会出现下面的提示
+目标 D:\03Android\sea-monster-video\libs\armeabi-v7a\libconvert.so 是文件名
+还是目录名
+(F = 文件，D = 目录)?
+在命令行添加 /F 是不行的，必须用： echo f|xcopy .....
+
+下面的写法也可以正常运行
+xcopy D:\CoreSDK\Android\libs\armeabi-v7a\libconvert.so D:\03Android\sea-monster-video\libs\armeabi-v7a\libconvert.so /Y
+
+echo y|xcopy D:\CoreSDK\Android\libs\armeabi-v7a\libconvert.so D:\03Android\sea-monster-video\libs\armeabi-v7a\libconvert.so
+等价于下面的写写法
+xcopy D:\CoreSDK\Android\libs\armeabi-v7a\libconvert.so D:\03Android\sea-monster-video\libs\armeabi-v7a\libconvert.so /Y
+
+复制命令：
+xccopy ../../libavutil/aes.h aes.h
+xcopy中提示“无效的参数数量”的解决方法: 文件路径加引号
+
+xcopy "../../libavutil/aes.h" "aes.h" 复制不成功，因为，路径名称，必需使用反斜杠。
+xcopy "..\libavutil\aes.h" "include\libavutil\aes.h"
+
+可以连起来写，用于应付，"是否复制" 和 "是文件还是文件夹" 两种情况。
+echo fy|xcopy "..\libavutil\%1" "include\libavutil\%1"
+
+如果目标文件存在，会提示是否覆盖，输入Y/N
+xcopy libs\armeabi\libfvideo.so ..\feinnovideo\libs\armeabi\libfvideo.so
+可用下面的方法避免这种提示
+xcopy libs\armeabi\libfvideo.so ..\feinnovideo\libs\armeabi\libfvideo.so /Y
+或者
+echo y|xcopy libs\armeabi\libfvideo.so ..\feinnovideo\libs\armeabi\libfvideo.so

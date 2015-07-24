@@ -1,0 +1,17 @@
+http://www.douban.com/note/142037908/
+
+netsh wlan start hostednetwork
+14:46 2015/6/29
+C:\Windows\system32>netsh wlan start hostednetwork
+无法启动承载网络。
+连到系统上的设备没有发挥作用。
+
+这个需要
+1. netsh wlan show drivers 查看，是否支持，持承载网络
+2. 查看下是否无线网卡被禁用或者网卡物理开关处在关闭状态
+3. 需要重新设置 
+   netsh wlan set hostednetwork mode=allow ssid=binglanPC key=binglanWiFi
+4. 确保你的无线网已经打开！（能搜到别的无线网） 
+   最后发现是这个问题，无线网卡搜索不到任何网络，图标是带一个大红叉
+   驱动没有问题
+   最后找到原因：笔记本快捷键锁住了，估计是锁住了，按照你笔记本品牌的无线网卡快捷键打开试下

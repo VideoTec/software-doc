@@ -1,0 +1,137 @@
+大多数 Git 服务器都会选择使用 SSH 公钥来进行授权。
+系统中的每个用户都必须提供一个公钥用于授权，没有的话就要生成一个。
+生成公钥的过程在所有操作系统上都差不多
+
+用SSH，需要使用git协议
+git@192.168.200.8:beside-android/feinnobeside.git
+git@github.com:VideoTec/jni.git
+
+-------------------------------
+16:05 2015/7/8
+github.com 设置 ssh-key
+-------------------------------
+
+$ ssh -T git@github.com
+Warning: Permanently added the RSA host key for IP address '192.30.252.131' to the list of known hosts.
+Hi VideoTec! You've successfully authenticated, but GitHub does not provide shell access.
+
+-------------------------------
+16:25 2015/7/8
+bitbucket.org 设置 ssh-key
+-------------------------------
+
+$ ssh -T git@bitbucket.org
+The authenticity of host 'bitbucket.org (131.103.20.167)' can't be established.
+RSA key fingerprint is 97:8c:1b:f2:6f:14:6b:5c:3b:ec:aa:46:46:74:7c:40.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'bitbucket.org,131.103.20.167' (RSA) to the list of known hosts.
+logged in as wangxiang83.
+
+You can use git or hg to connect to Bitbucket. Shell access is disabled.
+
+-------------------------------
+修改 ssh 协议为 git
+-------------------------------
+查看当前的远程库 URL
+git remote -v 
+
+设置新的远程库 URL
+git remote set-url origin git@github.com:VideoTec/jni.git
+
+---------------------
+没在网站，指定，公钥的情况下，clone，出下面的错误
+---------------------
+
+permanently[英]['pɜ:mənəntlɪ] [美][ˈpəmənəntlɪ]
+adv.永久地，长期不变地
+
+established[英][ɪˈstæblɪʃt] [美][əˈstæblɪʃt]
+adj.已建立的；已设立的；已制定的；确定的
+v.建立( establish的过去式和过去分词)；确定；[植物学]使（植物）定植；使成为
+
+passphrase 密码
+
+$ git clone git@192.168.200.8:beside-android/feinnobeside.git /d/work/feinnobeside
+Cloning into 'd:/work/feinnobeside'...
+The authenticity of host '192.168.200.8 (192.168.200.8)' can't be established.
+RSA key fingerprint is 44:99:b3:05:2d:16:aa:7d:06:d9:a7:3f:79:7d:44:56.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.200.8' (RSA) to the list of known hosts.
+
+git@192.168.200.8's password:
+Permission denied, please try again.
+git@192.168.200.8's password:
+
+---------------------
+生成公钥
+---------------------
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/schacon/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/schacon/.ssh/id_rsa.
+Your public key has been saved in /Users/schacon/.ssh/id_rsa.pub.
+The key fingerprint is:
+43:c5:5b:5f:b1:f1:50:43:ad:20:a6:92:6a:1f:9a:3a schacon@agadorlaptop.local
+
+提示创建.ssh/id_rsa、id_rsa.pub的文件，其中第一个为密钥，第二个为公钥。
+过程中会要求输入密码，为了ssh访问过程无须密码，可以直接回车 
+
+15:14 2015/7/8 创建过程（无任何输入，直接 回车，回车 ...）
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/wangxiangfx/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/wangxiangfx/.ssh/id_rsa.
+Your public key has been saved in /c/Users/wangxiangfx/.ssh/id_rsa.pub.
+The key fingerprint is:
+de:b4:53:fb:d0:24:f9:61:a4:d7:6f:2b:30:09:7c:30 wangxiangfx@WANGXIANGFX
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+|         E       |
+|        . o   .  |
+|         o . + . |
+|        S + * = .|
+|       . o * O ..|
+|        . + = o o|
+|           . + ..|
+|              o. |
++-----------------+
+
+https://git-scm.com/book/zh/v1/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E7%94%9F%E6%88%90-SSH-%E5%85%AC%E9%92%A5
+服务器上的 Git - 生成 SSH 公钥
+
+http://riny.net/2014/git-ssh-key/
+解决本地多个ssh key问题
+通过设置 .ssh/config 来为不同的网站，提供不同的 ssh
+
+15:50 2015/7/8
+把密码添加到服务器后，检测 ssh key 是否配置成功
+$ ssh -T git@192.168.200.8
+Welcome to GitLab, 王翔fx!
+
+配置成功，但是，clone 时发生下面的错误
+$ git clone git@192.168.200.8:beside-anroid/feinnobeside.git /d/work/beside
+Cloning into 'd:/work/beside'...
+Access denied.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights and the repository exists.
+
+最后发现原因是，是由于， 地址写错了， android
+git@192.168.200.8:beside-anroid/feinnobeside.git
+
+---------------------
+复制公钥到 github.com
+---------------------
+Copy-paste the key to the 'My SSH Keys' section under the 'SSH' tab in your user profile. 
+Please copy the complete key starting with ssh- and ending with your username and host.
+
+----------------------------------
+查看是否已经存在 密钥
+----------------------------------
+/c/Users/wangxiangfx/.ssh/id_rsa
+/c/Users/wangxiangfx/.ssh/id_rsa.pub

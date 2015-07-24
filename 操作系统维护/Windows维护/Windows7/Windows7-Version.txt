@@ -1,0 +1,35 @@
+Windows 7于2009年7月22日发放给组装机生产商，零售版于2009年10月23日在中国大陆及台湾发布[4][5]，香港于翌日发布。2011年10月StatCounter调查数据显示，Windows 7已售出4.5亿套，以40.17%市占率超越Windows XP的38.72%
+
+Windows 7的后继操作系统是Windows 8、并在2012年10月26日上市
+
+《再見Windows7，SP2落空》Microsoft賜死，2015年1月13日停止主要支援！
+
+试用版停用[编辑]
+2010年2月2日下午，微软宣布将终止2009年发行的Windows 7发布候选版。2月15日开始，该版本用户将每隔数小时收到系统的警告通知。3月1日起，系统运行每隔两小时自动关机一次，且关机前不发出警告
+
+Service Pack 1[编辑]
+Windows 7的第一个服务包Service Pack 1正式版于当地时间2011年2月23日凌晨通过Windows Update推送给台湾地区普通用户，用户也可在之后于微软下载中心下载得到此服务包。
+
+该服务包传承了当年Windows Vista和Windows Server 2008的惯例，将Windows 7的和Windows Server 2008 R2的更新程序捆绑于同一个包内。其中32位的服务包大小约为537MB，而64位Windows 7和Windows Server 2008 R2的服务包大小高达903MB
+
+
+Windows 7 入门版（Starter）
+入门版是Windows 7功能最少的版本；不包含Windows Aero主题、不能更换桌面背景且不支持64位核心架构，系统存储器最大支持2GB。这个版本只会经由系统制造商预装在机器上，不会在零售市场贩卖[8][9]。
+
+Windows 7 家庭普通版（Home Basic）
+家庭普通版只在阿根廷、巴西、智利、中国大陆、哥伦比亚、印度、巴基斯坦、巴拿马、菲律宾、墨西哥、俄罗斯、泰国和土耳其等新兴市场出售 [10]。西欧与中欧地区、北美地区、香港、沙特阿拉伯和台湾等发达地区并不出售此版本。这个版本主要针对中、低级的家庭电脑，所以Windows Aero功能不会在这个版本中开放。
+
+Windows 7 家庭高级版（Home Premium）
+家庭高级版主要是针对家用主流电脑市场而开发的版本，是微软在零售市场中的主力产品，包含各种Windows Aero功能、Windows Media Center媒体中心还有触控屏幕的控制功能。
+
+Windows 7 家用服务器版（Home Server）
+主条目：Windows Home Server 2011
+
+Windows 7 专业版（Professional）
+专业版向电脑热爱者以及小企业用户靠齐[11]，包含了家庭高级版的所有功能，同时还加入了可成为Windows Server domain成员的功能，新增的功能还包括远程桌面服务器、位置识别打印、加密的文件系统、展示模式、软件限制方针（不是Windows Server 2008 R2中的AppLocker功能）以及Windows XP模式。
+
+Windows 7 企业版（Enterprise）
+这个版本主要对象是企业用户以及其市场，通过大量授权给有与微软签订软件授权合约的公司；同时有一个大量授权的产品密钥，必须通过其激活。这个版本不会通过零售以及OEM贩卖。它提供的功能包含多国语言用户接口包、BitLocker设备加密以及UNIX应用程序的支持。
+
+Windows 7 旗舰版（Ultimate）
+旗舰版与企业版的功能几乎完全相同, 但是提供授权给一般的用户。家庭高级版以及专业版的用户若是希望升级到旗舰版，可使用Windows Anytime Upgrade升级。这个版本与Windows Vista旗舰版不同，Windows 7旗舰版不会包含加值的Ultimate Extra服务。

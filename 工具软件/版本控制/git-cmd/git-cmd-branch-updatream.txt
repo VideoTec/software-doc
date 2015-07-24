@@ -1,0 +1,39 @@
+upstream 概念
+git branch -vv 列出所有分支的upstream
+
+git push -u origin my_branch  
+上传分支，并且，设置当前分支的upstream branch
+
+git branch -u origin/develop  
+git branch -set-upstream-to origin/develop
+Branch develop set up to track remote branch develop from origin
+
+git checkout -b libav10 libav/release/10   建立了pull关系
+git checkout --track libav/release/10  创建release/10分支
+
+---------------------------------
+branch 名字不一致的问题
+---------------------------------
+fatal: The upstream branch of your current branch does not match
+the name of your current branch.  To push to the upstream branch
+on the remote, use
+
+    git push origin HEAD:develop
+
+To push to the branch of the same name on the remote, use
+
+    git push origin dev
+
+-------------------------
+fatal: 
+-------------------------
+The upstream branch of your current branch
+does not match the name of your current branch.  
+
+To push to the upstream branch on the remote, use：xxxx
+
+$ git push
+fatal: The current branch 11 has no upstream branch.
+
+the first time that you push that branch. 
+You only need to do it once, and that sets up the association between your branch and the one at origin in the same way as git branch --set-upstream does

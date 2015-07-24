@@ -1,0 +1,3 @@
+git reset HEAD
+
+会把 staged 变成 unstaged

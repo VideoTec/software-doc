@@ -1,0 +1,49 @@
+rename 简写 ren
+
+E:\WinApp\libav-test>rename aac-encoder.exe aac--
+
+和通配符wildcard['waɪldkɑ:d]一起使用
+
+rename *.txt *.bak
+rename * 1_*
+
+
+ren  *  A?Z*
+  1        -> AZ
+  12       -> A2Z
+  1.txt    -> AZ.txt
+  12.txt   -> A2Z.txt
+  123      -> A2Z
+  123.txt  -> A2Z.txt
+  1234     -> A2Z4
+  1234.txt -> A2Z4.txt
+
+ren  *  *.txt
+  a     -> a.txt
+  b.dat -> b.txt
+  c.x.y -> c.x.txt
+
+ren  *  *?.bak
+  a     -> a.bak
+  b.dat -> b.dat.bak
+  c.x.y -> c.x.y.bak
+
+ren  *  ?????.?????
+  a     -> a
+  a.b   -> a.b
+  a.b.c -> a.b
+  part1.part2.part3    -> part1.part2
+  123456.123456.123456 -> 12345.12345   (note truncated name and extension because not enough `?` were used)
+
+ren  ?????.?????.*  ?????.?????
+  a      ->  a
+  a.b    ->  a.b
+  a.b.c  ->  a.b
+  part1.part2.part3  ->  part1.part2
+  123456.123456.123456  (Not renamed because doesn't match sourceMask)
+
+ren  *_*  *_NEW.*
+  abcd_12345.txt  ->  abcd_NEW.txt
+  abc_newt_1.dat  ->  abc_newt_NEW.dat
+  abcdef.jpg          (Not renamed because doesn't match sourceMask)
+  abcd_123.a_b    ->  abcd_123.a_NEW  (not desired, but no simple RENAME form will work in this case)

@@ -1,0 +1,10 @@
+参考：
+http://www.robvanderwoude.com/battech_redirection.php
+
+DIR /S | MORE
+where the MORE command accepts DIR's Standard Output at its own Standar Input, 
+chops the stream in blocks of 25 lines (or whatever screen size you may use) and sends it to its own Standard Output.
+
+(Since MORE's Standard Input is used by DIR, 
+MORE must catch its keyboard presses (the "Any Key") 
+directly from the keyboard buffer instead of from Standard Input.)

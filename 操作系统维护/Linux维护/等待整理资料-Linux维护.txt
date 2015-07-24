@@ -1,0 +1,13 @@
+Bourne shell
+
+Bourne shell
+Bourne shell，或 sh，是 Version 7 Unix 默认的Unix shell，替代执行文件同为sh的Thompson shell。它由AT&T贝尔实验室的史蒂夫·伯恩在1977年在Version 7 Unix中针对大学与学院发布的。它的二进制程序文件在大多数Unix系统上位于/bin/sh ，在很多Unix版本中，它仍然是root的默认shell。
+其concise（简洁），compact（紧凑），fast（高效），由AT&T编写，属于系统管理shell。
+
+configure 脚本，运行在SHELL上的脚本。
+windows，上的SHELL程序，
+cygwin, msys, win-bash
+
+msys : 安装GIT时，会安装c
+C:\msys\1.0\msys.bat -norxvt
+C:\msys\1.0\msys.bat -rxvt 显示白低的控制台

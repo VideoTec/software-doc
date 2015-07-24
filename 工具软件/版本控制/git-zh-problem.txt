@@ -1,0 +1,8 @@
+第一个中文问题：
+使得在 Git Bash 中输入 ls 命令，可以正常显示中文文件名
+修改 etc\git-completion.bash
+alias ls='ls --show-control-chars --color=auto'
+
+第二个中文问题 Git 环境中的中文支持
+git ls-files 目录列表里正常显示中文
+git config --global core.quotepath false

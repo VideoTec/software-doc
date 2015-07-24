@@ -1,0 +1,38 @@
+目标：
+
+不包含：
+android-demo/               这样写会忽略所有的子内容
+但是要包含
+!android-demo/TestDemo
+
+应该这样写
+
+android-demo/*              看下面的解释。
+!android-demo/TestDemo
+
+------------------------------------------------------------------------------------------------------------
+http://stackoverflow.com/questions/5533050/gitignore-exclude-folder-but-include-specific-subfolder
+------------------------------------------------------------------------------------------------------------
+
+If you exclude application/, then everything under it will always be excluded (even if some later negative exclusion pattern (“unignore”) might match something under application/).
+
+# you can skip this first one if it is not already excluded by prior patterns
+!application/
+
+application/*
+!application/language/
+
+application/language/*
+!application/language/gr/
+
+implicitly[英][ɪm'plɪsɪtlɪ] [美][ɪmˈplɪsɪtlɪ] adv.含蓄地；暗示地；无疑问地；无保留地
+
+the trailing /* is significant. 
+If a directory is excluded, Git will never look at the contents of that directory. 
+The pattern dir/* says nothing about dir itself; it just excludes everything under dir. 
+With dir/*, Git will process the direct contents of dir, 
+giving other patterns a chance to “un-exclude” some bit of the content (!dir/sub/).
+
+The pattern dir/ excludes a directory named dir and (implicitly) everything under it. 
+With dir/, Git will never look at anything under dir, 
+and thus will never apply any of the “un-exclude” patterns to anything under dir. 

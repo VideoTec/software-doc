@@ -1,0 +1,7 @@
+10:17 2015/5/15
+不知道什么安装的 金山服务，奇怪
+
+DefSrv
+C:\Program Files (x86)\kingsoft\ksdef
+
+手动删除

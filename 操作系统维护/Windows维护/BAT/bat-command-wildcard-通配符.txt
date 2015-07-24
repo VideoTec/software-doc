@@ -1,0 +1,11 @@
+wildcard['waɪldkɑ:d] 通配符
+
+? - Matches any 0 or 1 character except . This wildcard is greedy[美][ˈɡridi]贪婪的 - it always consumes the next character if it is not a . However it will match nothing without failure if at name end or if the next character is a .
+
+* - Matches any 0 or more characters including . (with one exception below). This wildcard is not greedy. It will match as little or as much as is needed to enable subsequent characters to match.
+
+. - Matches itself or it can match the end of name (nothing) if no more characters remain. (Note - a valid Windows name cannot end with .)
+
+{space} - Matches itself or it can match the end of name (nothing) if no more characters remain. (Note - a valid Windows name cannot end with {space})
+
+*. at the end - Matches any 0 or more characters except . The terminating . can actually be any combination of . and {space} as long as the very last character in the mask is . This is the one and only exception where * does not simply match any set of characters.

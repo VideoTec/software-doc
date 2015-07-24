@@ -1,0 +1,8 @@
+http://baike.baidu.com/link?url=VnjRWYHQxLiQa-CYYfnC__XTK75DOFDCE7f8VrAXQ3irYH49CPCFSWnFVN_BUI94knlaWfOkwea42vu-ljJWhq
+
+UNC为网络（主要指局域网）上资源的完整 Windows 2000 名称。
+1.什么是UNC路径?
+UNC路径就是类似\\softer这样的形式的网络路径。
+UNC为网络（主要指局域网）上资源的完整 Windows 2000 名称。
+格式： \\servername\sharename ，其中 servername 是服务器名，sharename 是共享资源的名称。
+目录或文件的 UNC 名称可以包括共享名称下的目录路径，格式为：\\servername\sharename\directory\filename。

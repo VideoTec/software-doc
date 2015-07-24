@@ -1,0 +1,24 @@
+@echo off 
+set /p input=请输入字母A或B： 
+if "%input%"=="A" goto A 
+if "%input%"=="B" goto B 
+pause 
+exit 
+
+:A 
+echo 您输入的字母是A 
+pause 
+exit 
+
+:B 
+echo 您输入的字母是B 
+pause 
+exit 　
+
+
+cd %~dp0
+:BUILD
+call ndk-build V=1 NDK_DEBUG=0
+pause
+cls
+goto BUILD

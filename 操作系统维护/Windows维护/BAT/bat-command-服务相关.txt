@@ -1,0 +1,26 @@
+删除服务
+
+You have at least three options. I have presented them in order of usage preference.
+
+Method 1 - You can use the SC tool (Sc.exe) included in the Resource Kit. (included with Windows 7/8)
+
+Open a Command Prompt and enter
+
+sc delete <service-name>
+Tool help snippet follows:
+
+DESCRIPTION:
+        SC is a command line program used for communicating with the
+        NT Service Controller and services.
+
+delete----------Deletes a service (from the registry).
+Method 2 - use delserv
+
+Download and use delserv command line utility. This is a legacy tool developed for Windows 2000. In current Window XP boxes this was superseded by sc described in method 1.
+
+Method 3 - manually delete registry entries (Note that this backfires in Windows 7/8)
+
+Windows services are registered under the following registry key.
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
+Search for the sub-key with the service name under referred key and delete it.

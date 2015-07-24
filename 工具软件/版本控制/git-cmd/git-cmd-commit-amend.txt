@@ -1,0 +1,3 @@
+amend[英][əˈmend] [美][əˈmɛnd] vt.& vi.改良，修改；修订
+
+git commit --amend -m "New commit message"

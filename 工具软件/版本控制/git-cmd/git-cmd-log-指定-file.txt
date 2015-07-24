@@ -1,0 +1,13 @@
+http://stackoverflow.com/questions/278192/view-the-change-history-of-a-file-using-git-versioning
+
+How can I view the change history of an individual file in Git, complete with what has changed?
+
+I have got as far as:
+
+git log -- [filename]
+which shows me the commit history of the file, but how do I get at the content of each of the changes?
+
+
+For this I'd use:
+
+gitk [filename]

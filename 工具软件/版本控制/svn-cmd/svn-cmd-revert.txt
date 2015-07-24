@@ -1,0 +1,3 @@
+恢复一个文件
+
+svn revert file-name

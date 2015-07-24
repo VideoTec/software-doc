@@ -1,0 +1,8 @@
+SVN树冲突
+什么操作，造成，树冲突？
+当工作目录修改删除过时更新 使用svn更新就容易发生树冲突“Tree Confilict”
+
+怎么解决树冲突？
+svn resolve --accept working removed_directory
+
+svn 界面里也有个 resolve命令

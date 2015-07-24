@@ -1,0 +1,18 @@
+http://www.15yan.com/story/6yueHxcgD9Z/
+
+主要分支：
+1）master
+2）hotfixes
+3）release branches
+4）develop
+5）feature branches
+
+git工作流提倡
+一个master分支和
+一个develop分支，同时也包括了
+feature分支、
+release分支、
+hotfixe分支。
+开发工作在develop分支进行，然后提交到release分支，最后合并到master分支
+
+git flow的一个更简单的替换方案是GitHub Flow

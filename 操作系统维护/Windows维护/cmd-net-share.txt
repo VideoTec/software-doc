@@ -1,0 +1,13 @@
+----------------------------------------------------------
+net share share name=drive:path [/users:number | /unlimited] [/remark:”text”]
+----------------------------------------------------------
+创建、删除或显示共享资源
+
+http://blog.sina.com.cn/s/blog_437d0f2d0100fwr3.html
+
+16:47 2015/6/24 删除共享，出错
+net share baiduyundownload /delete
+C:\Users\wangxiangfx>net share BaiduYunDownload /delete
+发生系统错误 5。
+
+拒绝访问。

@@ -1,0 +1,26 @@
+---------------------------------
+理解下面三句的区别
+---------------------------------
+set a= this is a book   %a% 这个变量是字符串 " this is a book"  注意字符开头的空格
+set a=this is a book    %a% 这个变量是字符串 "this is a book"
+set a =this is a book   %a% 这个变量是字符串 不会改变，因为等号左边不能有空格
+
+
+参考
+http://steve-jansen.github.io/guides/windows-batch-scripting/part-2-variables.html
+
+http://ss64.com/nt/set.html
+Display, set, or remove CMD environment variables. Changes made with SET will remain only for the duration of the current CMD session.
+
+Syntax
+      SET variable
+      SET variable=string
+      SET /A "variable=expression"
+      SET "variable="
+      SET /P variable=[promptString]
+      SET "
+
+Key
+   variable    : A new or existing environment variable name e.g. _num
+   string      : A text string to assign to the variable.
+   expression  : Arithmetic expression

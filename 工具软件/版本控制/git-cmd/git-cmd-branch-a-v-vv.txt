@@ -1,0 +1,4 @@
+$ git branch -a -vv
+* master                1062881 [origin/master] update opengl es test project
+  remotes/origin/HEAD   -> origin/master
+  remotes/origin/master 1062881 update opengl es test project

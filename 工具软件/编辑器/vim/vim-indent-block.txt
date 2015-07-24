@@ -1,0 +1,14 @@
+indent，Linux命令，功能是调整C原始代码文件的格式
+
+第一种方法 
+Use the > command. To indent 5 lines, 5>>
+
+第二种方法
+To mark a block of lines and indent it, Vjj> to indent 3 lines (vim only). 
+
+第三种方法
+To indent a curly-braces block, put your cursor on one of the curly braces and use >%.
+
+第四种方法：很有用，粘贴一段代码时，自动格式化 ]p
+If you’re copying blocks of text around and need to align the indent of a block in its new location, 
+use ]p instead of just p. This aligns the pasted block with the surrounding text

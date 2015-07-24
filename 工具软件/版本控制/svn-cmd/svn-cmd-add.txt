@@ -1,0 +1,68 @@
+svn　add　文件名 
+注：告诉SVN服务器要添加文件了，还要用svn commint -m真实的上传上去！ 
+例子： 
+svn add test.php                                      ＜－ 添加test.php 
+svn commit -m “添加我的测试用test.php“ test.php 
+
+svn add *.php                                         ＜－ 添加当前目录下所有的php文件 
+svn commit -m “添加我的测试用全部php文件“ *.php 
+
+文档：
+http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.add.html
+
+To add a file to your working copy:
+
+$ svn add foo.c 
+A         foo.c
+
+When adding a directory, the default behavior of svn add is to recurse:
+
+$ svn add testdir
+A         testdir
+A         testdir/a
+A         testdir/b
+A         testdir/c
+A         testdir/d
+
+You can add a directory without adding its contents:
+
+$ svn add --depth=empty otherdir
+A         otherdir
+
+Attempts to schedule the addition of an item which is already versioned will fail by default. 
+This behavior foils the most common scenario under which users attempt this: 
+when trying to get to Subversion to recursively examine a versioned directory and add any unversioned items inside of it. 
+To override the default behavior and force Subversion to recurse into already-versioned directories, pass the --force option:
+
+$ svn add versioned-dir
+svn: warning: W150002: '/home/cmpilato/projects/subversion/site' is already under version control
+$ svn add versioned-dir --force
+A         versioned-dir/foo.c
+A         versioned-dir/somedir/bar.c
+A  (bin)  versioned-dir/otherdir/docs/baz.doc
+
+命令svn add *会忽略所有已经在版本控制之下的目录，
+有时候，你会希望添加所有工作拷贝的未版本化文件，包括那些隐藏在深处的文件，
+可以使用svn add的--force递归到版本化的目录下：
+$ svn add * --force
+A         foo.c
+A         somedir/bar.c
+A         otherdir/docs/baz.doc。SVN子命令add的用法介绍讲解完毕。
+…
+
+运行实例
+G:\ipc-code>svn add * --force
+svn: Skipping argument: E200025: '.svn' ends in a reserved name
+A         libbase\Makefile
+A         libCamcradle\Makefile
+A         libDeviceCam\Makefile
+A         libMinixml\Makefile
+A         libNetDevice\Makefile
+A         libNetwork\Makefile
+A         libP2P\Makefile
+A         libProtocol\Makefile
+A         libRecorder\Makefile
+A         libRTSPSvr\Makefile
+A         libVideosurv\Makefile
+A         mftp\Makefile
+A         TestApp\Makefile

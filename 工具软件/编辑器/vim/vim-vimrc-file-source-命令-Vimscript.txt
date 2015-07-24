@@ -1,0 +1,12 @@
+Vim中的 source 命令翻譯成中文是甚麼
+
+source vimrc
+source mappings
+
+这个命令来自于linux系统，我觉得翻译为 解析 或者 执行 也可以吧
+
+Vim有其脚本语言 Vimscript ，使用Vimscript写成的宏可以实现自动执行复杂的操作。
+用-s选项启动Vim，或者直接切换到宏所在目录使用':source'命令都可以执行Vim脚本。
+
+Vim的配置文件就可以作为Vim脚本的一个范例，Unix和Linux下配置文件名是.vimrc，Windows下配置文件一般叫做_vimrc。
+这个文件在启动Vim的时候被自动执行。

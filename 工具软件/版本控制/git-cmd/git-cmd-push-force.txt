@@ -1,0 +1,6 @@
+在 A 机器上强制推送了提交
+git push force
+
+然后到 B 机器上 git pull 时，会出问题。
+出现一个 merge
+git fetch 之后，需要删除本地的分支，再重新， git checkout -b xx

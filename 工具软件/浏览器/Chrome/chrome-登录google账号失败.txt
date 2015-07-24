@@ -1,0 +1,12 @@
+
+提示下面的错误
+Request canceled
+
+先使用host直接连接，再登录，就可以了。
+再使用翻墙登录就可以了
+
+https://productforums.google.com/forum/#!topic/chrome/s8MZxbdfyGw
+Hi Stefan, I used to access network from behind a proxy server. 
+It was then when I was unable to sync with chrome. 
+When I logged in from a different network (direct access) then this 'sync' problem was resolved. 
+After that I went back to proxy server network and that sync problem didn't happen again
