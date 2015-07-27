@@ -1,0 +1,9 @@
+http://lifehacker.com/how-to-eliminate-uac-prompts-for-specific-applications-493128966
+http://www.makeuseof.com/tag/stop-annoying-uac-prompts-how-to-create-a-user-account-control-whitelist-windows/
+
+http://answers.microsoft.com/en-us/windows/forum/windows_8-performance/stop-uac-from-popping-up-for-a-specific-program/a24cb8a8-1423-40f3-8fa9-8885071b2474
+Stop UAC from popping up for a specific program.
+
+In the UAC, there is no option to disable pop up for a specific program as it has been structured in this way. User Account Control (UAC) notifies you before changes are made to your PC that require administrator-level permission. By default, UAC is set to notify you whenever apps try to make changes to your PC.
+
+User Account Control (UAC) is designed not only for preventing automatic malware executions in PCs, but also to prevent temp users from doing wrong things (e.g. turn off security features which they should not). The UAC security feature doesn’t have a “list” and a “black-list”, were trusted programs can be added. The UAC feature is built-in deep inside the Windows Kernel and the Windows Account System.
