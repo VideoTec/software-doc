@@ -1,0 +1,50 @@
+https://zh.wikipedia.org/wiki/Google_Native_Client
+利用沙盒技术，让机器码在浏览器上运行
+
+Google Native Client（缩写为 NaCl），是一个由Google所发起的开放源代码计划，采用BSD许可证。
+它采用沙盒技术，让Intel x86、ARM或MIPS子集的机器码直接在沙盒上运行。
+它能够从浏览器直接运行程序机器码，独立于用户的操作系统之外，
+使Web应用程序可以用接近于机器码运作的速度来运行，
+同时兼顾安全性。
+其功能类似于微软的 ActiveX，但是ActiveX只支持视窗系统。
+
+Google将这项功能合并在Chrome OS之下开发。它也可以被用来开发安全的浏览器外挂程序。
+
+NaCl支持单指令流多数据流指令（如SSE、3DNow!）及多线程接口，
+应用软件一般只需简单的修改便可以移植到NaCl平台；
+在2009年一个发布会上，NaCl开发人员示范一个为NaCl平台的移植而修改了20行源代码的H264解码器软件
+
+NaCl使用Newlib作为它的C标准库，但它也支持GNU C 库。
+它最初只支持x86平台，但目前也支持ARM平台与x86-64。
+Newlib，一种C标准库，为自由软件，主要用于嵌入式系统上。由Cygnus Solutions开发，目前由Red Hat公司的工程师Jeff Johnson负责维护工作。Cygwin目前即是使用Newlib来作为它的C标准库。
+
+参考
+https://developer.chrome.com/native-client
+官网
+Native Client is a sandbox for running compiled C and C++ code in the browser efficiently and securely, independent of the user’s operating system. Portable Native Client extends that technology with architecture independence, letting developers compile their code once to run in any website and on any architecture with ahead-of-time (AOT) translation
+
+https://developer.chrome.com/native-client/devguide/distributing
+发布方式 javascript + pepper
+pepper[英][ˈpepə(r)] [美][ˈpɛpɚ] n.胡椒；辣椒；胡椒粉
+pepper.js 是一个JavaScript 开发包，
+它能够使本机的Pepper 应用程序编译成在Javascript 中使用的 Emscripten
+Linux 用户：Adobe Flash Player 使用跨平台的 Pepper API (PPAPI) 在 Chrome 中运行其插件
+
+Chromium 不再支持 Netscape plugin API (NPAPI)，flashplugin 已经无法工作
+可以使用 Google Chrome (新Pepper API)提供的 Flash.
+
+https://developer.chrome.com/native-client/nacl-and-pnacl
+This document describes the differences between 
+Native Client and 
+Portable Native Client, 
+and provides recommendations for when to use each.
+
+http://www.sigma.me/2011/08/14/google-native-client-implementation.html
+NaCl支持直接执行C/C++/Java等代码，Native Client技术可以简化移植过程，减少移植成本
+
+http://www.cnblogs.com/phinecos/archive/2008/12/09/1351378.html
+
+http://www.zhihu.com/question/19811586
+Native Client 是否会减弱 Javascript 的重要性，甚至取代？
+google更期望前端用JS操控Dom，而C/C++完成之前浏览器脚本无法做到的那部分，
+例如3D游戏运算、图片处理、数据算法等最后等）

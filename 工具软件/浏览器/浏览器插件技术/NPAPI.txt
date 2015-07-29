@@ -1,0 +1,33 @@
+NPAPI（Netscape Plugin Application Programming Interface，网景插件应用程序接口）
+是用于在浏览器中执行外部应用程序的通用接口，与微软的ActiveX是竞争技术。
+
+较为常见的，通过NPAPI分发的插件包括：
+
+Adobe Acrobat
+Adobe Flash Player
+Adobe Shockwave
+JRE
+QuickTime
+RealPlayer
+Windows Media Player
+
+正是由于其跨浏览器的特性，
+插件库的内容更新及管理一般不是由浏览器而是由各个插件提供商自行维护的。
+这个特点引发了一些安全性上的疑虑[2]，Google Chrome提出了名为Pepper的解决方案[3]，
+但没有得到其它厂商，特别是Mozilla基金会的普遍支持[4]。
+
+2014年11月，Google宣布Chrome将于2015年1月默认屏蔽NPAPI插件，9月份会完全移除支持，
+以鼓励开发者和用户转用HTML5、Chrome API或Google Native Client等新技术替换NPAPI
+
+参考
+http://www.guokr.com/question/533765/
+由于运行插件的本质就是调用外部程序，将外部程序产生的输出写回浏览器中。
+这个把本应该在浏览器内部的数据向外发送的过程，就容易引起安全问题
+
+开发浏览器扩展来替代原来的插件。
+和插件不同，浏览器扩展本身也是网页，运行在浏览器内部，是个相对安全的环境
+
+和ActiveX一样，NPAPI也是过时的技术，现在的消失是正常的事情。
+不依赖外部程序，仅仅浏览器就能做到的事情已经非常多了
+
+http://archives.guao.hk/posts/chrome-to-gradually-drop-support-for-npapi-plug-ins.html
