@@ -10,7 +10,14 @@ git stash
 git pull
 git stash pop
 
-git stash暂存下来, 当pull或者合并后使用git add -i命令, 进行diff, update, revert等命令
+git stash 暂存下来, 当pull或者合并后使用git add -i命令, 进行diff, update, revert等命令
+
+-----------------------------
+另一种情况：stash untracked files
+-----------------------------
+git add .
+git stash
+git checkout 
 
 
 经常有这样的事情发生，
