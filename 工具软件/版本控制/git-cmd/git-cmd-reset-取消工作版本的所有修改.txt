@@ -2,5 +2,9 @@
 
 git reset --hard
 
+注意,下面这两命令没有任何效果，为什么？
+git reset HEAD
+git checkout HEAD
+
 其中git reset是针对版本,如果想针对文件回退本地修改,使用
 git checkout HEAD file/to/restore 

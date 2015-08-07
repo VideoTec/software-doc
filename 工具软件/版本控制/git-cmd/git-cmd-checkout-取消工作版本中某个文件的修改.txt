@@ -4,3 +4,6 @@ git reset --hard
 
 其中git reset是针对版本,如果想针对文件回退本地修改,使用
 git checkout HEAD file/to/restor
+
+git checkout file
+git checkout -- file
