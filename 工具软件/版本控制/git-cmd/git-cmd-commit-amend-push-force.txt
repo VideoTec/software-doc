@@ -1,0 +1,4 @@
+http://stackoverflow.com/questions/253055/how-do-i-push-amended-commit-to-the-remote-git-repo
+http://stackoverflow.com/questions/3968281/git-pushing-amended-commits
+
+git push --force
