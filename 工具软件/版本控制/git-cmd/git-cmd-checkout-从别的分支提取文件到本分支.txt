@@ -1,0 +1,5 @@
+http://nicolasgallagher.com/git-checkout-specific-files-from-another-branch/
+
+git checkout develop libs/ffmpeg.jar
+
+会文件会被提取到当前工作目录对应的子目录下。

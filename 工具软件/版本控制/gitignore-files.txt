@@ -1,5 +1,6 @@
 https://github.com/github/gitignore
 
+
 This is GitHub’s collection of .gitignore file templates. We use this list to populate the .gitignore template choosers available in the GitHub.com interface when creating new repositories and files.
 
 For more information about how .gitignore files work, and how to use them, the following resources are a great place to start:
@@ -7,3 +8,14 @@ For more information about how .gitignore files work, and how to use them, the f
 The Ignoring Files chapter of the Pro Git book.
 The Ignoring Files article on the GitHub Help site.
 The gitignore(5) manual page
+
+-------------------------------
+常用的 .gitignore
+-------------------------------
+gitignore/Global/JetBrains.gitignore
+Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
+解释：
+JetBrains (formerly IntelliJ) is a software development company 
+whose tools are targeted towards software developers and project managers
+
+gitignore/Global/Eclipse.gitignore

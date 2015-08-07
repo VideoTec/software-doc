@@ -1,5 +1,9 @@
 git checkout -- filename
 
+15:42 2015/8/7
+不加 -- 也可以 
+但是：get checkout HEAD 没有任何效果
+
 If you have an uncommitted change (its only in your working copy) that you wish to revert (in SVN terms) to the copy in your latest commit
 
 git reset 能够取消 add -A 操作。
