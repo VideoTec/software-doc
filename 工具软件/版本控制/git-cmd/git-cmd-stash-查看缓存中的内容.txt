@@ -1,0 +1,16 @@
+http://makandracards.com/makandra/11565-git-how-to-look-at-the-stash
+
+git stash list
+stash@{0}: WIP on feature/foo
+stash@{1}: WIP on feature/bar
+stash@{2}: WIP on fix/baz
+
+All those stashed changes have their own reference (like branch names) 
+that you can look at, like stash@{0}, stash@{1}, etc.
+Above, we looked at stash@{0} which is the default for stash actions.
+
+指定 stash 引用号
+git stash show stash@{1} -u
+
+The following will give you the diff of the topmost stash item:
+git stash show -u
