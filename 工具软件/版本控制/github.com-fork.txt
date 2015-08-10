@@ -1,0 +1,31 @@
+http://www.zhihu.com/question/20431718
+
+GitHub 的 Fork 是什么意思
+
+相当于你在原项目的主分支上又建立了一个分支，
+你可以在该分支上任意修改，
+如果想将你的修改合并到原项目中时，
+可以pull request，
+这样原项目的作者就可以将你修改的东西合并到原项目的主分支上去，
+这样你就为开源项目贡献了代码，
+开源项目就会在大家共同的努力下不断壮大和完善
+
+http://www.iteye.com/news/25956
+
+Github自从2008年上线以来，发展迅速，目前已经成为最流行的代码托管站点。
+在Github中，开发者除了可以托管自己的项目源码外，
+还可以
+Watch（关注）、
+Star（加星）、
+Fork（复制一份）、
+Pull Request（提交问题或申请功能）其他开发者的项目
+
+http://blog.csdn.net/pan12jian/article/details/25324451
+github fork开源项目后如何与源项目保持同步
+
+#添加一个远程库连接到本地，命名为apache  
+git remote add apache https://github.com/apache/spark.git  
+#从远程分支拉取代码到本地  
+git pull apache master  
+#push到自己的库里  
+git push
