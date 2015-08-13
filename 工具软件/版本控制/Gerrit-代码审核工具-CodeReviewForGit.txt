@@ -1,0 +1,28 @@
+https://www.gerritcodereview.com/
+
+Gerrit provides web based code review and repository management for the Git version control system.
+
+----------------------------
+功能一：
+Discuss code
+----------------------------
+
+Read old and new versions of files with syntax highlighting and colored differences. Discuss specific sections with others to make the right changes.
+
+----------------------------
+功能二：
+Manage and serve Git repositories
+----------------------------
+Gerrit includes Git-enabled SSH and HTTPS servers compatible with all Git clients. Simplify management by hosting many Git repositories together.
+Schedule git gc over all managed repositories and replicate to geographical mirrors for latency reduction and backup servers for hot spare redundancy.
+
+
+----------------------------
+功能三：
+Extensible through plugins
+----------------------------
+Gerrit Code Review can be extended and further customized by installing server-side plugins. Source code for additional plugins can be found through the project listing.
+
+
+http://blog.163.com/guaiguai_family/blog/static/20078414520124224465323/
+接下来是把玩下 Gerrit，这厮的文档写的也很赞（开源的东西文档写的好的真不多见），安装是很简单了，早期的 Gerrit 据说是用 Python 写的，在 GIT 主力开发者以及 jgit 项目发起人 Shawn O. Pearce 加入 Google 后就改用 Java 写了，编译好的 Gerrit 就是一个 war 包，可以放入 Servlet 容器里运行，也可以java -jar gerrit.war 直接用内置的 Jetty，太贴心了。Shawn 是个很勤奋的人，用 Java 重新实现了 GIT 核心功能，Gerrit 内置 Web server、SSH server，还有一个 Prolog 语言解释器
