@@ -1,0 +1,3 @@
+http://lhdst-163-com.iteye.com/blog/1982923
+
+执行rm -f .git/index.lock （或者rm -f git/index.lock）

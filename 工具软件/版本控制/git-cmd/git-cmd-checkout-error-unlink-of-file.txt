@@ -1,0 +1,13 @@
+Unlink of file 'libs/gif.jar' failed. Should I try again? (y/n)
+
+最后发现，是由于 eclipse 正占用着这个文件。
+
+http://stackoverflow.com/questions/4389833/unlink-of-file-should-i-try-again
+
+This could mean that another program is using the file, 
+which is preventing git from "moving" the file into or out of the working directory when you are attempting to change branches. 
+
+I have had this happen on Windows Vista where eclipse is the program "using" the file.
+The file may not be actually open in eclipse but may have been opened by a process run by eclipse. 
+In this event, try closing the file in any applications that might have used it. 
+If that doesn't work, completely exit any applications which may have opened the file.
