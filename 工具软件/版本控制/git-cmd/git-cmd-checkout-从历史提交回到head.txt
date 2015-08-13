@@ -1,0 +1,14 @@
+17:55 2015/8/13
+
+git checkout d780
+
+现在想回到 head 提交，怎么办？
+
+git checkout HEAD  不行
+
+应该，checkout，分支名称：
+
+git checkout q4
+
+http://stackoverflow.com/questions/3559076/git-how-to-get-back-to-most-recent-version
+git checkout master should do the trick. To go back two versions, you could say something like git checkout HEAD~2, but better to create a temporary branch based on that time, so git checkout -b temp_branch HEAD~2
