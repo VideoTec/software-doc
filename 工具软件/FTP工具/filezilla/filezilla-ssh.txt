@@ -1,0 +1,17 @@
+http://www.moonlit.me/filezilla-sftp-ssh%E6%9C%8D%E5%8B%99%E5%99%A8%E6%95%99%E5%AD%B8-775.html
+
+那私鑰怎麽導入呢?因為只有通過私鑰登錄，才能進入服務器
+
+我們有兩種方式導入私鑰
+
+第一种方式：
+直接配置 FileZilla 的 STPF 設置選項。選擇“編輯” -> “設置” -> “SFTP" -> “添加密鑰文件”(look for Graph 1)
+接著就是選擇私鑰文件，如果你選擇的 FileZilla 可以識別的私鑰文件，輸入私鑰密碼後就添加成功(look for Graph 2)
+
+但如果你選擇的 PuTTY 格式的私鑰文件，那就要先轉化為 FileZilla 格式的私鑰並輸入私鑰密碼
+(look for Graph 3)，才能添加成功。
+如果密鑰添加成功，則會在私鑰(K)文本框中顯示相關信息(look for Graph 1)
+
+第二种方式：
+在 FileZilla 的官方文檔 Key-based authentication with SFTP 是這麽說明：Windows
+For SFTP using SSH2, FileZilla utilizes the excellent PuTTY tools . To allow the use of RSA / DSA key files with Filezilla, you’ll need to download two more tools from PuTTY: Pageant and (assuming your key file isn’t already in PPK format) PuTTYgen .換句話說，我們可以使用 Pageant 的 Session 代理功能實現第一種方法的功能
