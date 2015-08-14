@@ -1,0 +1,22 @@
+https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%88Stashing%EF%BC%89
+
+$ git stash list
+stash@{0}: WIP on master: 049d078 added the index file
+stash@{1}: WIP on master: c264051 Revert "added file_size"
+stash@{2}: WIP on master: 21d80a5 added number to log
+
+应用某个暂存：(但是不删除缓存)
+git stash apply stash@{2}
+如果你不指明 stash@{2} ，Git 默认使用最近的储藏并尝试应用它
+
+对文件的变更被重新应用，
+但是被暂存的文件没有重新被暂存。想那样的话，
+你必须在运行 git stash apply 命令时带上一个 --index 的选项来
+告诉命令重新应用被暂存的变更
+
+应用并删除某个缓存
+git stash pop 来重新应用储藏，同时立刻将其从堆栈中移走
+git stash pop stash@{2}
+
+删除某个缓存
+git stash drop stash@{2}

@@ -1,0 +1,27 @@
+$ git branch -vv
+  dev     015d04d add reply floor deleted flag
+  develop 015d04d [origin/develop: behind 2] add reply floor deleted flag
+  master  80eeef1 [origin/master: behind 123] Merge branch 'develop'
+  q2      3fadafd [origin/2014_Q2_20140915] Q2fegnban
+  q3      3bef7b0 [origin/2014_Q3_20141016] 修改项目中的Log打印
+* q4      da2319e [origin/2014_Q4_20150109: ahead 2] fix java compile error
+
+$ git push
+fatal: The upstream branch of your current branch does not match
+the name of your current branch.  To push to the upstream branch
+on the remote, use
+
+    git push origin HEAD:2014_Q4_20150109
+
+To push to the branch of the same name on the remote, use
+
+    git push origin q4
+    
+http://stackoverflow.com/questions/24864700/fatal-the-upstream-branch-of-your-current-branch-does-not-match-the-name-of-you
+
+To fix the warning once and for all, rename your local branch to match the remote name:
+git branch -m releases/rel_5.4.1
+
+参考：push.default
+simple - must reject a push when branch names are different. 
+in centralized workflow, work like upstream with an added safety to refuse to push if the upstream branch’s name is different from the local one.

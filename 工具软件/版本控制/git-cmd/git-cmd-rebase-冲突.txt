@@ -1,0 +1,35 @@
+17:52 2015/8/14
+
+git rebase 产生冲突，会提示所有冲突的地方
+
+Auto-merging src/com/feinno/beside/ui/activity/help/SelectedHelpFragment.java
+CONFLICT (content): Merge conflict in 
+src/com/feinno/beside/ui/activity/help/SelectedHelpFragment.java
+
+Auto-merging src/com/feinno/beside/ui/activity/help/AllHelpFragment.java
+CONFLICT (content): Merge conflict in 
+src/com/feinno/beside/ui/activity/help/AllHelpFragment.java
+
+Failed to merge in the changes.
+
+解决冲突的三步：
+1）接着，需要解决冲突。
+2）接着，标示冲突已经解决，git add . 
+3）接着，git rebase --continue
+
+https://help.github.com/articles/resolving-merge-conflicts-after-a-git-rebase/
+
+When you perform a git rebase operation, you're typically moving commits around. Because of this, you might get into a situation where a merge conflict is introduced. That means that two of your commits modified the same line in the same file, and Git doesn't know which change to apply.
+
+After you reorder and manipulate commits using git rebase, should a merge conflict occur, Git will tell you so with the following message printed to the terminal:
+
+$ git rebase develop
+When you have resolved this problem, run "git rebase --continue".
+If you prefer to skip this patch, run "git rebase --skip" instead.
+To check out the original branch and stop rebasing, run "git rebase --abort".
+
+$ git rebase --continue
+src/com/feinno/beside/ui/activity/help/AllHelpFragment.java: needs merge
+src/com/feinno/beside/ui/activity/help/SelectedHelpFragment.java: needs merge
+You must edit all merge conflicts and then
+mark them as resolved using git add
