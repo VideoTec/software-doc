@@ -1,0 +1,64 @@
+宿主与虚拟机之间数据传递：
+安装辅助工具包：
+1. cd /media/VBOXADDITIONS_4.1.18_78361/   进入光盘
+2. sudo ./VBoxLinuxAdditions.run  安装，注意这里必须让你的ubuntu连接网络，要不然也会安装不成功。（失败见下面的原因：sh）
+3. reboot  安装成功后需要重新启动虚拟机
+
+VirtualBox 共享文件设置
+固定分配
+ 固定分配：通过固定分配的共享文件夹讲永远存在，避免下次再操作
+
+临时分配
+ 临时分配：也就是临时性的，虚拟机一关闭，下次启动后共享的文件夹也就不存在了
+
+“自动挂载”
+VirtualBox的自动挂载功能（挂载目录自己不可控）
+
+重新启动之后：
+1. mkdir /mnt/share_windows 新建挂载点
+2. mount -t vboxsf share /mnt/share_windows  挂载共享文件夹
+3. cd /mnt/share_windows 进入共享文件夹
+4. ls 看看下面是不是有你windows,下你刚刚共享的那个目录下的东西了
+
+设置自动挂载，重启虚拟机系统共享仍在
+可以在/etc/fstab中添加一项
+BaiduShare /mnt/share vboxsf rw,gid=110,uid=1100,auto 0 0
+
+卸载挂载点命令：umount -f /mnt/share
+
+解决：（C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso）
+sudo sh VBoxLunuxAdditions.run 这样可以运行。不带sh运行失败。这里sh有什么用处？
+
+GDM could not write to your authorization file. This could mean that you are out of disk space or that your home directory could not be opened for writing. In any case, it is not possible to log in. please contact your system admnistrator.
+
+调整虚拟机的硬盘大小
+C:\>D:\Apps\Oracle\VirtualBox\VBoxManage.exe modifyhd "D:\CentOS2.vid" --resize 5120
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+
+VBoxManage modifyhd uuid –resize 40960
+这里的40960就是你要调整的容量，即40G。命令中的uuid也可以用vid文件名代替
+
+要使用uuid，则需要获得当前虚拟机的uuid。在管理工具中无法获得，因此，我们应通过命令行获得：
+VBoxManage list hdds
+该命令会显示所有的虚拟硬盘。你可以通过Location来判断你要调整的硬盘。
+获得uuid，就可以通过modifyhd调整硬盘大小了。
+注意，在调整硬盘之前，一定要先关闭该虚拟机
+
+调整内存大小
+VBoxManage modifyvm "Windows XP" --memory "512MB"
+
+修改（虚拟硬盘文件）vdi文件路径
+virutal Box 解决导入.vdi文件时报“uuid is exists”错误 个人总结.
+手动修改*.vbox文件: 主菜单：注册 -> 在资源管理器中显示，打开，*.VBOX文件所在路径
+<HardDisks>
+        <HardDisk uuid="{c660371b-df66-4784-9744-85f97950f767}" location="E:/rhel2/rhel2.vdi" format="VDI" type="Normal"/>
+</HardDisks> 
+直接修改*.vbox里的，harddisk -> location属性
+vboxmanage clonehd /VM/ubuntu10.10.vdi /Volumes/ExternalDisk/VM/ubuntu10.10.vdi.
+
+virtualbox 动态分配存储
+其实，vbox中，“虚拟分配空间”指的是这个虚拟磁盘在宿主盘上的最大值，而“实际分配空间”是指我的ubuntu的磁盘分区所占用的空间大小，刚才只是修改了宿主盘上的最大值，ubuntu的磁盘没变
+
+查看逻辑卷的信息，lvdisplay 和 free，知道分成两个逻辑卷
+/dev/mapper/VolGroup00-LogVol00  这个分配给跟目录
+/dev/mapper/VolGroup00-LogVol01  这个分配给了swap分区
