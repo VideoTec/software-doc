@@ -1,0 +1,7 @@
+http://stackoverflow.com/questions/7167645/how-do-i-create-a-new-git-branch-from-an-old-commit
+
+git checkout -b justin a9c146a09505837ec03b
+This will create the new branch and check it out.
+
+git branch justin a9c146a09505837ec03b
+This creates the branch without checking it out.
