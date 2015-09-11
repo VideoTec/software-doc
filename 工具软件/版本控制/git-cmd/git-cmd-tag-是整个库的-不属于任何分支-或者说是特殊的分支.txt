@@ -1,0 +1,9 @@
+http://stackoverflow.com/questions/1457103/how-is-a-tag-different-from-a-branch-which-should-i-use-here
+
+标签（固定指向一个提交）和分支（可在分支上添加新的提交）的区别
+
+From the theoretical point of view:
+
+tags are symbolic names for a given revision. They always point to the same object (usually: to the same revision); they do not change.
+
+branches are symbolic names for line of development. New commits are created on top of branch. The branch pointer naturally advances, pointing to newer and newer commits.
