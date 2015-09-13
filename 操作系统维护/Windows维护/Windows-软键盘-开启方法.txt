@@ -1,0 +1,8 @@
+两种软键盘：
+
+1）开始菜单|附件|TabletPC|TabletPC输入面板
+2）控制面板|轻松访问|使用没有键盘和鼠标的计算机|使用屏幕键盘（勾掉）
+
+http://answers.microsoft.com/en-us/windows/forum/windows_vista-desktop/is-there-a-way-to-turn-off-the-on-screen-keyboard/ce752b42-f8a5-4693-957c-c7acef0d80b3?auth=1
+
+On Screen Keyboard
