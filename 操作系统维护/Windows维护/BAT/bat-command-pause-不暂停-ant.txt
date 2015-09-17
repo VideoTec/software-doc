@@ -1,0 +1,11 @@
+原因是，ant，命令是本身也是一个批处理，
+需要使用 call 命令来调用。
+
+http://stackoverflow.com/questions/14701561/batch-scripting-ant-stop-cmd-prompt-from-auto-exiting
+
+If the ant script is a console app then you will need to call that also, otherwise control will be transferred to it and never return to the batch
+
+@echo off
+call C:/somefile.bat
+call ant targetName
+pause
