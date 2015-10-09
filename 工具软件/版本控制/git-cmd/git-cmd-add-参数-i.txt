@@ -1,0 +1,10 @@
+-i
+--interactive
+Add modified contents in the working tree interactively to the index. 
+Optional path arguments may be supplied to limit operation to a subset of the working tree. 
+See “Interactive mode” for details.
+
+http://hubingforever.blog.163.com/blog/static/171040579201231110371044/
+
+我们可以通过git add -i [<path>]命令查看<path>中被所有修改过或已删除文件但没有提交的文件，
+并通过其revert子命令可以查看<path>中所有untracted的文件，同时进入一个子命令系统

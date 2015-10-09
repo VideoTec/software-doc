@@ -1,0 +1,11 @@
+$ git stash pop
+Auto-merging src/com/feinno/beside/ui/fragment/FindNavigationFragment.java
+CONFLICT (content): Merge conflict in src/com/feinno/beside/ui/fragment/FindNavi
+gationFragment.java
+
+$ git stash pop
+src/com/feinno/beside/ui/fragment/FindNavigationFragment.java: needs merge
+unable to refresh index
+
+最简单的方法：
+git stash drop - 如果缓存的修改不重要，直接丢弃

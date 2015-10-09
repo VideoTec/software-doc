@@ -1,0 +1,14 @@
+-u
+--update
+Update the index just where it already has an entry matching <pathspec>. This removes as well as modifies index entries to match the working tree, but adds no new files.
+
+If no <pathspec> is given when -u option is used, all tracked files in the entire working tree are updated (old versions of Git used to limit the update to the current directory and its subdirectories).
+
+http://hubingforever.blog.163.com/blog/static/171040579201231110371044/
+git add -u 表示 add to index only files modified or deleted and not those created 
+
+git add -u [<path>]: 把<path>中所有tracked文件中
+1）被修改过或
+2）已删除文件的信息添加到索引库。
+它不会处理untracted的文件。
+省略<path>表示.,即当前目录

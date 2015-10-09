@@ -1,0 +1,15 @@
+-A
+--all
+--no-ignore-removal
+Update the index not only where the working tree has a file matching <pathspec> but also where the index already has an entry. This adds, modifies, and removes index entries to match the working tree.
+
+If no <pathspec> is given when -A option is used, all files in the entire working tree are updated (old versions of Git used to limit the update to the current directory and its subdirectories).
+
+http://hubingforever.blog.163.com/blog/static/171040579201231110371044/
+git add -A: [<path>]
+表示把<path>中所有tracked文件中
+1）被修改过或
+2）已删除文件和
+3）所有untracted的文件信息
+添加到索引库。
+省略<path>表示.,即当前目录。
