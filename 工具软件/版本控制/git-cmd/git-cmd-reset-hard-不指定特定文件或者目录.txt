@@ -1,0 +1,6 @@
+$ git reset --hard -- *.java
+fatal: Cannot do hard reset with paths.
+
+正确用法，需要使用
+git checkout HEAD <file>
+

@@ -1,10 +1,13 @@
-git reset --hard
-this resets all uncommitted changes you’ve made in your working copy
+https://git-scm.com/docs/git-reset
 
-Note that git reset <file> is short for git reset HEAD <file>.
+NAME
+git-reset - Reset current HEAD to the specified state
 
-You can use git reset without any file name to undo all due changes. 
-This can come handy when there are too many files to be listed one by one.
+SYNOPSIS
+git reset [-q] [<tree-ish>] [--] <paths>…​
+git reset (--patch | -p) [<tree-ish>] [--] [<paths>…​]
+git reset [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [<commit>]
 
-和 git checkout . 区别：
-checkout 不重置，已经add的修改，reset可以
+DESCRIPTION
+
+In the first and second form, copy entries from <tree-ish> to the index. In the third form, set the current branch head (HEAD) to <commit>, optionally modifying index and working tree to match. The <tree-ish>/<commit> defaults to HEAD in all forms.

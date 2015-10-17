@@ -1,5 +1,16 @@
 E:\doc\Computer software\工具软件\版本控制\.gitattributes
 
+总结 true false input 的意义：
+提交时是否 转成 lf
+检出是否   转成 crlf
+
+还需要解释，新文件和已经存在的文件的处理方式有区别吗？
+http://stackoverflow.com/questions/3206843/how-line-ending-conversions-work-with-git-core-autocrlf-between-different-operat
+
+还需要解释什么时候替换？
+Text files in your working tree with CRLF EOL characters are normalized to LF 
+when committed back to the repository.
+
 意义解释
 git config --global core.autocrlf input 提交时转换为LF，检出时不转换
 git config --global core.autocrlf true  提交时转换为LF，检出时转换为CRLF

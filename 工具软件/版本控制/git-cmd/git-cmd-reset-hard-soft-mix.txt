@@ -1,0 +1,24 @@
+http://my.oschina.net/MinGKai/blog/144932
+
+根据–soft –mixed –hard，会对working tree和index和HEAD进行重置:
+
+git reset –mixed：此为默认方式，
+不带任何参数的git reset，即时这种方式，
+它回退到某个版本，只保留源码，回退commit和index信息。
+是将git的HEAD变了（也就是提交记录变了），
+但文件并没有改变，（也就是working tree并没有改变）
+
+git reset –soft：回
+退到某个版本，只回退了commit的信息，
+不会恢复到index file一级。
+如果还要提交，直接commit即可。
+实际上，是git reset –mixed id 后，又做了一次git add
+注意：这里的 add，只添加 reset 指定的提交的后续提交的更改。
+
+git reset –hard：
+彻底回退到某个版本，本地的源码也会变为上一个版本的内容
+
+总结：
+git reset -soft :取消了commit 
+git reset -mixed（默认） :取消了commit ，取消了add
+git reset -hard :取消了commit ，取消了add，取消源文件修改

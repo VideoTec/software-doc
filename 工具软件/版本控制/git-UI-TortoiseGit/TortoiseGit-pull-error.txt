@@ -1,0 +1,13 @@
+C:\Program Files (x86)\Git/libexec/git-core\git-pull: line 258: /bin/tr: Bad file number
+Your configuration specifies to merge with the ref 'develop'
+from the remote, but no such ref was fetched.
+
+
+git did not exit cleanly (exit code 1) (10920 ms @ 2015/10/16 10:25:11)
+
+最后找到原因是：
+1）这只是个警告
+2）修改 .git/config
+   [branch "develop"]
+	remote = origin [这里添加远程分支名称]develop
+	merge = refs/heads/develop

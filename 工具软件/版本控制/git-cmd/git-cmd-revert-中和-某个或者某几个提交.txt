@@ -1,0 +1,29 @@
+https://git-scm.com/docs/git-revert
+
+git revert是HEAD继续前进，
+只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容。
+
+NAME
+git-revert - Revert some existing commits
+
+SYNOPSIS
+git revert [--[no-]edit] [-n] [-m parent-number] [-s] [-S[<key-id>]] <commit>…​
+git revert --continue
+git revert --quit
+git revert --abort
+
+DESCRIPTION
+
+Given one or more existing commits, revert the changes that the related patches introduce, and record some new commits that record them. This requires your working tree to be clean (no modifications from the HEAD commit).
+
+Note: git revert is used to record some new commits to reverse the effect of some earlier commits (often only a faulty one). If you want to throw away all uncommitted changes in your working directory, you should see git-reset[1], particularly the --hard option. If you want to extract specific files as they were in another commit, you should see git-checkout[1], specifically the git checkout <commit> -- <filename> syntax. Take care with these alternatives as both will discard uncommitted changes in your working directory.
+
+http://samael65535.github.io/git/2013/01/18/git/ 示例：
+
+git revert HEAD~3：
+丢弃最近的三个commit，把状态恢复到最近的第四个commit，
+并且提交一个新的commit来记录这次改变。
+
+git revert -n master~5..master~2：
+丢弃从最近的第五个commit（包含）到第二个（不包含）,
+但是不自动生成commit，这个revert仅仅修改working tree和index。

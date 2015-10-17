@@ -1,0 +1,31 @@
+http://my.oschina.net/MinGKai/blog/144932
+
+git revert 是撤销某次操作，此次操作之前的commit都会被保留 - 只删除一次提交
+git reset  是撤销某次提交，但是此次之后的修改都会被退回到暂存区
+
+比如git revert HEAD~1  ,
+那么会撤销倒数第二次的提交结果。
+而倒数第一次的提交记录，仍然在。
+
+如果git reset –hard HEAD~1,
+那么，commit退回到倒数第三次的状态中
+
+http://samael65535.github.io/git/2013/01/18/git/
+reset与revert的区别
+
+1）
+git revert是用一次新的commit来回滚之前的commit，
+git reset是直接删除指定的commit。
+
+2）
+在回滚这一操作上看，效果差不多。
+但是在日后继续merge以前的老版本时有区别。
+因为git revert是用一次逆向的commit“中和”之前的提交，
+因此日后合并老的branch时，导致这部分改变不会再次出现，
+但是git reset是之间把某些commit在某个branch上删除，
+因而和老的branch再次merge时，这些被回滚的commit应该还会被引入。
+
+3）
+git reset 是把HEAD向后移动了一下，而
+git revert是HEAD继续前进，
+只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容。

@@ -1,2 +1,5 @@
+wildcard[英]['waɪldkɑ:d] [美]['waɪldkɑ:d]
+n.通配符
+
 wangxiangfx@WANGXIANGFX /d/work/beside (chat-dev)
 $ git reset -- *FindNavigation*.java
