@@ -1,0 +1,6 @@
+fiddler[英][ˈfɪdlə(r)] [美][ˈfɪdlər]
+n.拉提琴的人；小提琴家；爱玩乐的人，游手好闲的人；(账目等的弄虚作假
+
+设置，HTTP 代理服务器的端口号：
+
+Tools | Fiddler Options | Connections | Fiddler listens on port:

@@ -1,0 +1,8 @@
+允许其它计算机通过本机的 Fillder 代理，访问网络：
+
+Tools | Fiddler Options | Connections | Allow remote computer to connect
+
+可能需要重启下 Fiddler。
+
+检测下：
+netsh 192.192.3.83 8833

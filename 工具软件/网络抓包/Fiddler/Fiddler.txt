@@ -1,0 +1,20 @@
+fiddler[英][ˈfɪdlə(r)] [美][ˈfɪdlər]
+n.拉提琴的人；小提琴家；爱玩乐的人，游手好闲的人；(账目等的弄虚作假
+
+http://www.telerik.com/fiddler
+http://www.telerik.com/download/fiddler 视频教程
+
+http://www.cnblogs.com/TankXiao/archive/2012/02/06/2337728.html
+Fiddler是最强大最好用的Web调试工具之一，
+它能记录所有客户端和服务器的http和https请求，允许你监视，设置断点，
+甚至修改输入输出数据. 
+使用Fiddler无论对开发还是测试来说，都有很大的帮助
+
+http://www.aliued.cn/2010/04/25/use-fiddler-to-improve-efficiency-of-front-development-example.html
+使用Fiddler提高前端工作效率 (实例篇)
+
+在我们前端开发的日常工作中，发现服务器上某个css/javascript文件有问题，需要修改，那真是家常便饭。
+通常，我们需要将文件进行修改，然后重新发布再验证，这样就很容易影响到生产环境的稳定性。
+更普遍的做法是，我们在开发环境中修改文件并验证，然后发布到生产环境。
+虽然安全，却比较繁琐。
+而利用Fiddler的可以修改HTTP数据的特性，我们就非常敏捷地基于生产环境修改并验证，确认后再发布

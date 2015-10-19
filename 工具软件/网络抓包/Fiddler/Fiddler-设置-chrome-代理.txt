@@ -1,0 +1,27 @@
+
+
+http://www.cnblogs.com/tugenhua0707/p/4637771.html#_labe0
+
+下面的说法是不正确的，可以直接设置 SwitchySharp 代理，用于fidller
+需要注意，先检测下，指定的端口是否打开了。
+
+telnet 127.0.0.1 8833
+
+http://bbs.blueidea.com/thread-3048935-1-1.html
+
+我遇到和你一样的问题了。
+实际上fiddler是可以抓chrome的请求的。
+由于我的chrome安装了代理管理的插件SwitchySharp，
+无论选择直接连接还是选择使用代理连接，插件都会屏蔽fiddler的设置。
+
+fiddler会自动给浏览器设置一个代理127.0.0.1 端口8888，并且记忆浏览器的代理设置，
+所有的请求先走fiddler代理，再走浏览器代理。
+如果使用插件，可能会直接屏蔽了fiddler的代理，因此无法监听到请求了。
+
+chrome下的解决方法，
+代理插件选择“使用系统代理设置”选项，fiddler又重新能看到chrome的请求了。
+或者不使用插件，不用卸载，chrome很方便禁用一个插件。然后使用浏览器默认的代理设置方式就ok了。
+
+使用代理插件是为了方便切换代理，但是可能会导致fiddler等工具无法使用。正所谓鱼和熊掌不可兼得。
+
+ps：我的版本号：chrome18，fiddler2.3.0
