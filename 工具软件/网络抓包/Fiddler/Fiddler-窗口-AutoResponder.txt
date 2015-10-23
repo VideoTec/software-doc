@@ -1,0 +1,18 @@
+http://www.cnblogs.com/TankXiao/archive/2012/02/06/2337728.html
+
+Fiddler中创建 AutoResponder 规则
+
+Fiddler 的 AutoResponder tab 允许你从本地返回文件，而不用将http request 发送到服务器上。
+
+看个实例. 
+
+1. 打开博客园首页，把博客园的logo图片保存到本地，并且对图片做些修改。
+
+2. 打开Fiddler 找到logo图片的会话， http://static.cnblogs.com/images/logo_2012_lantern_festival.gif，  把这个会话拖到AutoResponer Tab下
+
+3. 选择 Enable automatic reaponses 和 Unmatched requests passthrough
+
+4. 在下面的 Rule Editor 下面选择 Find a file... 选择本地保存的图片.
+   最后点击Save 保存下。
+
+5. 再用IE博客园首页, 你会看到首页的图片用的是本地的。

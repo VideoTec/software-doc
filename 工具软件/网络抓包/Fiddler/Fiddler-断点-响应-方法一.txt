@@ -1,0 +1,7 @@
+Fiddler中设置断点修改Response
+
+当然Fiddler中也能修改Response
+
+第一种：
+打开Fiddler 点击Rules-> Automatic Breakpoint  ->After Response  (这种方法会中断所有的会话)
+如何消除命令呢？  点击Rules-> Automatic Breakpoint  ->Disabled

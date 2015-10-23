@@ -1,0 +1,6 @@
+[SystemRecord]
+DirectList=.cn|.baidu.com|.qq.com|.taobao.com|.163.com|.weibo.com|.sohu.com|.soso.com|.youku.com|.tudou.com|.renren.com|.netease.com|.taobaocdn.com|.wallcoo.com|.fminutes.com|.gtimg.com|.gooooal.com|
+ExceptList=.google.cn|.googleadsserving.cn|.360.cn|
+WhiteList=.google.com|.boxun.com|.tuo8.com|.google.com.hk|
+UseDPList=2
+SkipProxyCtrl=1

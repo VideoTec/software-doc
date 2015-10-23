@@ -1,0 +1,8 @@
+http://docs.telerik.com/fiddler/knowledgebase/quickexec
+
+bpafter
+
+Break any response where the RequestURI contains the specified string
+
+bpafter /favicon.ico 
+bpafter        <-- Call with no parameter to clear

@@ -1,0 +1,8 @@
+http://docs.telerik.com/fiddler/knowledgebase/quickexec
+
+bpu
+
+Create a request breakpoint for URIs containing the specified string. Setting this command will clear any previous value for the command; calling it with no parameter will disable the breakpoint.
+
+bpu /myservice.asmx
+bpu        <-- Call with no parameter to clear

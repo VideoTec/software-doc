@@ -1,0 +1,75 @@
+第一条：
+产生一条没有意义的 merge 提交
+
+第二条：
+提交历史，产生大量的分叉，合并。
+坏处：回退到某个提交时，非常困难。
+相对来说，一脉相承的提交历史，回退非常方便。
+
+第三条：今天发现的（13:15 2015/10/23）
+merge 提交不记录，修改的内容(diff)，参考
+http://stackoverflow.com/questions/5072693/how-to-git-show-a-merge-commit-with-combined-diff-output-even-when-every-chang
+This is because, for merges, 
+git show uses the combined diff format which omits files 
+that agree with either of the parent versions.
+
+参考资料
+http://www.oschina.net/translate/git-fetch-and-merge?print
+为什么不用 git 的 pull？
+
+虽然 git pull 大部分时候是好的，特别是如果你用CVS类型的方式使用Git时，
+它可能正适合你。
+然而，如果你想用一个更地道的方式（建立很多主题分支，当你需要时随时改写本地历史，等等）使用Git，
+那么习惯把 git fetch 和 git merge 分开做会有很大帮助
+
+https://ruby-china.org/topics/112
+这样的 merge commit，
+这些 commit 在审阅代码的时候很干扰，如果 pull 得频繁就会变成波浪状
+
+git flow的分支策略可以减少git rebase的使用，
+个人认为，git pull --rebase是必须的用法，
+合并分支就用git-flow就可以了，不用太在意细节。
+
+git rebase的强大功能就是改写历史 rebase -i可以做很多事
+
+http://segmentfault.com/q/1010000000181403
+git支持很多种工作流程，我们采用的一般是这样，远程创建一个主分支，本地每人创建功能分支
+日常工作流程如下：
+
+去自己的工作分支
+$ git checkout work
+
+工作
+....
+
+提交工作分支的修改
+$ git commit -a
+
+回到主分支
+$ git checkout master
+
+获取远程最新的修改，此时不会产生冲突
+$ git pull
+
+回到工作分支
+$ git checkout work
+
+用rebase合并主干的修改，如果有冲突在此时解决
+$ git rebase master
+
+回到主分支
+$ git checkout master
+
+合并工作分支的修改，此时不会产生冲突。
+$ git merge work
+
+提交到远程主干
+$ git push
+
+这样做的好处是，远程主干上的历史永远是线性的。每个人在本地分支解决冲突，不会在主干上产生冲突
+
+http://www.ruanyifeng.com/blog/2012/07/git.html
+Git分支管理策略
+
+https://ihower.tw/blog/archives/3843
+使用 git rebase 避免無謂的 merge

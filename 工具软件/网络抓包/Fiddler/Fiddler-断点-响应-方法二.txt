@@ -1,0 +1,7 @@
+Fiddler中设置断点修改Response
+
+当然Fiddler中也能修改Response
+
+第二种:  
+在命令行中输入命令:  bpafter www.baidu.com   (这种方法只会中断www.baidu.com)
+如何消除命令呢？  在命令行中输入命令 bpafter,

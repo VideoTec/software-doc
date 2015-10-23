@@ -1,0 +1,12 @@
+http://www.eclipse.org/egit/
+
+About This Project
+EGit is an Eclipse Team provider for the Git version control system. Git is a distributed SCM, which means every developer has a full copy of all history of every revision of the code, making queries against the history very fast and versatile.
+
+The EGit project is implementing Eclipse tooling on top of the JGit Java implementation of Git.
+
+----------------------------------
+插件安装路径：
+----------------------------------
+
+E:\android\adt\eclipse\plugins\org.eclipse.egit.core.source_4.1.0.201509280440-r.jar

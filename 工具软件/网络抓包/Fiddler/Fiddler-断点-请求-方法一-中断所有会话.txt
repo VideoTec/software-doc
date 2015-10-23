@@ -1,0 +1,8 @@
+http://www.cnblogs.com/TankXiao/archive/2012/02/06/2337728.html
+
+Fiddler最强大的功能莫过于设置断点了，设置好断点后，你可以修改httpRequest 的任何信息包括host, cookie或者表单中的数据。设置断点有两种方法
+
+第一种：
+打开Fiddler 点击Rules-> Automatic Breakpoint  ->Before Requests(这种方法会中断所有的会话)
+如何消除命令呢？  
+点击Rules-> Automatic Breakpoint  ->Disabled

@@ -1,0 +1,7 @@
+http://thread.gmane.org/gmane.comp.version-control.git/89400/focus=90659
+http://stackoverflow.com/questions/13915275/git-log-for-a-specific-file-is-missing-commits
+
+You should run the same command with --full-history. 
+It is because git compacts history
+
+什么是完整历史？相对的标准历史是什么？省略了那些历史提交？

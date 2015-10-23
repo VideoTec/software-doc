@@ -1,0 +1,7 @@
+http://www.cnblogs.com/TankXiao/archive/2012/02/06/2337728.html
+
+Fiddler最强大的功能莫过于设置断点了，设置好断点后，你可以修改httpRequest 的任何信息包括host, cookie或者表单中的数据。设置断点有两种方法
+
+第二种:  
+在命令行中输入命令:  bpu www.baidu.com   (这种方法只会中断www.baidu.com)
+如何消除命令呢？  在命令行中输入命令 bpu

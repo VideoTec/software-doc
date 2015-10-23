@@ -1,0 +1,26 @@
+https://github.com/eclipse/jgit
+http://www.eclipse.org/jgit/
+
+JGit
+Git commit graph
+About This Project 
+JGit is an EDL (new-style BSD) licensed, lightweight, pure Java library implementing the Git version control system:
+
+repository access routines
+network protocols
+core version control algorithms
+Users
+
+JGit has very few dependencies, making it suitable for embedding in any Java application, whether or not the application is taking advantage of other Eclipse or OSGi technologies. JGit can be found within:
+
+EGit, Eclipse team provider for Git
+Gerrit Code Review, a web based peer review system for Git
+NBGit, Git Support for NetBeans
+GitBlit, Git server for managing, viewing, and serving Git repositories
+... and some commercial products
+
+----------------------------------
+插件安装路径：
+----------------------------------
+
+org.eclipse.jgit_4.1.0.201509280440-r.jar

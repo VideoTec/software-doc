@@ -1,0 +1,9 @@
+http://rherrmann.github.io/gonsole/repository/
+
+Gonsole is a Git Console for the Eclipse IDE.
+
+This is a software repository for the Eclipse IDE. 
+To install the features contained here, press Help > Install New Software... 
+in your Eclipse IDE and enter the URL of this site.
+
+http://rherrmann.github.io/gonsole/ 文档

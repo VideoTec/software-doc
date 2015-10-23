@@ -1,0 +1,6 @@
+git log -- *ExpressionUtils.java
+git log --full-history -- *ExpressionUtils.java
+
+或者使用图形工具 gitk:
+gitk -- *ExpressionUtils.java
+gitk --full-history -- *ExpressionUtils.java

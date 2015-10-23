@@ -1,0 +1,6 @@
+使用方法：
+1) Windows | show view | others | Git Repositories
+2) 工程 右键 Teams 菜单
+
+configure 配置:
+git-repositories 属性设置
