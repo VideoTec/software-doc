@@ -1,0 +1,17 @@
+http://windows.microsoft.com/en-us/windows/work-with-files-ftp-site#1TC=windows-7
+
+Open Computer by clicking the Start button Picture of the Start button, and then clicking Computer.
+Right-click anywhere in the folder, and then click Add a Network Location.
+
+---------------------------------
+ftp://192.168.130.190
+---------------------------------
+总是提示：
+输入的文件夹似乎无效
+
+解决方法：
+http://zhidao.baidu.com/link?url=NPWQy2WjRTRZx911uPrGdF7vtvx9lK__6p0ChTFbU0ToIZJcBwsFSsC3fUhDOz7DrGomdE9S1DCSC_2nD5Zzl1XGJ5ahQZhxOYUb3QOeCW_
+E:\doc\software\操作系统维护\Windows维护\windows-explorer-ftp-fix.reg
+
+解决方法：（这种方法，是查看共享文件夹吧）
+在WIN菜单里打开开始-运行-然后输入\\192.168.**.*(这里指你要添加的FTP的地址）

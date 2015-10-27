@@ -1,6 +1,7 @@
 注意：
 1）不能怎么添加新文件。
 2）可以删除文件
+3）重命名，也不能恰当处理。
 
 https://lostechies.com/jasonmeridth/2009/09/10/quot-git-commit-a-quot-and-quot-git-add-quot/
 
