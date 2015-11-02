@@ -14,3 +14,18 @@ c confirm，每次替换前询问；
 e error， 不显示错误；
 g globle，不询问，整行替换。如果不加g选项，则只替换每行的第一个匹配到的字符串；
 i ignore，忽略大小写。
+
+10:09 2015/11/1
+mac osx 替换 hosts ip 时不能使用，最后找到
+http://blog.lifeibo.com/blog/2012/12/23/vim-sub.html
+当前行进行替换
+:s/abc/efg/
+:s/abc/efg/g
+
+所有行进行替换
+:%s/abc/efg/
+:%s/abc/efg/g
+
+从第n行开始向下的所有行进行替换，当n为"."时，表示从当前行开始
+:n,$s/abc/efg/
+:n,$s/abc/efg/g
