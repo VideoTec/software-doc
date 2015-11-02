@@ -1,5 +1,6 @@
 git 文件的换行符的问题
 
+这是一个不正确的警告信息，实际不会转换：
 warning: LF will be replaced by CRLF in libav-test/libav/include/libavcodec/avff
 The file will have its original line endings in your working directory.
 

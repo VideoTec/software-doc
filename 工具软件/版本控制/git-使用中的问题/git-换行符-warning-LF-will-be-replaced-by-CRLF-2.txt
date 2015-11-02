@@ -1,0 +1,49 @@
+17:49 2015/11/2
+
+Administrator@IT-201511021157 MINGW64 /e/doc/software (master)
+$ git add -- *git-proxy.txt
+warning: LF will be replaced by CRLF in 工具软件/版本控制/git-使用中的问题/git-proxy.txt.
+The file will have its original line endings in your working directory.
+
+http://stackoverflow.com/questions/1967370/git-replacing-lf-with-crlf
+
+这个警告真正的意思是：
+The warning "LF will be replaced by CRLF" says that 
+you (having autocrlf=true) will lose your unix-style LF after commit-checkout cycle 
+(it will be replaced by windows-style CRLF).
+Git doesn't expect you to use unix-style LF under windows.
+
+出现这个警告的原因是：editor/IDE 的结束符模式
+P.P.S. My personal preference is configuring the editor/IDE to use Unix-style endings, and 
+setting core.autocrlf to false.
+
+http://stackoverflow.com/questions/1967370/git-replacing-lf-with-crlf
+
+In vim open the file (e.g.: :e YOURFILEENTER), then
+
+:set noendofline binary
+:wq
+
+vim 换行符设置方法
+http://stackoverflow.com/questions/4133501/vim-no-end-of-line-on-last-line-or-eof
+http://yyq123.blogspot.com/2010/07/vim-line-feed.html
+
+http://stackoverflow.com/questions/17628305/windows-git-warning-lf-will-be-replaced-by-crlf-is-that-warning-tail-backwar
+
+The core.autocrlf directive will 
+convert all crlf to lf upon commit and 
+vice versa on checkout. 
+So upon commit, the mentioned warning is in fact incorrect imho
+
+这是一个不正确的警告信息，实际不会转换
+
+The Git-Book states Git can 
+handle this by auto-converting CRLF line endings into LF when you commit, 
+and vice versa when it checks out code onto your filesystem. 
+This means that on commit there will be a conversion to LF and never to CRLF.
+
+suspect[英][səˈspekt] [美][səˈspɛkt]
+vt.猜疑（是）；怀疑，不信任；怀疑…有罪
+
+So I suspect this conversion happens on a git commit 
+only if said commit is part of a merge process.

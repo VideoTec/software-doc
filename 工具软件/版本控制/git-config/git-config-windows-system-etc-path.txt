@@ -1,0 +1,8 @@
+/etc/gitconfig 文件：系统中对所有用户都普遍适用的配置。
+若使用 git config 时用 --system 选项，读写的就是这个文件。
+
+D:\PortableGit\mingw64\etc\gitconfig
+
+查看路径方法：
+git config --system --edit
+会打开，对应的配置文件，可以看到路径

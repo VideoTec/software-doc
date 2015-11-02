@@ -75,7 +75,7 @@ Your public key has been saved in /Users/schacon/.ssh/id_rsa.pub.
 The key fingerprint is:
 43:c5:5b:5f:b1:f1:50:43:ad:20:a6:92:6a:1f:9a:3a schacon@agadorlaptop.local
 
-提示创建.ssh/id_rsa、id_rsa.pub的文件，其中第一个为密钥，第二个为公钥。
+提示创建.ssh/id_rsa、id_rsa.pub的文件，其中第一个为私钥，第二个为公钥。
 过程中会要求输入密码，为了ssh访问过程无须密码，可以直接回车 
 
 15:14 2015/7/8 创建过程（无任何输入，直接 回车，回车 ...）

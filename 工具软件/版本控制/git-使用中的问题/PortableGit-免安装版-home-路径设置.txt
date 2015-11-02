@@ -1,0 +1,27 @@
+
+By default, git-cmd and git-bash use the directory they were started from as
+the working directory when run. You can override this by passing --cd-to-home
+to them, which will set the user's home directory as the working directory (as
+if Git for Windows was installed).
+
+In addition, if you set the HOME environment variable (either permanently or
+for the current session only) you can make Git store the configuration files
+and the cloned repositories in the directory specified in that variable. And if
+you specify --cd-to-home, git-bash and git-cmd will use that as the
+working directory, too. For example:
+
+        set HOME=%cd%/home
+        git --cd-to-home
+will use the relative directory named home (%cd% specifies the current
+directory).
+
+HOME 目录不知道怎么修改。
+再建个批处理，设置环境变量，再间接调用命令行。
+
+常用设置：
+git config --global core.quotepath false //git ls-files 目录列表里正常显示中文
+git config --global core.crlf false //禁止 pull push 时，修改换行符
+
+如果使用 免安装版本 最好设置 system 的值，
+system 值保存在安装目录里，重装系统也不影响
+D:\PortableGit\mingw64\etc\gitconfig

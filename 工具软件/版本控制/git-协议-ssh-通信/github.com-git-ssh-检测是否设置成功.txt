@@ -1,0 +1,19 @@
+$ ssh -T git@github.com
+The authenticity of host 'github.com (192.30.252.130)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? no
+Host key verification failed.
+
+这个运行后，会在 .ssh 目录里增加一个 known_hosts 文件，
+里面记录着，git 服务器地址 和 服务器的公钥 信息
+
+----------------------------------------------
+服务器，放置的是公有密钥
+----------------------------------------------
+本地保存，私钥
+大多数 Git 服务器都会选择使用 SSH 公钥来进行授权。
+系统中的每个用户都必须提供一个公钥用于授权，没有的话就要生成一个
+
+用SSH，需要使用git协议
+git@192.168.200.8:beside-android/feinnobeside.git
+git@github.com:VideoTec/jni.git

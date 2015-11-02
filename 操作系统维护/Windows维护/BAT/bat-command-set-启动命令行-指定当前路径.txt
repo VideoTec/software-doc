@@ -1,0 +1,6 @@
+http://blog.csdn.net/watermelondesign/article/details/8959348
+
+   
+   d:
+   cd directory_name
+   cmd

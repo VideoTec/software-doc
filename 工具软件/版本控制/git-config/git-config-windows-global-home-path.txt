@@ -1,0 +1,5 @@
+C:\Users\Administrator\.gitconfig
+
+查看路径方法：
+git config --system --edit
+会打开，对应的配置文件，可以看到路径

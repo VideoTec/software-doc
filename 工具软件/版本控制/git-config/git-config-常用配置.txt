@@ -1,0 +1,6 @@
+git config --global core.quotepath false //git ls-files 目录列表里正常显示中文
+git config --global core.crlf false //禁止 pull push 时，修改换行符
+
+如果使用 免安装版本 最好设置 system 的值，
+system 值保存在安装目录里，重装系统也不影响
+D:\PortableGit\mingw64\etc\gitconfig

@@ -1,0 +1,8 @@
+设置环境变量
+转到指定目录
+启动命令行
+
+Set Path=%Path%;E:\android-sdk-windows\build-tools\23.0.0
+d:
+cd work\beside
+cmd

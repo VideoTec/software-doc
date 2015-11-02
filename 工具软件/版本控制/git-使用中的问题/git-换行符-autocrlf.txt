@@ -1,0 +1,8 @@
+http://stackoverflow.com/questions/1967370/git-replacing-lf-with-crlf
+
+core.autocrlf=true:    core.autocrlf=input:      core.autocrlf=false:
+
+       repo                     repo                    repo
+    /        \               /        \              /        \
+crlf->lf    lf->crlf     crlf->lf       \          /            \      
+ /              \        /                \      /                \

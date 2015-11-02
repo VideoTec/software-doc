@@ -1,0 +1,63 @@
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Administrator/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Administrator/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Administrator/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:JFwdkYWZmewCvXcqA9evJ90x2cCZrZ6yX2aMmem/wbo Administrator@IT-201511021157
+The key's randomart image is:
++---[RSA 2048]----+
+|       ..oo@.    |
+|     .... X      |
+|      o..+   . + |
+|      .o+ + . = .|
+|       oSo +   = |
+|        o . . **.|
+|         o o o=*=|
+|          o +.=+.|
+|           o.E+oo|
++----[SHA256]-----+
+
+
+提示创建.ssh/id_rsa、id_rsa.pub的文件，其中
+第一个为私钥，   /c/Users/Administrator/.ssh/id_rsa
+第二个为公钥。   /c/Users/Administrator/.ssh/id_rsa.pub
+                 把这个文件的内容添加到，git 服务器上。
+过程中会要求输入密码，为了ssh访问过程无须密码，可以直接回车 
+
+---------------------------------------------------------------
+/c/Users/Administrator/.ssh/id_rsa 的内容：
+---------------------------------------------------------------
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEA9IB8ikXNwsCBtifmqhPMgqfpYc8d81oX3xWGAT3I6OrmwLE/
+abKAd3lH1cdGVkfmHdTp9eEQEz7MH57JDqc8KfhuJSnMxdZ7l0ah51HAuSbME5hh
+Zf5TPP28YzxiL5gV5Bo8Hxs53U4MaEuaEpfr/EFPmWFBGYWVCIZ8qyvK2iZhzdRC
+XyMy7Zzi/LXVulrnqui9xPwQTnTryB9LBSb5kZVhWC5mZKECk5dyHR3QdqAHliXM
+Wt4aCXmLwrqMy+oTW/jNm/i7EEBtmSpn99TUluMt/fskB4/ZYOb3u/DjUKfK57sA
+Zkyi1wbCBslggiPuty9L6evjcc5mf157R/49YQIDAQABAoIBACk4lEaXmCYSYIv+
+VCQubFdGydEEoy8I7Gde8JW6/elO2RJ5j5BZWNFLsDG5hAE94+z5nWwnwpcMCkv2
+cD05Mqp8yM0ZK/3auEF71gXywYQ1p0hSc3FHnG729FDiuEb/5Ajt517zLyFBbFQV
+Eue5lz6TIEFipSARZlvmmJQfMPbwF0cF3tcjc6uhDprzHvuNkLwYWtOEdvpgc6bG
+GmFoMp7KjDD9n/wPaa4AWK9aJtOLXhM8Jn5QCFyNYF1HIFxMKg+GFpfCDa9rInMW
+3P/qvQhHT+ulu3+p0IpDsIBjvVlsq+M13qJM7ySEhHxQ+9lP5snbFmVaITsw/G0B
+7RZGGDUCgYEA+uH8+epMhhHh1hOiF/s+4syBEyeZCsOV1c+cjOIVTn4oTcRW8n/t
+2RjOjGtyJKZXIT2ARAmvK3wH9mnaIQYRFUvq/dAn7bLd+rOD1AJ9KH+GKFuoAu8Q
+QkwVnGFYR2X9FiZSQGpRvnhrtO68qNURP7P9KlnBSuEVQr98qWxS2LMCgYEA+X0u
+DljX0KFTncQgyYYxQkCwHo7aT109neatBgUqvK9aYQs9B0guOKtTBJvw/X5Cm0NZ
+Pdbtw3eCGu1tn9kczSLLbadU82veo/cFRQxPPV0eadHsRsKaC4eMRVFee5dlJNo0
+yMjmuW0MU6wRoCbzT04JRwSgm6Oxqi3iAL+hU5sCgYBJ8pRzQWk+10R+qhjMAsU9
+alPdRn2om4+tjt0w9W6cTTkp+uY54hVEOTigUQc64ECsTolhBI26PnvGWNrvgu9E
+HLVuDI3IVUFypLkFo5oqdrQfbyyteLONJwnzpwmzOc+IWNFDpVLk1m/Ay+GVzf+g
+jDfh5MTBgmiW3QQsl/4vWwKBgQCElqc8TrDbGnGCnbHDB8Lz78bpZofUt7vAR9Ba
+K7LLtfE1M7DKRuzxhvNGts07GrexJfiuaaPQRpnpT5b75Xlt93jfHJeECia3QtcV
+G/acqPk5yatk65TMXcwJJrYsvoetLx3wOvyLPM3ZRc/UKf8SfWlmyanFLRiFVX8P
+YMgO0wKBgGD2+BfISwEjM4Dg7Ic23dVEYrRPP2/MUqe48+HHuPEWFReXDlegOQ2y
+wUlJDBylherKpKdJFgdVN/yGxBk9LmNhVbN+s7JRuIQqpFKAbXP03czYJ/RQMbtw
+aCMIfHE2fcw3HndMJ6Jonj7vLkVk14HvWDh1FK5S8JTDky/EJrkp
+-----END RSA PRIVATE KEY-----
+
+
+/c/Users/Administrator/.ssh/id_rsa.pub 的内容是：
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD0gHyKRc3CwIG2J+aqE8yCp+lhzx3zWhffFYYBPcjo6ubAsT9psoB3eUfVx0ZWR+Yd1On14RATPswfnskOpzwp+G4lKczF1nuXRqHnUcC5JswTmGFl/lM8/bxjPGIvmBXkGjwfGzndTgxoS5oSl+v8QU+ZYUEZhZUIhnyrK8raJmHN1EJfIzLtnOL8tdW6Wueq6L3E/BBOdOvIH0sFJvmRlWFYLmZkoQKTl3IdHdB2oAeWJcxa3hoJeYvCuozL6hNb+M2b+LsQQG2ZKmf31NSW4y39+yQHj9lg5ve78ONQp8rnuwBmTKLXBsIGyWCCI+63L0vp6+NxzmZ/XntH/j1h Administrator@IT-201511021157

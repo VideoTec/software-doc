@@ -1,0 +1,16 @@
+http://stackoverflow.com/questions/6081607/what-is-the-best-git-config-set-up-when-you-are-using-linux-and-windows/6081812#6081812
+
+As detailled in Git on Windows (msysgit) - Unix or DOS line termination, I would use:
+
+git config --system core.autocrlf false
+That would avoid any automatic eol transformation 
+(See "Git on Windows: 
+What do the crlf settings mean?" for the exact meaning of this option value).
+
+You can leave it to true, 
+as explained in git replacing LF with CRLF, 
+but I prefer setting core.eol + some gitattribute files 
+in order to fine tune some of the files I want eol changes on.
+See this answer for more details.
+
+http://stackoverflow.com/questions/2333424/distributing-git-configuration-with-the-code/2354278#2354278
