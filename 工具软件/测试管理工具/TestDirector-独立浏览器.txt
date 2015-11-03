@@ -1,0 +1,19 @@
+http://www.iefans.net/testdirector80-ie80-fangan/
+
+下载插件，安装TD自带的浏览器（通用）
+http://10.0.1.100/tdbin
+1）单击Add-ins Page
+2）单击More TestDirector Add-ins
+3）单击others下的TestDirector Explorer Add-in下载插件
+
+安装插件后，
+就可以通过机器访问了
+开始菜单->所有程序->TestDirector 8.0->TDExplorer
+
+
+http://10.0.1.100/tdbin  
+
+注意：
+1）选择 Domain: IMPS
+2）选择 Project: feinno
+wangxiangfx 密码为空
