@@ -1,4 +1,6 @@
 http://stackoverflow.com/questions/15160978/is-there-a-way-to-use-wildcards-with-git-checkout
 http://stackoverflow.com/questions/5012086/does-git-support-wildcards-in-paths
 
-git checkout 不支持文件通配符
+17:31 2015/11/4
+git checkout 不支持文件通配符 1.9   不支持
+git version 2.6.2.windows.1         支持了

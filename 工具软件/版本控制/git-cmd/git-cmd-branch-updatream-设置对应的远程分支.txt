@@ -1,0 +1,7 @@
+wangxiangfx@wangxiangfx MINGW64 /d/work/beside (br554)
+
+$ git branch -u origin/br554
+Branch br554 set up to track remote branch br554 from origin.
+
+相当于：
+git branch -set-upstream-to origin/develop
