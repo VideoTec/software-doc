@@ -1,0 +1,32 @@
+默认值写法：
+@=""
+
+字符串值，注意使用转义符
+@="\"D:\\npp.6.7.4.bin\\notepad++.exe\" \"%1\""
+
+-----------------------------------------
+例子一：
+-----------------------------------------
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\ftp]
+ @="URL:File Transfer Protocol"
+ "AppUserModelID"="Microsoft.InternetExplorer.Default"
+ "EditFlags"=dword:00000002
+ "FriendlyTypeName"="@C:\\Windows\\system32\\ieframe.dll,-905"
+ "ShellFolder"="{63da6ec0-2e98-11cf-8d82-444553540000}"
+ "Source Filter"="{E436EBB6-524F-11CE-9F53-0020AF0BA770}"
+ "URL Protocol"=""
+[HKEY_CLASSES_ROOT\ftp\DefaultIcon]
+ @=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+   00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,75,00,72,00,\
+   6c,00,2e,00,64,00,6c,00,6c,00,2c,00,30,00,00,00
+[HKEY_CLASSES_ROOT\ftp\shell]
+ @="open"
+[HKEY_CLASSES_ROOT\ftp\shell\open]
+
+-----------------------------------------
+例子二：
+-----------------------------------------
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\*\shell\Edit With Notepad++\command]
+ @="\"D:\\npp.6.7.4.bin\\notepad++.exe\" \"%1\""

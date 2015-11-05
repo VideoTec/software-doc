@@ -1,0 +1,10 @@
+abbrev[英][əb'ri:v] [美][əb'ri:v]
+[计] 缩写
+
+--abbrev-commit
+Instead of showing the full 40-byte hexadecimal commit object name, show only a partial prefix. Non default number of digits can be specified with "--abbrev=<n>" (which also modifies diff output, if it is displayed).
+
+This should make "--pretty=oneline" a whole lot more readable for people using 80-column terminals.
+
+--no-abbrev-commit
+Show the full 40-byte hexadecimal commit object name. This negates --abbrev-commit and those options which imply it such as "--oneline". It also overrides the log.abbrevCommit variable.

@@ -1,0 +1,38 @@
+不加 --full-history 下面的 commit 记录，没有显示
+785a0ee bug 163518 fix four line expression error
+
+--------------------------------------------------------------------------
+$ git log --full-history --oneline -- *ExpressionUtils.java
+--------------------------------------------------------------------------
+f400097 Merge branch 'develop' of git@192.168.200.8:beside-android/feinnobeside.git into develop
+87ba1a1 Merge branch 'develop' of git@192.168.200.8:beside-android/feinnobeside.git into develop
+023d3c5 caused by commit 904aed and another
+f7fec7f Merge branch 'develop' of git@192.168.200.8:beside-android/feinnobeside.git into develop
+904aed6 Merge branch 'develop' of git@192.168.200.8:beside-android/feinnobeside.git into develop
+6b12522 Merge branch 'mychat' into develop
+785a0ee bug 163518 fix four line expression error
+d74660e merge develop 1
+2c936c7 Merge branch 'mychat' into chat
+da7cc74 修改冲突
+910ee95 Merge branch 'develop'
+dd4e3ab Merge branch 'debug' into develop
+6f95674 Merge branch 'work' into develop
+837f8cd Merge branch 'develop' of 192.168.200.8:beside-android/feinnobeside into develop
+c0acb56 Merge branch 'develop'
+6ee5026 Merge branch 'date' into develop
+b8f4808 Merge branch 'develop' of 192.168.200.8:beside-android/feinnobeside into develop
+cc0abbe Merge branch 'develop' of 192.168.200.8:beside-android/feinnobeside into develop
+b8a5c9a 修改：Toast替换统一的显示
+746def2 add project
+
+--------------------------------------------------------------------------
+wangxiangfx@wangxiangfx MINGW64 /d/work/beside (dev)
+$ git log --oneline -- *ExpressionUtils.java
+--------------------------------------------------------------------------
+023d3c5 caused by commit 904aed and another
+da7cc74 修改冲突
+837f8cd Merge branch 'develop' of 192.168.200.8:beside-android/feinnobeside into develop
+6ee5026 Merge branch 'date' into develop
+b8f4808 Merge branch 'develop' of 192.168.200.8:beside-android/feinnobeside into develop
+b8a5c9a 修改：Toast替换统一的显示
+746def2 add project

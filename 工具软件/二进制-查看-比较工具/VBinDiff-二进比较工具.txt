@@ -1,0 +1,13 @@
+http://www.cjmweb.net/vbindiff/
+
+VBinDiff (Visual Binary Diff) displays files in hexadecimal and ASCII (or EBCDIC). It can also display two files at once, and highlight the differences between them. Unlike diff, it works well with large files (up to 4 GB).
+VBinDiff was inspired by the Compare Files function of the ProSel utilities by Glen Bredon, for the Apple II. When I couldn’t find a similar utility for the PC, I wrote it myself.
+The single-file mode was inspired by the LIST utility of 4DOS and friends. While less provides a good line-oriented display, it has no equivalent to LIST’s hex display. (True, you can pipe the file through hexdump, but that’s incredibly inefficient on multi-gigabyte files.)
+I would like to hear from anyone who uses VBinDiff, especially if you find it useful. You can find my contact information here.
+
+http://bbs.feng.com/read-htm-tid-2726587.html
+这个软件是一款16进制的编辑器，
+我在ipod4g大神的帖子里看见了这个软件，
+于是就在cydia里安装了。
+问题是这个软件没有图标，设置里也没有其他选项，
+我想知道如何利用这个软件编辑其他文件

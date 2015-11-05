@@ -1,0 +1,3 @@
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\*\shell\Edit With Notepad++\command]
+ @="\"D:\\npp.6.7.4.bin\\notepad++.exe\" \"%1\""
