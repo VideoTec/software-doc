@@ -1,0 +1,16 @@
+http://www.jb51.net/article/32866.htm
+
+在 set 语句中：
+
+和~同时使用时，: 起到截取字符串的功能。
+假设 set str=abcde，那么，set var=%str:~0,1% 
+表示截取字符串abcde的第一个字符；
+
+和=同时使用时，: 起到替换字符串的功能。
+假设：set str=abc:de，那么，
+
+set var=%str:a=1% 
+则表示把字符串abc:de中的a替换为1，
+
+set var=%str::=2% 
+则表示把字符串abc:de中的:替换为2；

@@ -1,0 +1,48 @@
+http://www.jb51.net/article/32866.htm
+
+① 截取字符串
+
+用在 set 语句中，和:同时使用时，起到截取字符串的功能
+假设 set str=abcde，那么，set var=%str:~0,1% 
+表示截取字符串abcde的第一个字符
+
+② 按位取反
+
+用在 set /a 语句中时，它是一元运算符号，表示将操作数字按位取反，
+例如，
+set /a num=~1的执行结果是-2，
+set /a num=~0的结果是-1
+
+③ 增强for的功能
+见 for 的文档
+https://technet.microsoft.com/en-us/library/bb490909.aspx
+
+用在for语句中，表示增强for的功能，能够提取到更多的信息。
+例如：在批处理文件的for语句中：
+%%~i表示去掉第一对外侧引号，
+%%~zi表示获取文件的大小(以字节为单位)，
+%%~ni表示获取文件名，
+
+%%~xi表示获取扩展名(带点号)……它们可以组合使用，
+如%%~nxi表示获取文件名和后缀名
+
+https://technet.microsoft.com/en-us/library/bb490909.aspx
+完整列表：
+Substitution modifiers for for variable references have been enhanced. The following table lists optional syntax (for any variable I).
+%~I         - expands %I removing any surrounding quotes ("")
+%~fI        - expands %I to a fully qualified path name
+%~dI        - expands %I to a drive letter only
+%~pI        - expands %I to a path only
+%~nI        - expands %I to a file name only
+%~xI        - expands %I to a file extension only
+%~sI        - expanded path contains short names only
+%~aI        - expands %I to file attributes of file
+%~tI        - expands %I to date/time of file
+%~zI        - expands %I to size of file
+%~$PATH:I   - searches the directories listed in the PATH
+               environment variable and expands %I to the
+               fully qualified name of the first one found.
+               If the environment variable name is not
+               defined or the file is not found by the
+               search, then this modifier expands to the
+               empty string

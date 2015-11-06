@@ -1,0 +1,54 @@
+http://bbs.csdn.net/topics/310260095
+
+echo 当前盘符：%~d0
+echo 当前盘符和路径：%~dp0
+echo 当前批处理全路径：%~f0
+echo 当前盘符和路径的短文件名格式：%~sdp0
+echo 当前CMD默认目录：%cd%
+pause
+
+http://stackoverflow.com/questions/112055/what-does-d0-mean-in-a-windows-batch-file
+解释：
+
+1）
+The magic variables %n contains the arguments used to invoke the file: 
+%0 is the path to the bat-file itself, 
+%1 is the first argument after, 
+%2 is the second and so on
+
+2）
+Since the arguments are often file paths, 
+there is some additional syntax to extract parts of the path. 
+~d is drive, 
+~p is the path (without drive), 
+~n is the file name. 
+
+They can be combined so ~dp is drive+path.
+%~dp0 is therefore pretty useful in a bat: 
+it is the folder in which the executing bat file resides.
+
+You can also get other kinds of meta info about the file: 
+~t is the timestamp, 
+~z is the size.
+
+
+https://technet.microsoft.com/en-us/library/bb490909.aspx
+完整列表：
+Substitution modifiers for for variable references have been enhanced. The following table lists optional syntax (for any variable I).
+%~I         - expands %I removing any surrounding quotes ("")
+%~fI        - expands %I to a fully qualified path name
+%~dI        - expands %I to a drive letter only
+%~pI        - expands %I to a path only
+%~nI        - expands %I to a file name only
+%~xI        - expands %I to a file extension only
+%~sI        - expanded path contains short names only
+%~aI        - expands %I to file attributes of file
+%~tI        - expands %I to date/time of file
+%~zI        - expands %I to size of file
+%~$PATH:I   - searches the directories listed in the PATH
+               environment variable and expands %I to the
+               fully qualified name of the first one found.
+               If the environment variable name is not
+               defined or the file is not found by the
+               search, then this modifier expands to the
+               empty string

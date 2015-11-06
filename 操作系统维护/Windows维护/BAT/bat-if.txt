@@ -1,3 +1,6 @@
+文档
+https://technet.microsoft.com/en-us/library/bb490920.aspx
+
 没有 elif 或者 else if
 
 IF 条件 (
