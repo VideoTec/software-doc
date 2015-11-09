@@ -1,0 +1,7 @@
+git log --pretty=oneline commit-id
+显示 截止到 commit-id 的历史记录
+
+http://stackoverflow.com/questions/7693249/commits-since-a-certain-commit-number
+
+git log --pretty=oneline commit-id...HEAD
+从 commit-id 到 当前的所有提交记录
