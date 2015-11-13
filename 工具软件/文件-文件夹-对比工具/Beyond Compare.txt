@@ -1,0 +1,19 @@
+共享软件 - 30 天试用期
+
+官网
+http://www.scootersoftware.com/download.php
+
+https://zh.wikipedia.org/wiki/Beyond_Compare
+
+Beyond Compare是一套由Scooter Software推出的内容比较工具软件。
+除了可以作文件比较以外，还可以比对文件目录、FTP目录及压缩文件的内容等[1]。
+因为这些功能，Beyond Compare被应用于版本控制及数据同步的工作上。
+
+通过另外下载的外挂，Beyond Compare可以达成以下的各种比较：
+
+机器码比较
+图片比较
+MP3比较
+此外，通过额外安装的比较规则，亦可作MS Word文本、MS Excel之间的比较。
+
+Beyond Compare的强项在于可以设置成为git的difftool或mergetool的默认比较工具

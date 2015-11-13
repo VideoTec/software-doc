@@ -1,0 +1,8 @@
+comparison[英][kəmˈpærɪsn] [美][kəmˈpærɪsən]
+n.比较，对照；[语]比喻；比较级
+
+Filters | Comparison | 
+
+Requires opening files 勾选 Compare contents 
+
+默认： Rules-based comparison
