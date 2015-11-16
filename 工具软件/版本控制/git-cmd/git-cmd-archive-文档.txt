@@ -1,0 +1,30 @@
+git archive --help
+
+file:///D:/PortableGit/mingw64/share/doc/git-doc/git-archive.html
+
+git archive [--format=<fmt>] [--list] [--prefix=<prefix>/] [<extra>]
+	      [-o <file> | --output=<file>] [--worktree-attributes]
+	      [--remote=<repo> [--exec=<git-upload-archive>]] <tree-ish>
+	      [<path>…​]
+
+git archive --format zip --output /full/path/to/zipfile.zip master
+
+git archive master                   会把结果输出到 stdout
+-o <file>，Write the archive to <file> instead of stdout.
+git archive master -o /d/master.zip  会把结果输出到文件
+
+<path> 指定导出的目录
+Without an optional path parameter, 
+all files and subdirectories of the current working directory are included in the archive. 
+If one or more paths are specified, only these are included.
+
+$ git archive master -o /d/master.zip res/  只导出res目录
+
+------------------------------------
+Show all available formats.
+------------------------------------
+$ git archive -l
+tar
+tgz
+tar.gz
+zip

@@ -1,0 +1,6 @@
+http://jingyan.baidu.com/article/6525d4b128bd1aac7d2e94af.html
+
+视图：显示和隐藏栏
+
+勾选：
+文档结构图（或者 导航窗格）

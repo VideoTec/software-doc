@@ -1,0 +1,5 @@
+http://tortoisesvn.net/docs/release/TortoiseSVN_zh_CN/tsvn-dug-export.html
+
+如果你在未版本控制的目录执行此命令，TortoiseSVN会假定此目录是目标，弹出对话框让你输入要导出的URL和版本。这个对话框有只导出顶级目录，省略外部引用，以及不管svn:eol-style的取值，重新设置行结束样式等选项。
+
+Another way to export from a working copy is to right drag the working copy folder to another location and choose Context Menu → SVN Export versioned items here or Context Menu → SVN Export all items here or Context Menu → SVN Export changed items here. The second option includes the unversioned files as well. The third option exports only modified items, but maintains the folder structure.
