@@ -1,3 +1,36 @@
+10:12 2015/11/19
+
+上次的问题怀疑是某个键没有弹起造成的，
+很有可能是“F2”  或者 "control"
+
+参考：
+http://www.12edu.com/itl/cjwt/201110/683429.shtml
+
+这一次，本来， control + c / x / v 都不能用。
+重按了下，F2， control + x 能用了。
+
+复制，粘贴，即使用，右键菜单，也无效。
+（让人怀疑不可能是键盘的问题，更不可能是快捷键被占用的问题）
+甚至，把键盘拿下来，右键菜单，还是无效，真是无语了。
+
+是因为昨天安装了，svn，造成的吗？不确定
+
+使用管理员权限运行下面的命令：
+sfc /scannow
+运行中，我又试了下复制功能，莫名的，可以用了。
+
+运行结果：
+C:\Windows\system32>sfc /scannow
+开始系统扫描。此过程将需要一些时间。
+开始系统扫描的验证阶段。
+验证 100% 已完成。
+Windows 资源保护找到了损坏文件但无法修复其中某些文件。
+CBS.Log windir\Logs\CBS\CBS.log 中有详细信息。例如
+C:\Windows\Logs\CBS\CBS.log
+
+参考：
+http://forum.thewindowsclub.com/windows-7-management-support/33216-windows-explorer-right-click-context-menu-disabled-cannot-copy-paste-delete-cu.html
+
 14:06 2015/10/15
 
 原因不明，已经出现两次

@@ -1,0 +1,7 @@
+校验工具文件名：
+E:\tools\7-zip\7zG.exe
+
+7-Zip options > Plugins, 7-Zip > Options > 7-Zip > 添加 7-zip 到右键菜单
+
+选择添加到右键菜单显示的项目：
+最后一个： CRC SHA >

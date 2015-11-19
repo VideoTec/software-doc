@@ -8,6 +8,9 @@ Most of the time that I need to 'export' something from git, I want a compressed
 
 git archive master | bzip2 >source-tree.tar.bz2
 
+git archive -o br556           不指定分支名称 不行
+git archive -o br556.zip br556 这样才可以
+
 ZIP archive:
 
 git archive --format zip --output /full/path/to/zipfile.zip master 

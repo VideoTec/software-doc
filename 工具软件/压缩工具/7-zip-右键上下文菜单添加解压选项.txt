@@ -1,0 +1,10 @@
+http://www.sevenforums.com/software/8795-right-click-context-menu-7-zip.html
+
+7-Zip options > Plugins, 7-Zip > Options > System
+关联指定文件，双击打开
+
+7-Zip options > Plugins, 7-Zip > Options > 7-Zip > 添加 7-zip 到右键菜单
+
+选择添加到右键菜单显示的项目：
+可以把不用的选项都去掉：
+比如：邮件类。
