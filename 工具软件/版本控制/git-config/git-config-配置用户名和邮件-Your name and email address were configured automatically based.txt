@@ -1,0 +1,23 @@
+10:57 2015/11/27 未配置时的错误提醒
+
+$ git commit -m 'avoid re-open url when re-click one nav-button'
+[master a4fa148] avoid re-open url when re-click one nav-button
+ Committer: 王翔fx <wangxiangfx@feinno.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 60 insertions(+), 37 deletions(-)
+
+http://stackoverflow.com/questions/10946893/git-name-and-email-address-configuration
+ 
+git config --global user.name "Your Name"
+git config --global user.email you@example.com

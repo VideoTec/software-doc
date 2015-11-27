@@ -1,0 +1,32 @@
+conflict[英][ˈkɒnflɪkt] [美][ˈkɑ:nflɪkt]
+n.冲突；战斗；相互干扰；矛盾
+
+collision[英][kəˈlɪʒn] [美][kəˈlɪʒən]
+n.碰撞；冲突；（意见，看法）的抵触；（政党等的）倾轧
+
+----------------------------------------------------------------------------------------
+使用 git status 查看有冲突的地方：
+----------------------------------------------------------------------------------------
+You are currently rebasing branch 'master' on '6bac584'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git reset HEAD <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   res/layout/vocation_main_act.xml
+        both modified:   src/com/feinno/vocation/VocationMain.java
+        
+解决完冲突后 
+git add
+git rebase --continue (或者其它 continue)
+
+----------------------------------------------------------------------------------------
+https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/
+----------------------------------------------------------------------------------------
+
+两类冲突：
+Creating an edit collision
+Resolving a removed file conflict
