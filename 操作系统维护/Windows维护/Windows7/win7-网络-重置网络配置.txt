@@ -1,0 +1,11 @@
+http://www.it892.com/content/system/Windows_7/20130612/4535.html
+
+开始→搜索cmd.exe，右键以管理员权限启动
+ 
+然后分别运行以下命令：
+ 
+NETSH INT IP RESET 需要重启
+ 
+NETSH WINHTTP RESET PROXY
+ 
+IPCONFIG /FLUSHDNS

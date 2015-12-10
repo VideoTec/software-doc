@@ -1,0 +1,11 @@
+http://www.zhihu.com/question/20531462
+
+用户权限问题，
+可以在文件所在文件夹属性->安全->编辑中加入users的完全控制和修改权限
+
+18:19 2015/12/9
+修改 etc\hosts 文件后，保存，提示：检测文件是否在别的程序中打开。
+
+解决方法：
+1. 修改 etc 文件夹的所有者： 从 TrustedInstaller 改为  wangxiangfx
+2. 修改 etc 文件夹 wangxiangfx 操作权限

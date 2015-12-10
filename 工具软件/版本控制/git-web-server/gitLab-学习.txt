@@ -1,0 +1,9 @@
+http://feiyang.me/2013/03/work-with-gitlab/
+
+虽然GitLab是一个从头到位模仿Github的家伙，
+但是我们确实有这样的需求，并且他还是开源的。
+相比Gtihub来说可以减少很多成本。
+Github本身是有企业版可以在公司环境搭建的，
+但是价钱不菲，看看Github Enterprise定价就知道了，最小的也要一年5000美金，
+对于小团队小公司是一笔不小的投入。
+有了Gitlab可以几乎不需投入就能轻松有一套内部的Git管理平台

@@ -1,0 +1,10 @@
+GIT 不能提交空文件夹
+在空文件夹里，添加一个文件
+.gitkeep
+
+http://stackoverflow.com/questions/14541253/commit-empty-folder-structure-with-git
+
+http://stackoverflow.com/questions/115983/how-can-i-add-an-empty-directory-to-a-git-repository
+My suggestion: actually this solution is leveraged from the Laravel framework; 
+basically it's very simple, they use an empty file 
+called .gitkeep in order to force the presence of the folder in the versioning system

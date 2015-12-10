@@ -1,6 +1,11 @@
 fiddler[英][ˈfɪdlə(r)] [美][ˈfɪdlər]
 n.拉提琴的人；小提琴家；爱玩乐的人，游手好闲的人；(账目等的弄虚作假
 
+第一步：设置代理：
+关键步骤：1）设置端口号，2）Allow remote computer to connect
+设置好端口后，必须要重启，fiddler才行
+检测代理：telnet 192.168.137.1 8306
+
 http://www.cnblogs.com/TankXiao/archive/2012/02/06/2337728.html
 Fiddler是最强大最好用的Web调试工具之一，
 它能记录所有客户端和服务器的http和https请求，允许你监视，设置断点，

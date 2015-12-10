@@ -1,13 +1,19 @@
 创建虚拟WIFI网卡
 netsh wlan set hostednetwork mode=allow ssid=wxiang key=feinno@83
+创建出来的虚拟网卡是：
+Microsoft Virtual WiFi Miniport Adapter
 
 启动承载网络
 netsh wlan start hostednetwork
 
+http://wenku.baidu.com/view/3373f7d2a58da0116c174961.html?re=view
 注意：
+1）
 创建虚拟网卡后，需要把连接网络的连接，共享给虚拟网卡
-网络适配器属性 -> 共享 -> Internet 连接共享 -> 允许其它网络用户通过此计算机的Internet连接来连接
-选择对应的 家庭网络连接
+网络适配器属性 | 共享 | Internet 连接共享 | 允许其它网络用户通过此计算机的Internet连接来连接
+选择：刚创建的无线网络
+2）
+网络适配器属性 | 共享 | 设置 | 选择允许访问的协议类型
 
 ----------------------------
 笔记本设置wifi热点 并 翻墙
