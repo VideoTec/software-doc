@@ -4,3 +4,5 @@ git config --system alias.st status
 
 git config --system alias.all 'add -A'
 git config --system alias.ci 'commit -m'
+
+git config --system alias.aci 'add -A;commit -m "$1";'
