@@ -1,0 +1,1 @@
+http://blogs.atlassian.com/2014/10/advanced-git-aliases/
