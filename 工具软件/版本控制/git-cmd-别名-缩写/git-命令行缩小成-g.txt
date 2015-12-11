@@ -1,0 +1,5 @@
+在下面的文件夹里增加 g.exe
+D:\PortableGit\mingw64\bin\git.exe
+
+复制，重命令：
+D:\PortableGit\mingw64\bin\g.exe
