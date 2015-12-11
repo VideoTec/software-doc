@@ -1,0 +1,6 @@
+Mingw 应该编辑下面的配置文件：
+C:\Users\wangxiang\.bash_profile
+
+alias gv='git --version'
+alias gs='git --status'
+alias gls='git log --oneline'

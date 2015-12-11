@@ -1,0 +1,21 @@
+Mingw 应该编辑下面的配置文件：
+C:\Users\wangxiang\.bash_profile
+
+http://stackoverflow.com/questions/19595067/git-add-commit-and-push-commands-in-one
+
+Building off of @Gavin's answer:
+
+Making lazygit a function instead of an alias allows you to pass it an argument. 
+I have added the following to my .bashrc (or .bash_profile if Mac):
+
+function lazygit() {
+    git add .
+    git commit -a -m "$1"
+    git push
+}
+This allows you to provide a commit message, such as
+
+lazygit "My commit msg"
+You could of course beef this up even more by accepting even more arguments, 
+such as which remote place to push to, or which branch.
+

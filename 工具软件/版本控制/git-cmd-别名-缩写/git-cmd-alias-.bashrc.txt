@@ -1,0 +1,115 @@
+http://superuser.com/questions/405342/mingw-bash-profile
+
+Mingw 应该编辑下面的配置文件：
+C:\Users\wangxiang\.bash_profile
+
+bash is probably getting started as a login shell, 
+in which case it doesn't read .bashrc automatically. 
+Instead, it reads .bash_profile
+
+So in summary, create a .bash_profile file in your homedir, 
+and add the line quoted above.
+
+If your bash is actually getting invoked as sh, 
+then you'll need to use .profile instead of .bash_profile 
+(see the "Invoked with name sh" section of the Bash manual link above).
+
+https://wido.me/sunteya/understand-bashrc-and-profile
+
+理解 bashrc 和 profile
+
+在一般的 linux 或者 unix 系统中, 
+都可以通过编辑 bashrc 和 profile 来设置用户的工作环境, 
+很多文章对于 profile 和 bashrc 也都有使用, 
+但究竟每个文件都有什么作用和该如何使用呢?
+
+首先我们来看系统中的这些文件, 一般的系统可能会有
+
+/etc/profile
+/etc/bashrc
+
+~/.bashrc
+~/.profile
+
+而如果系统是 ubuntu 或者 debian 的话, 
+就不会有 /etc/bashrc 而会有 /etc/bash.bashrc 文件.
+
+以上这些就是常用 profile 和 bashrc 文件了. 
+要理解这些文件之前还需要了解 Shell,
+Shell 的 login(登入) 和 interactive(交互式) 模式.
+
+bashrc 和 profile 的区别
+看了之前那么多种状态组合, 最关键的问题是, 
+究竟 bashrc 和 profile 有什么区别呢?
+
+profile
+其实看名字就能了解大概了, 
+profile 是某个用户唯一的用来设置环境变量的地方, 
+因为用户可以有多个 shell 比如 bash, sh, zsh 之类的, 
+但像环境变量这种其实只需要在统一的一个地方初始化就可以了, 
+而这就是 profile.
+
+bashrc
+bashrc 也是看名字就知道, 
+是专门用来给 bash 做初始化的比如用来初始化 bash 的设置, 
+bash 的代码补全, bash 的别名, bash 的颜色. 
+以此类推也就还会有 shrc, zshrc 这样的文件存在了, 
+只是 bash 太常用了而已
+
+http://www.ahlinux.com/shell/20239.html
+浅析linux下的
+
+/etc/profile、
+/etc/bashrc、
+
+~/.bash_profile、
+~/.bashrc文件
+
+/etc/profile:
+此文件为系统的每个用户设置环境信息,
+当用户第一次登录时,该文件被执行. 
+并从/etc/profile.d目录的配置文件中搜集shell的设置. 
+
+/etc/bashrc:
+为每一个运行bash shell的用户执行此文件.
+当bash shell被打开时,该文件被读取. 
+
+~/.bash_profile:
+每个用户都可使用该文件输入专用于自己使用的shell信息,
+当用户登录时,该文件仅仅执行一次!
+默认情况下,他设置一些环境变量,执行用户的.bashrc文件. 
+
+~/.bashrc:
+该文件包含专用于你的bash shell的bash信息,
+当登录时以及每次打开新的shell时,该文件被读取. 
+
+~/.bash_logout:
+当每次退出系统(退出bash shell)时,执行该文件. 
+
+/etc/profile中设定的变量(全局)的可以作用于任何用户
+~/.bashrc 等中设定的变量(局部)只能继承/etc/profile中的变量,他们是"父子"关系. 
+
+~/.bash_profile 是交互式、login 方式进入 bash 运行的
+~/.bashrc 是交互式 non-login 方式进入 bash 运行的
+通常二者设置大致相同，所以通常前者会调用后者
+
+要搞清bashrc与profile的区别，
+首先要弄明白什么是
+交互式shell和非交互式shell，什么是
+login shell 和non-login shell。 
+
+交互式模式就是shell等待你的输入，
+并且执行你提交的命令。
+这种模式被称作交互式是因为shell与用户进行交互。
+这种模式也是大多数用户非常熟悉的：
+登录、执行一些命令、签退。
+当你签退后，shell也终止了。
+
+shell也可以运行在另外一种模式：
+非交互式模式。
+在这种模式下，shell不与你进行交互，
+而是读取存放在文件中的命令,并且执行它们。
+当它读到文件的结尾，shell也就终止了。 
+
+bashrc与profile都用于保存用户的环境信息，
+bashrc用于交互式non-loginshell，而profile用于交互式login shell

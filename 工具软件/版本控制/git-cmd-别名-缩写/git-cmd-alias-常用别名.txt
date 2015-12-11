@@ -5,10 +5,11 @@ git config --system alias.st status
 git config --system alias.all 'add -A'
 git config --system alias.ci 'commit -m'
 
-git config --system alias.aci '!git add -A;git commit -m $1;'
-//必须是分号 && 符不行
-//最后一个也要加分号
-//分析这个 git ci 'xx' 扩展后是： git add -A / git commit -m 'xx' 'xx'
-
 ls = log --oneline
 caa = commit -a --amend -C HEAD
+
+git config --system alias.aci '!git add -A;git commit -m "$1";'
+//必须是分号 && 符不行
+//最后一个也要加分号
+//分析这个 git ci 'xx' 扩展后是： git add -A; / git commit -m "xx"; xx
+//结论，用 alias 方式处理参数，是不正确的

@@ -1,0 +1,3 @@
+在 bash 运行profile脚本
+
+. ~/.bash_profile
