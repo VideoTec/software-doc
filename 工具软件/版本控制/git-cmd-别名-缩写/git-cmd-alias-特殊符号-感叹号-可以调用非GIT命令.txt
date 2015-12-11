@@ -1,0 +1,30 @@
+http://stackoverflow.com/questions/18860696/syntax-for-git-aliases-with-multiple-commands
+
+$ git config alias.q '!sh -c "echo a; echo b"'
+
+$ git q
+Output:
+
+a
+b
+
+I think this is (rudimentarily) documented in man git-config under alias.*
+
+Note that git commands should include git, 
+unlike in normal aliases. 
+It is caused by fact that it is treated as a shell command, 
+not as a git command (see manpage quoted in the question). 
+
+For example to chain
+
+git init
+
+and
+
+git commit --allow-empty -m "empty initial commit"
+
+it is necessary to create
+
+"!git init; git commit --allow-empty -m \"empty initial commit\""
+
+alias.

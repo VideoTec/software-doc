@@ -1,0 +1,22 @@
+http://stackoverflow.com/questions/7534184/git-alias-multiple-commands-and-parameters
+
+This will work (tested with zsh and bash):
+
+[alias] chs = !git checkout $1 && git status
+
+这样 git chs 的意思是：
+git checkout xxx
+git status
+
+https://git-scm.com/book/tr/v2/Git-Basics-Git-Aliases
+感叹号的作用：
+
+However, 
+maybe you want to run an external command, 
+rather than a Git subcommand. 
+
+In that case, you start the command with a ! character. 
+This is useful if you write your own tools that work with a Git repository. 
+We can demonstrate by aliasing git visual to run gitk:
+
+$ git config --global alias.visual "!gitk"
