@@ -8,6 +8,8 @@ This will work (tested with zsh and bash):
 git checkout xxx
 git status
 
+注意： && 使用 ; 也可以
+
 https://git-scm.com/book/tr/v2/Git-Basics-Git-Aliases
 感叹号的作用：
 
