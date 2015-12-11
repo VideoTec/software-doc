@@ -1,0 +1,7 @@
+
+---------------------------------------
+kdiff3 会生成备份文件：
+---------------------------------------
+kdiff3 保存备份文件的单独设置：
+kdiff3 菜单 | Settings | Configure KDiff3... | Directory | Backup files (.orig)
+勾掉 Backup files (.orig) 就可以了。

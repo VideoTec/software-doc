@@ -1,0 +1,29 @@
+http://stackoverflow.com/questions/12956509/how-to-set-meld-as-git-mergetool
+
+git config --global merge.tool meld      可以不设置（在命令行里加 -t meld）
+git config --global mergetool.meld.path /c/Program files (x86)/meld/bin/meld
+
+最终成功设置的命令行：
+$ git config --system "/c/Program files (x86)/Meld/Meld.exe"
+
+------------------------------------------
+设置时提示错误：
+------------------------------------------
+$ git config --system mergetool.meld.path /c/Program files (x86)/Meld
+bash: syntax error near unexpected token `('
+解决方法：添加双引号 "/c/Program files (x86)/Meld"
+
+还是出错：
+$ git mergetool -t meld
+Merging:
+src/com/feinno/beside/application/BesideInitUtil.java
+
+Normal merge conflict for 'src/com/feinno/beside/application/BesideInitUtil.java':
+  {local}: modified file
+  {remote}: modified file
+The merge tool meld is not available as 'C:/Program files (x86)/Meld'
+
+------------------------------------------
+解决方法：指定完全路径
+------------------------------------------
+$ git config --system "/c/Program files (x86)/Meld/Meld.exe"

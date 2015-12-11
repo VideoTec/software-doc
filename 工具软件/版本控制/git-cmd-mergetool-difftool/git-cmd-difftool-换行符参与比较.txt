@@ -1,0 +1,31 @@
+git diff 显示换行符区别
+
+wangxiangfx@wangxiangfx MINGW64 /d/androidrongfly (master)
+$ git diff
+diff --git a/settings.gradle b/settings.gradle
+index e7b4def..d3db109 100644
+--- a/settings.gradle
++++ b/settings.gradle
+@@ -1 +1 @@
+-include ':app'
++include ':app'^M  --- 换行符区别
+
+http://stackoverflow.com/questions/1889559/git-diff-to-ignore-m
+
+Github suggests that you should make sure to only use \n as a newline character in git-handled repos. There's an option to auto-convert:
+
+$ git config --global core.autocrlf true
+Of course, this is said to convert crlf to lf, while you want to convert cr to lf. I hope this still works …
+
+And then convert your files:
+
+# Remove everything from the index
+$ git rm --cached -r .
+
+# Re-add all the deleted files to the index
+# You should get lots of messages like: "warning: CRLF will be replaced by LF in <file>."
+$ git diff --cached --name-only -z | xargs -0 git add
+
+# Commit
+$ git commit -m "Fix CRLF"
+core.autocrlf is described on the man page.

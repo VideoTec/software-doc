@@ -1,0 +1,49 @@
+git config --global mergetool.keepBackup false 
+meld 有效；
+kdiff3 无效;
+
+[merge]
+    tool = meld         上面的命令，是加在这个字段里
+    keepBackup = false  这个对 meld 有效；kdiff3 需要单独设置
+                        15:57 2015/12/11
+                        问题：是 [merge] 字段，还是 [mergetool]字段？
+[mergetool "meld"]
+    prompt = false
+    keepBackup = false
+    keepTemporaries = false 注意 ： kdiff3 保存备份文件的单独设置 不是这里
+    path = C:/Program Files (x86)/Meld/meld/meld.exe
+    cmd = '\"/c/Program Files (x86)/Meld/meld/meld.exe\" $PWD/$LOCAL $PWD/$BASE $PWD/$REMOTE --output=$PWD/$MERGED'
+
+kdiff3 保存备份文件的单独设置：
+kdiff3 菜单 | Settings | Configure KDiff3... | Directory | Backup files (.orig)
+勾掉 Backup files (.orig) 就可以了。
+
+15:48 2015/12/11 走的弯路：
+kdiff3 勾掉 Backup files (.orig) 设置后，.orig 还是出现。
+原来是，git reset --hard 后，没有 git clean -fdx，那个 .orig 是之前产生的。
+    
+http://stackoverflow.com/questions/1251681/git-mergetool-generates-unwanted-orig-files
+
+A possible solution from git config:
+
+git config --global mergetool.keepBackup false
+
+After performing a merge, 
+the original file with conflict markers can be saved as a file with a .orig extension.
+
+If this variable is set to false then this file is not preserved.
+Defaults to true (i.e. keep the backup files).
+The alternative being not adding or ignoring those files, as suggested in this gitguru article,
+
+git mergetool saves the merge-conflict version of the file with a “.orig” suffix.
+Make sure to delete it before adding and committing the merge or add *.orig to your .gitignore
+
+Charles Bailey advises in his answer 
+to be aware of internal diff tool settings which could also generate those backup files, 
+no matter what git settings are.
+
+kdiff3 has its own settings (see "Directory merge" in its manual).
+
+other tools like WinMerge can have their own backup file extension 
+(WinMerge: .bak, as mentioned in its manual).
+So you need to reset those settings as well.

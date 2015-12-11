@@ -1,0 +1,6 @@
+http://stackoverflow.com/questions/137102/whats-the-best-visual-merge-tool-for-git
+
+  git config --global merge.tool p4merge
+  总是写错成： mergetool.tool
+  git config --global mergetool.p4merge.cmd p4merge '$BASE' '$LOCAL' '$REMOTE' '$MERGED'
+  git config --global mergetool.p4merge.trustExitCode false

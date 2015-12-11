@@ -1,5 +1,0 @@
-http://git-scm.com/download/win
-
-https://github.com/git-for-windows/git/releases/download/v2.6.3.windows.1/Git-2.6.3-64-bit.exe
-
-必须要翻墙啊

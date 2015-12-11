@@ -1,0 +1,1 @@
+git cofig --system diff.tool meld

@@ -1,0 +1,61 @@
+-t <tool>
+--tool=<tool>
+
+Use the merge resolution program specified by <tool>. 
+Valid values include 
+1）emerge, 
+2）gvimdiff, 
+3）kdiff3, 
+4）meld, 
+5）vimdiff, and 
+6）tortoisemerge. 
+
+Run git mergetool --tool-help for the list of valid <tool> settings.
+
+If a merge resolution program is not specified, 
+git mergetool will use the configuration variable merge.tool. 
+If the configuration variable merge.tool is not set, 
+git mergetool will pick a suitable default.
+
+git config --global merge.tool p4merge
+git config --global mergetool.p4merge.cmd p4merge '$BASE' '$LOCAL' '$REMOTE' '$MERGED'
+git config --global mergetool.p4merge.trustExitCode false
+
+You can explicitly provide a full path to the tool 
+by setting the configuration variable mergetool.<tool>.path. 
+For example, 
+you can configure the absolute path to kdiff3 by setting mergetool.kdiff3.path. 
+Otherwise, git mergetool assumes the tool is available in PATH.
+
+Instead of running one of the known merge tool programs, 
+git mergetool can be customized to run an alternative program 
+by specifying the command line to invoke in a configuration variable mergetool.<tool>.cmd.
+
+When git mergetool is invoked with this tool 
+(either through the -t or --tool option or the merge.tool configuration variable) 
+the configured command line will be invoked with 
+
+1）$BASE 
+set to the name of a temporary file containing the common base for the merge, 
+if available; 
+
+2）$LOCAL 
+set to the name of a temporary file containing the contents of the file 
+on the current branch; 
+
+3）$REMOTE 
+set to the name of a temporary file containing the contents of the file 
+to be merged, and 
+
+4）$MERGED 
+set to the name of the file to 
+which the merge tool should write the result of the merge resolution.
+
+If the custom merge tool correctly 
+indicates the success of a merge resolution with its exit code, 
+then the configuration variable mergetool.<tool>.trustExitCode can be set to true.
+ 
+Otherwise, 
+git mergetool will prompt the user 
+to indicate the success of the resolution 
+after the custom tool has exited.

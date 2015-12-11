@@ -1,0 +1,12 @@
+-y
+--no-prompt
+Do not prompt before launching a diff tool.
+
+--prompt
+Prompt before each invocation of the diff tool. 
+This is the default behaviour; 
+the option is provided to override any configuration settings.
+
+设置 config 字段
+difftool.prompt
+Prompt before each invocation of the diff tool.

@@ -1,0 +1,12 @@
+http://sourceforge.net/p/kdiff3/support-requests/15/
+
+I entered this as a bug instead of a support request. 
+I'm not sure which is appropriate. 
+Please see https://sourceforge.net/p/kdiff3/bugs/198/. 
+In short, version 0.9.98 of KDiff3 is apparently 
+misreading the Chinese string 請稍待 as 請稊待 in the input files, 
+which causes it to also change the content in the output 
+where no change should exist. 
+Version 0.9.96a did not do this.
+
+http://stackoverflow.com/questions/27826555/anything-odd-about-chinese-unicode-characters-%E7%A8%8D-and-%E7%A8%8A-that-would-affect-kdiff3

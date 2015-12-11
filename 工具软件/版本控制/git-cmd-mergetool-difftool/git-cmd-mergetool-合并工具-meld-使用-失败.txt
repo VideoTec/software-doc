@@ -1,0 +1,20 @@
+虽然有错误，但是可以保存正确的合并后的文件，并 add 到缓存中。
+
+在编辑窗口中修改完，保存时，控制台输出下面的错误：
+
+wangxiangfx@wangxiangfx MINGW64 /d/work/beside (master|MERGING)
+$ git mergetool -t meld
+Merging:
+src/com/feinno/beside/application/BesideInitUtil.java
+
+Normal merge conflict for 'src/com/feinno/beside/application/BesideInitUtil.java':
+  {local}: modified file
+  {remote}: modified file
+
+(Meld.exe:4144): Gdk-CRITICAL **: gdk_device_get_source: assertion 'GDK_IS_DEVICE (device)' failed
+
+(Meld.exe:4144): Gdk-CRITICAL **: gdk_device_get_source: assertion 'GDK_IS_DEVICE (device)' failed
+
+(Meld.exe:4144): Gdk-CRITICAL **: gdk_device_get_source: assertion 'GDK_IS_DEVICE (device)' failed
+
+(Meld.exe:4144): Gdk-CRITICAL **: gdk_device_get_source: assertion 'GDK_IS_DEVICE (device)' failed
