@@ -1,0 +1,5 @@
+git config --system alias.dt difftool
+git config --system alias.mt mergetool
+git config --system alias.st status
+
+git config --system alias.all 'add -A'
