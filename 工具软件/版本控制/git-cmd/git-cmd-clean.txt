@@ -13,3 +13,25 @@ usage: git clean [-d] [-f] [-i] [-n] [-q] [-e <pattern>] [-x | -X] [--] <paths>.
     -X                    remove only ignored files
 
 git clean -dfx
+
+----------------------------
+-x
+----------------------------
+pristine[英][ˈprɪsti:n] [美][prɪˈstiːn]
+adj.太古的，原始状态的；纯朴的，纯洁的；未受腐蚀的，新鲜的
+
+Don’t use the standard ignore rules read from 
+
+1）.gitignore (per directory) and 
+2）$GIT_DIR/info/exclude, 
+
+but do still use the ignore rules given with -e options. 
+This allows removing all untracked files, including build products. 
+This can be used (possibly in conjunction with git reset) to 
+create a pristine working directory to test a clean build.
+
+----------------------------
+-X
+----------------------------
+Remove only files ignored by Git. 
+This may be useful to rebuild everything from scratch, but keep manually created files.
