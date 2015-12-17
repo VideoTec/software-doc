@@ -1,0 +1,34 @@
+http://stackoverflow.com/questions/18308535/automatic-prune-with-git-fetch-or-pull
+
+Without "git fetch --prune", 
+remote-tracking branches 
+for a branch the other side already has removed will stay forever.
+Some people want to always run "git fetch --prune".
+
+To accommodate users who want to either prune always or when fetching from a particular remote, 
+add two new configuration variables "fetch.prune" and "remote.<name>.prune":
+
+"fetch.prune" allows to enable prune for all fetch operations.
+"remote.<name>.prune" allows to change the behaviour per remote.
+
+The latter will naturally override the former, 
+and the --[no-]prune option from the command line 
+will override the configured default.
+
+Since --prune is a potentially destructive operation 
+(Git doesn't keep reflogs for deleted references yet), 
+we don't want to prune without users consent, 
+so this configuration will not be on by default.
+
+---------------------------------------------------
+git 1.8.5 (Q4 2013) will propose:
+---------------------------------------------------
+
+"git fetch" (hence "git pull" as well) learned 
+to check "fetch.prune" and "remote.*.prune" configuration variables and 
+to behave as if the "--prune" command line option was given.
+
+That means that, if you set remote.origin.prune to true:
+
+git config remote.origin.prune true
+Any git fetch or git pull will automatically prune.

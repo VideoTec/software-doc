@@ -1,0 +1,21 @@
+
+http://blog.plataformatec.com.br/2013/05/how-to-properly-mirror-a-git-repository/
+
+Mirroring a git repository without a local copy
+If you haven’t cloned the repository before, you can mirror it to a new home by
+
+$ git clone --mirror git@example.com/upstream-repository.git
+$ cd upstream-repository.git
+$ git push --mirror git@example.com/new-location.git
+
+This
+will get all the branches and tags that are available in the upstream repository and 
+will replicate those into the new location.
+
+Don’t use git push --mirror in repositories that weren’t cloned by --mirror as well. 
+It’ll overwrite the remote repository with your local references (and your local branches). 
+This is not what we want. 
+Read the next section to discover what to do in these cases.
+
+Also git clone --mirror is prefered over git clone --bare 
+because the former also clones git notes and some other attributes.

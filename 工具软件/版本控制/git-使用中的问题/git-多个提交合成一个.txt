@@ -1,0 +1,13 @@
+https://feeding.cloud.geek.nz/posts/combining-multiple-commits-into-one/
+
+straightforward[英][ˌstreɪtˈfɔ:wəd] [美][ˌstreɪtˈfɔ:rwərd]
+adj.直截了当的；坦率的；明确的
+
+squash[英][skwɒʃ] [美][skwɑ:ʃ]
+vt.挤进；将（某人[某物]）压扁；使沉默；平定（叛乱等）
+
+git rebase provides a simple way of 
+combining multiple commits into a single one. 
+
+However using rebase to squash an entire branch down to a single commit 
+is not completely straightforward.

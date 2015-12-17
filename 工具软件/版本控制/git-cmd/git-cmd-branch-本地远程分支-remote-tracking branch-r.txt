@@ -1,0 +1,36 @@
+本地远程分支【即：remote-tracking branch】
+
+git branch -r
+列出所有的（本地）远程分支
+
+git branch -r -d origin/test
+删除本地远程分支【即：remote-tracking branch】
+
+这个删除，能提交吗? 不会提交上去
+如果要删除远程仓库中的分支：
+git push origin :xxx
+或者
+git push origin --delete xxx
+
+http://stackoverflow.com/questions/3184555/cleaning-up-old-remote-git-branches
+First, what is the result of git branch -a on machine B?
+Second, you have already deleted 'heads/devel' on 'origin', 
+so that's why you can't delete it from B.
+
+Try
+git branch -r -d origin/devel
+or
+git remote prune origin
+or
+git fetch origin --prune
+
+http://stackoverflow.com/questions/1072171/how-do-you-remove-an-invalid-remote-branch-reference-from-git
+git push public :master
+
+This would delete the remote branch named master as Kent Fredric has pointed out.
+
+To list remote-tracking branches:
+git branch -r
+
+To delete a remote-tracking branch:
+git branch -rd public/master

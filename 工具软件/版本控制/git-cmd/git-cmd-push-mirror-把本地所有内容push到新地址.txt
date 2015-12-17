@@ -1,0 +1,27 @@
+错误的使用这个选项，造成麻烦，
+会把本地和远程分支，全部提交到远程库
+
+正确的使用方法见：
+http://blog.plataformatec.com.br/2013/05/how-to-properly-mirror-a-git-repository/
+
+--mirror
+Instead of naming each ref to push, specifies that all refs under refs/ (which includes but is not limited to refs/heads/, refs/remotes/, and refs/tags/) be mirrored to the remote repository. Newly created local refs will be pushed to the remote end, locally updated refs will be force updated on the remote end, and deleted refs will be removed from the remote end. This is the default if the configuration option remote.<remote>.mirror is set.
+
+http://stackoverflow.com/questions/6865302/push-local-git-repo-to-new-remote-including-all-branches-and-tags
+
+To push all your branches, use either:
+
+git push REMOTE '*:*'
+git push REMOTE --all
+
+To push all your tags:
+
+git push REMOTE --tags
+
+Finally, I think you can do this all in one command with:
+
+git push REMOTE --mirror
+
+However, 
+in addition --mirror, 
+will also push your remotes, so this might not be exactly what you want.

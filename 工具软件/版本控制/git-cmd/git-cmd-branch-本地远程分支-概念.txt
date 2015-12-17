@@ -1,0 +1,9 @@
+http://stackoverflow.com/questions/20106712/what-are-the-differences-between-git-remote-prune-git-prune-git-fetch-prune
+
+I don't blame you for getting frustrated about this. 
+The best way to look at is this. 
+There are potentially three versions of every remote branch:
+
+1）The actual branch on the remote repository
+2）Your snapshot of that branch locally (stored under refs/remotes/...)
+3）And a local branch that might be tracking the remote branch

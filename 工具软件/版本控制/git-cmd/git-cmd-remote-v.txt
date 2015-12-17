@@ -1,3 +1,5 @@
+git remote [-v | --verbose]
+
 $ git remote -v
 origin  https://wangxiang83@bitbucket.org/wangxiang83/videotech.git (fetch)
 origin  https://wangxiang83@bitbucket.org/wangxiang83/videotech.git (push)

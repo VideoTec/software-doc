@@ -1,0 +1,1 @@
+git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)…​]

@@ -1,0 +1,11 @@
+git remote set-url [--push] <name> <newurl> [<oldurl>]
+git remote set-url --add [--push] <name> <newurl>
+git remote set-url --delete [--push] <name> <url>
+
+查看当前的远程库 URL
+git remote -v 
+
+设置新的远程库 URL
+git remote set-url origin git@github.com:VideoTec/jni.git
+
+git remote add pb git://github.com/paulboone/ticgit.git

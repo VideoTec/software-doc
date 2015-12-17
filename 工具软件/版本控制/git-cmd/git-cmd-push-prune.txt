@@ -1,0 +1,15 @@
+不理解这个选项的意思？会删除远程分支吗？
+
+--prune
+Remove remote branches that don’t have a local counterpart. 
+
+For example 
+
+a remote branch tmp will be removed 
+if a local branch with the same name doesn’t exist any more. 
+
+This also respects refspecs, 
+e.g. 
+git push --prune remote refs/heads/*:refs/tmp/* 
+would make sure that remote refs/tmp/foo will be removed 
+if refs/heads/foo doesn’t exist.

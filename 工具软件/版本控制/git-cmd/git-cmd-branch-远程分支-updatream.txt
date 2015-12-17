@@ -1,3 +1,7 @@
+git branch [--set-upstream | --track | --no-track] [-l] [-f] <branchname> [<start-point>]
+git branch (--set-upstream-to=<upstream> | -u <upstream>) [<branchname>]
+git branch --unset-upstream [<branchname>]
+
 upstream 概念
 git branch -vv 列出所有分支的upstream
 

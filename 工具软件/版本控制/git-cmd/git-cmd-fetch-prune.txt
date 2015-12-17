@@ -1,0 +1,34 @@
+git fetch [<options>] [<repository> [<refspec>…​]]
+git fetch [<options>] <group>
+git fetch --multiple [<options>] [(<repository> | <group>)…​]
+git fetch --all [<options>]
+
+-p
+--prune
+After fetching, 
+remove any remote-tracking references that no longer exist on the remote. 
+
+Tags are not subject to pruning if they are fetched only 
+because of the default tag auto-following or due to a --tags option. 
+
+However, if tags are fetched due to an explicit refspec 
+(either on the command line or in the remote configuration, 
+for example 
+if the remote was cloned with the --mirror option), 
+then they are also subject to pruning.
+
+------------------------------------------
+11:34 2015/12/17
+------------------------------------------
+1）删除 远程仓库 不存在的分支
+2）添加 远程仓库 新的分支 (不加 --prune 也会拉取新分支)
+
+wangxiangfx@wangxiangfx MINGW64 /d/work/beside (br556)
+$ git fetch -p origin
+remote: Counting objects: 17, done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 17 (delta 12), reused 0 (delta 0)
+Unpacking objects: 100% (17/17), done.
+From git.feinno.com:ngcc-beside/feinnobeside
+   c07f31b..70f6499  develop    -> origin/develop
+ * [new branch]      q4-koobe   -> origin/q4-koobe

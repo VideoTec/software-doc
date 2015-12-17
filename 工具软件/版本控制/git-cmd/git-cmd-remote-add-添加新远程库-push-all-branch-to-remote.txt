@@ -1,0 +1,16 @@
+http://stackoverflow.com/questions/6865302/push-local-git-repo-to-new-remote-including-all-branches-and-tags
+
+To push all your branches, use either:
+git push REMOTE '*:*'
+git push REMOTE --all
+
+To push all your tags:
+git push REMOTE --tags
+
+Finally, I think you can do this all in one command with:
+git push REMOTE --mirror
+【 这个必须和 git clone --mirror git@xxx 配合使用 】
+However, 
+in addition --mirror, 
+will also push your remotes, 
+so this might not be exactly what you want.

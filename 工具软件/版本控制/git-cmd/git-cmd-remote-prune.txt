@@ -1,0 +1,13 @@
+stale[英][steɪl] [美][stel]
+adj.陈腐的；不新鲜的；走了味的
+
+git remote prune [-n | --dry-run] <name>…​
+
+prune
+Deletes all stale remote-tracking branches under <name>. 
+These stale branches 
+have already been removed from the remote repository referenced by <name>, 
+but are still locally available in "remotes/<name>".
+
+With --dry-run option, 
+report what branches will be pruned, but do not actually prune them.

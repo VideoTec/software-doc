@@ -1,0 +1,24 @@
+stale remote-tracking branches 不新鲜的 本地-远程分支
+
+----------------------------------------------
+git fetch --prune remote-name
+----------------------------------------------
+
+git fetch [<options>] [<repository> [<refspec>…​]]
+git fetch [<options>] <group>
+git fetch --multiple [<options>] [(<repository> | <group>)…​]
+git fetch --all [<options>]
+
+-p
+--prune
+After fetching, 
+remove any remote-tracking references that no longer exist on the remote. 
+
+Tags are not subject to pruning if they are fetched only 
+because of the default tag auto-following or due to a --tags option. 
+
+However, if tags are fetched due to an explicit refspec 
+(either on the command line or in the remote configuration, 
+for example 
+if the remote was cloned with the --mirror option), 
+then they are also subject to pruning.
