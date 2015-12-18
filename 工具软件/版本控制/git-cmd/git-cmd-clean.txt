@@ -14,6 +14,15 @@ usage: git clean [-d] [-f] [-i] [-n] [-q] [-e <pattern>] [-x | -X] [--] <paths>.
 
 git clean -dfx
 
+16:58 2015/12/18 分成三类文件：
+1）tracked files
+2）untracked files
+   分两类： untracked-files-ignore / untracked-files-un-ignore
+
+git clean -fd   删除 untracked-files-un-ignore
+git clean -fdX  删除 untracked-files-ignore
+git clean -fdx  删除 untracked-files-ignore + untracked-files-un-ignore
+
 ----------------------------
 -x
 ----------------------------
