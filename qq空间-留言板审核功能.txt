@@ -1,0 +1,31 @@
+http://wenwen.sogou.com/z/q390923739.htm
+楼主可以设置一个留言审核，不过留言审核只能对陌生人生效的！
+这样所有的评论必须经你审核才能显示出来！
+
+
+qq 留言审核设置后，无效，还是直接发布评论，并且所有人能看到。
+为什么？
+
+http://jingyan.baidu.com/article/59a015e3a8ea0ff7948865b0.html
+完成开启。
+非好友评论我的日志，说说，相册，留言板，就需要自己审核之后才能展示了。
+
+http://zhidao.baidu.com/link?url=DaihEsqB2344IspLgoscU5ToSN7zcMnWvh-sVA5M9NPR7R8XYqOEpPjR51qzwv8wfc5VVHJldgPMml7QZJv4_umUK5UEu6JBVW4aIdRuEje
+QQ空间里的待审核评论在哪里看？
+若有待审核的评论将会在这里进行审核，通过说说、日志、相册界面也能进到这个界面。
+
+http://zhidao.baidu.com/question/562386574.html
+Q空间说说如何设置好友评论需要自己审核才能显示出来？
+
+QQ空间的评论审核是指非好友进您的QQ空间【留言板】留言以后，无法立即显示，需要您进行审核，您同意以后，便可显示在留言板中。只要不开启，任何人都是可以留言的。
+可以通过一下步骤进行设置：
+第一步：登入qq，在qq上方点击进入qq空间；
+第二步：在qq空间首页的右上角，找到设置中的【权限设置】；
+第三步：找到左边栏目中【防骚扰】，在点击右边【开启评论审核】；
+第四步：选择需要审核的对象，是所有人还是好友，选择好后，我们可以看到待审核的评论。
+
+http://wenwen.sogou.com/z/q392447991.htm
+留言审核是指非好友在留言或评论是需要经过主人的审核才能显示出来，前提是他需要有访问权限
+
+http://zhidao.baidu.com/link?url=CKhvK0NfPr7RVY3cmK_FV3R3pbYzjkllcMSjyKPF0AUWHD6z8fezB8_OI1FC-VwjLbrTaGZQLkANzdN7TnDwIa
+目前是这样的。如果是好友的话只能设置成可回复、评论、留言或者不可评论、回复、留言 。可以在空间设置的回复设置里设定
