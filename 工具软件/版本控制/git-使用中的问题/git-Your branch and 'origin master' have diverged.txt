@@ -1,0 +1,62 @@
+v.分开( diverge的过去式和过去分词 )；偏离；分歧；分道扬镳
+
+diverge[英][daɪˈvɜ:dʒ] [美][daɪˈvɜ:rdʒ]
+vi.分开，叉开；分歧；偏离，背离；[数]发散，无极限
+vt.使发散；使偏离
+
+15:37 2015/12/30
+陈宝强那（使用 as 工具），不知道怎么产生的
+
+git status
+发现有删除的文件，没有提交。
+
+最后：
+git fetch origin
+git stash
+git pull
+git reset --hard
+git stash pop
+然后，被删除的文件，又出现了。
+
+http://stackoverflow.com/questions/19864934/git-your-branch-and-origin-master-have-diverged-how-to-throw-away-local-com
+
+# Your branch and 'origin/master' have diverged,
+# and have 3 and 8 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+
+http://stackoverflow.com/questions/9189413/good-and-clear-understanding-of-the-git-branches-diverged-issue
+First,
+you can use the cherry command to see what commits differ between branches, and in what ways. 
+So in this case, 
+running g cherry origin/feature/worker-interface 
+shows us the status of commits on the current branch and 
+how they stack up against origin/feature/worker-interface. 
+You will find 1 repo which you forgot to commit.
+
+Now, lets see whats happening with the 'origin/feature/worker-interface' and its commits.
+For this we can run a log command 
+with a special format gl ..origin/feature/worker-interface --oneline
+
+Here we see 4 commits that don't exit in our current branch
+
+So now we have a good idea of what’s happened. 
+you’ve made 1 commits on your local master branch, 
+and it looks like there are 4 commits on origin/feature/worker-interface 
+which you don’t have merged in yet. 
+So, you could just blindly merge things together and 
+go on your way (if they merge without conflict), 
+but I’d like to show you how to deal with it in a more controlled manner.
+
+1) First, create a branch that points to your current HEAD: gco -b local_changes 
+2) Now that we have that to keep track of those changes, 
+we switch back to feature/worker-interface: gco feature/worker-interface 
+3) At this point, reset the feature/worker-interface branch to get rid of the 1 commit. 
+4) There you go! You can check your status of branch git status 
+you will be prompted as nothing to commit
+
+http://stackoverflow.com/questions/2452226/master-branch-and-origin-master-have-diverged-how-to-undiverge-branches
+
+I had this and am mystified as to what has caused it, even after reading the above responses. My solution was to do
+
+git reset --hard origin/master
+Then that just resets my (local) copy of master (which I assume is screwed up) to the correct point, as represented by (remote) origin/master.
