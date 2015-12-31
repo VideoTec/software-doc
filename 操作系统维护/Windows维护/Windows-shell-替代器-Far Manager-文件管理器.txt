@@ -1,0 +1,13 @@
+http://www.orsoon.com/Soft/101039.html
+
+FAR是一个文件管理器,分左右两个窗口,
+可以对文件任意的复制、移动、删除、查看、编辑等操作,
+也可以对目录进入操作,支持长文件名和中文文件名,使用极其方便。
+
+它包含众多的插件,还可以外挂插件,以便完成更多的功能。
+当使用 InstallExplorer 插件后,可以解开安装程序,
+
+Far Manager支持的安装程序相当多,包括：
+Wise, Vise, Inno Setup, Gentee Installer, InstallShield, 
+NullSoft Installer (ver>=1.1o), 
+SetupFactory, Esch

@@ -1,0 +1,3 @@
+https://github.com/cmderdev/cmder
+
+Lovely console emulator package for Windows http://cmder.net

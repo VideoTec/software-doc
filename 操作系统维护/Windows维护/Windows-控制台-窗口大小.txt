@@ -1,0 +1,12 @@
+http://ccm.net/faq/13136-windows-7-increase-the-size-of-the-command-prompt-window
+
+Start > Run > type "cmd" and press Enter
+Open a command prompt by clicking the Start button, type cmd and press Enter to validate.
+Right click on the title bar and select Properties.
+Select the Layout tab and enter your custom values in the "Windows Size" Section.
+
+http://superuser.com/questions/584027/can-you-dynamically-resize-windows-command-line-window
+This is done via the Properties > Layout tab of the window or the shortcut.
+
+In windows 7 use the mode command.
+mode con:cols=80 lines=40

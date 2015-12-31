@@ -1,0 +1,3 @@
+cd %~dp0
+mode con:cols=130 lines=30  指定长宽
+cmd

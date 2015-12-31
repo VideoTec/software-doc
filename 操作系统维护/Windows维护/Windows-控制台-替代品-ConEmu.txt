@@ -1,0 +1,8 @@
+Customizable Windows terminal with tabs, splits, quake-style and more 
+https://conemu.github.io/
+
+ConEmu-Maximus5 is a Windows console emulator with tabs, which represents multiple consoles as one customizable GUI window with various features.
+
+Initially, the program was created as a companion to Far Manager, my favorite shell replacement - file and archive management, command history and completion, powerful editor.
+
+Today, ConEmu can be used with any other console application or simple GUI tools (like PuTTY for example). ConEmu is an active project, open to suggestions.
