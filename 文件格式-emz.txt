@@ -1,0 +1,5 @@
+Windows Compressed Enhanced Metafile
+
+Compressed image file used by Microsoft programs such as Visio and the Office suite; contains an Enhanced Metafile (.EMF file) that has been compressed with the .GZIP compression algorithm.
+
+EMZ files may be decompressed with a GZIP decompression utility such as GNU zip (gzip.exe) or WinGZip. After decompression, they may be opened as standard EMF files.
