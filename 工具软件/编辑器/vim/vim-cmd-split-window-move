@@ -1,0 +1,4 @@
+ctrl + w 移动光标所在窗口
+
+ctrl + w + r 移动窗口位置
+http://stackoverflow.com/questions/4556184/vim-move-window-left-right

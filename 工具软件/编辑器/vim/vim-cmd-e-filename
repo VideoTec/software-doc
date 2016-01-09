@@ -1,0 +1,9 @@
+http://www.ehow.com/how_6012772_create-file-vi-editor.html
+
+However, contrary to what you may expect, vi still presents you with the buffer for "myFileName," not "copyOfFileName." The editor did create the copy and write it to disk, but it assumes that you intend to continue editing the original copy of the file. To open the copy execute the following:
+
+:e copyOfFileName
+
+
+
+Read more : http://www.ehow.com/how_6012772_create-file-vi-editor.html

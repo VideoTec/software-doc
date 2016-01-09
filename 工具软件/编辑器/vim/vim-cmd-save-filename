@@ -1,0 +1,9 @@
+http://www.ehow.com/how_6012772_create-file-vi-editor.html
+
+If you are using the vim editor (vi improved) then you can skip this two step process by creating the copy this way:
+
+:sav myCopyOfFileName
+
+
+
+Read more : http://www.ehow.com/how_6012772_create-file-vi-editor.html
