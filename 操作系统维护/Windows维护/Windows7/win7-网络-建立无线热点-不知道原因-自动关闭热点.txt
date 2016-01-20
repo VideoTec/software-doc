@@ -1,0 +1,23 @@
+My Wi-fi is always disconnected after waking from Sleep Mod
+I would suggest you disable sleep, if you are that concerned about ... 
+When a computer goes to sleep it's in almost the same state as shutdown.
+
+Wifi turns off during sleep mode - Configuration ...
+
+https://www.quora.com/I-have-created-a-virtual-hotspot-on-my-laptop-but-it-stops-after-a-certain-period-of-time-Is-there-any-way-in-which-I-can-run-it-continuously-if-I-use-Windows-8
+Does your laptop goes into sleep mode in that time? 
+Because the hotspot turns off with the wifi during sleep mode. 
+After awake, 
+it doesn't turn on automatically. 
+I use hotspot regularly in my laptop,
+and it doesn't turn off even after long hours given the laptop doesn't sleep and 
+the wifi hardware stays on.
+
+Which way you use for creating WiFi hotspot in your laptop? 
+If you set your computer sleep time, hotspot will stop after computer sleep.  
+You had better check your computer setting. 
+I think you can use WiFi hotspot creator, 
+which won't make your computer sleep. And it has timer. 
+You can set shut down time for computer. 
+Know more here: Use Your PC As a Free WiFi Hotspot and Share Internet with Other Devices
+http://www.drivethelife.com/free-wifi-hotspot-creator.html

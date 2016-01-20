@@ -1,0 +1,36 @@
+参考：
+git-冲突-modify-delete-本地提交里修改的文件-远程已经删除了.txt
+需要区分，使用的 git pull --rebase，还是 git pull 
+
+https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/
+
+Removed file conflicts occur when 
+1）one person edits a file, and 
+2）another person deletes that file in their branch. 
+Git does not know if you want to 
+1）keep the file with the new edits, or 
+2）delete the file and forget about those edits. 
+This example will show how to resolve this both ways.
+
+Resolving a removed file conflict
+
+第一种解决方法: keep the file with the new edits
+第二种解决方法：delete the file and forget about those edits
+
+http://stackoverflow.com/questions/1380670/how-do-i-fix-a-merge-conflict-due-to-removal-of-a-file-in-a-branch
+
+The conflict message:
+
+CONFLICT (delete/modify): res/layout/dialog_item.xml deleted in dialog and modified in HEAD
+means that res/layout/dialog_item.xml was deleted in the 'dialog' branch you are merging, but was modified in HEAD (in the branch you are merging to).
+
+So you have to decide whether
+
+remove file using "git rm res/layout/dialog_item.xml"
+or
+
+accept version from HEAD (perhaps after editing it) with "git add res/layout/dialog_item.xml"
+Then you finalize merge with "git commit".
+
+会增加一个 “合并” 提交 - 
+Note that git will warn you that you are creating a merge commit, in the (rare) case where it is something you don't want. Probably remains from the days where said case was less rare.

@@ -1,0 +1,90 @@
+A: delete f1 and commit-push to repo
+B: modify f1 and commit then pull from repo
+
+then what happen:
+
+-------------------------------------------------
+1) if b use git pull
+-------------------------------------------------
+
+wangxiangfx@wangxiangfx MINGW64 /e/testgit2 (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+
+        deleted by them: git-file-log-通配符.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+第一种解决方法: keep the file with the new edits
+git add git-file-log-通配符.txt
+git commit xxx
+全产生一个新的提交。
+
+第二种解决方法：delete the file and forget about those edits
+git rm git-file-log-通配符.txt
+git commit xxx
+全产生一个新的提交。
+
+-------------------------------------------------
+2) if b use git pull --rebase
+-------------------------------------------------
+
+也会出现冲突：
+
+$ git pull --rebase
+First, rewinding head to replay your work on top of it...
+Applying: modify one file which is deleted in repo
+Using index info to reconstruct a base tree...
+A       git-file-log-通配符.txt
+.git/rebase-apply/patch:10: trailing whitespace.
+test file
+.git/rebase-apply/patch:11: trailing whitespace.
+
+warning: 2 lines add whitespace errors.
+Falling back to patching base and 3-way merge...
+CONFLICT (modify/delete): git-file-log-通配符.txt 
+1) deleted in HEAD and 
+2) modified in modify one file which is deleted in repo. 
+Version modify one file which is deleted in repo of git-file-log-通配符.txt left in tree.
+error: Failed to merge in the changes.
+Patch failed at 0001 modify one file which is deleted in repo
+The copy of the patch that failed is found in: .git/rebase-apply/patch
+
+When you have resolved this problem, run "git rebase --continue".
+If you prefer to skip this patch, run "git rebase --skip" instead.
+To check out the original branch and stop rebasing, run "git rebase --abort".
+
+这个时修改 git status:
+$ git status
+rebase in progress; onto 664af56
+You are currently rebasing branch 'master' on '664af56'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git reset HEAD <file>..." to unstage)
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+
+        deleted by us:   git-file-log-通配符.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+解决方法，只能用
+第一种解决方法: keep the file with the new edits
+git add git-file-log-通配符.txt
+git rebase --continue
+全产生一个新的提交。
+
+如果使用 
+git rm git-file-log-通配符.txt
+会出现无解的问题

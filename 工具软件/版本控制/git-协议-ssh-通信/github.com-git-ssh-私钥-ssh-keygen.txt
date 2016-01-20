@@ -1,3 +1,8 @@
+---------------------
+生成公钥
+---------------------
+$ ssh-keygen
+
 http://blog.csdn.net/kongqz/article/details/6338690
 
 直接在 GIT 控制台里运行

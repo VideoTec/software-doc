@@ -1,0 +1,7 @@
+1. netsh wlan stop hostednetwork
+2. 禁用 无线网卡
+   netsh interface set interface name="wireless" admin=disabled
+   注意需要修改无线网卡的名称为：以方便书写
+3. 启动无线网卡
+   netsh interface set interface name="wireless" admin=enabled
+4. netsh wlan start hostednetwork
