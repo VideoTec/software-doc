@@ -1,0 +1,25 @@
+http://wiki.ubuntu.org.cn/%E6%BA%90%E5%88%97%E8%A1%A8
+
+源列表
+
+如何使用Ubuntu Night
+Ubuntu Night( http://ubuntu9.com ) 的Top mirror功能
+根据当前的网络情况和源健康状况不断地进行更新当前可用的源的信息，
+包括了Top fast/near/stable mirror，
+可以找到当前网络上所有可用的Ubuntu 镜像（即源)，
+并按照平均下载速度和地理位置进行排名。
+而且，当你找到最适合你的源之后，
+还可以直接下载它的sources.list 文件，
+并可直接将它copy到/etc/apt/sources.list或者放在/etc/apt/souces.list.d目录下，
+非常的方便，无须苦苦找可用源。
+
+首先备份源列表(for sure):
+sudo cp /etc/apt/sources.list /etc/apt/sources.list_backup
+
+而后用gedit或其他编辑器打开:
+从下面列表中选择合适的源，替换掉文件中所有的内容，保存编辑好的文件:
+注意：一定要选对版本
+
+然后，刷新列表:
+sudo apt-get update
+注意：一定要执行刷新

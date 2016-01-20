@@ -1,0 +1,38 @@
+https://about.gitlab.com/downloads/#ubuntu1404
+
+
+https://packages.gitlab.com/gitlab/gitlab-ce/install
+
+----------------------------------------
+Bash Scripts
+----------------------------------------
+
+These bash scripts are the quickest — if not the most robust — way to install a packagecloud repo. 
+They'll detect your platform and architecture and setup the repo accordingly. 
+If necessary, they'll also install the gpg key that we use for repo signing.
+
+First, pick an install script for your platform. 
+Then, you can choose to either pipe it to sudo bash or curl it and do something else, 
+depending on your level of paranoia.
+
+curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+
+Detected operating system as Ubuntu/wily.
+Checking for curl...
+Detected curl...
+Running apt-get update... done.
+Installing apt-transport-https... done.
+Installing /etc/apt/sources.list.d/gitlab_gitlab-ce.list...done.
+Importing packagecloud gpg key... done.
+Running apt-get update... done.
+
+The repository is setup! You can now install packages.
+
+----------------------------------------
+Manual Configuration
+----------------------------------------
+
+If you'd prefer to install your repo on your system manually, 
+follow the instructions below. 
+If you feel something is missing or just want more info, 
+don't hesitate to get in touch.

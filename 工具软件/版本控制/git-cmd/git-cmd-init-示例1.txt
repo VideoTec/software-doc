@@ -1,0 +1,12 @@
+EXAMPLES
+
+Start a new Git repository for an existing code base
+$ cd /path/to/my/codebase
+$ git init      (1)
+$ git add .     (2)
+$ git commit    (3)
+Create a /path/to/my/codebase/.git directory.
+
+Add all existing files to the index.
+
+Record the pristine state as the first commit in the history.

@@ -1,0 +1,31 @@
+lid[英][lɪd] [美][lɪd]
+
+n.盖子；限制；[口]果盖；[口]遮盖
+vt.给…盖盖子
+
+https://linux.cn/article-2485-1.html
+
+两种途径：
+
+一：通过电源设置
+这个设置，有时生效，有时还会休眠
+
+二：通过修改 /etc/systemd/logind.conf
+查找到
+#HandleLidSwitch=suspend
+修改成
+HandleLidSwitch=ignore
+重启系统就可以了。
+注意： 重启 restart systemd-logind 失败，直接重启系统就好了。
+
+http://askubuntu.com/questions/15520/how-can-i-tell-ubuntu-to-do-nothing-when-i-close-my-laptop-lid
+
+To make Ubuntu do nothing when laptop lid is closed:
+
+Open the /etc/systemd/logind.conf file in a text editor as root, for example,
+
+sudo -H gedit /etc/systemd/logind.conf
+Add a line HandleLidSwitch=ignore (make sure it's not commented out!),
+Restart the systemd daemon with this command:
+
+sudo restart systemd-logind

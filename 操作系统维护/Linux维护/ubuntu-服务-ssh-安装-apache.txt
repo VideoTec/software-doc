@@ -1,0 +1,45 @@
+http://wiki.ubuntu.com.cn/Apache
+
+LAMP的概念：
+
+Linux+Apache+Mysql+Perl/PHP/Python
+一组常用来搭建动态网站或者服务器的开源软件，
+本身都是各自独立的程序，
+但是因为常被放在一起使用，
+拥有了越来越高的兼容度，共同组成了一个强大的Web应用程序平台。
+
+安装LAMP就已经安装了 
+网页服务器 
+数据库 
+Perl/PHP/Python语言环境。
+
+如果你是安装到本机上测试的话，最好确保hosts的内容为这样
+
+username@ubuntu:~$ cat /etc/hosts
+127.0.0.1       localhost
+
+安装LAMP
+套件一次性安装
+sudo tasksel
+用空格选中LAMP，回车即可。
+（不过要小心别修改其他的选项，否则会安装或删除该服务！） 
+如果出现tasksel aptitude failed (100)错误，需要先更新源包 sudo apt-get update
+
+1）仔细手动安装法（最小组件）
+sudo apt-get install apache2 php5-mysql libapache2-mod-php5 mysql-server
+有些是因为依赖关系会自动安装的，但是为了保险，所以多打了一些。
+开始安装时sudo会问您密码（只是有可能），这是系统管理员的密码。
+安装途中MySQL要求设定账户有密码，这是与操作系统没关系的账户与密码。
+
+Configuring mysql-server-5.6
+New password for the MySQL "root" user: mysql2506
+
+2）图形安装法
+在新立得软件包管理器中选择  编辑－－使用任务分组标记软件包
+在打开的窗口中 勾选 LAMP SERVER 然后确定。
+在主窗口中 点击绿色的对号 应用 按钮
+好了 。接下来就是等待...等待新立得 自动下载安装完。
+
+注意： 安装途中MySQL要求设定账户有密码，这是与操作系统没关系的账户与密码。
+
+打开 http://localhost 或 http://127.0.0.1

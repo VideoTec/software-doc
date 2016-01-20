@@ -1,0 +1,5 @@
+https://about.gitlab.com/downloads/#ubuntu1404
+
+3. Configure and start GitLab
+
+sudo gitlab-ctl reconfigure

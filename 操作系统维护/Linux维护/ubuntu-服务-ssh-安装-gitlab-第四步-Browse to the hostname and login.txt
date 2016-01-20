@@ -1,0 +1,6 @@
+https://about.gitlab.com/downloads/#ubuntu1404
+
+4. Browse to the hostname and login
+
+Username: root 
+Password: 5iveL!fe

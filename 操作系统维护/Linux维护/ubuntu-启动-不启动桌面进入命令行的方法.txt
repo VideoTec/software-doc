@@ -1,0 +1,76 @@
+1:57 2016/1/20
+sudo update-grub 
+这句必须要调用，否则不会生效
+即使，调用了，还是启动了桌面，为什么？
+
+停止 桌面的方法：
+sudo service gdm stop
+
+https://forum.ubuntu.org.cn/viewtopic.php?f=86&t=457179
+关于Ubuntu不启动X，直接进入字符界面
+
+错误方法一： /etc/X11/default-display-manager
+错误方法二： /etc/default/grub
+错误方法三： 
+sudo update-rc.d -f gdm remove
+或
+sudo update-rc.d -f lightdm remove
+
+正确方法如下
+一、查看文件/etc/init/rc-sysinit.conf，在第14行附近：确认“env DEFAULT_RUNLEVEL=2”。2是新装系统默认的，确保不被修改。
+二、编辑文件 /etc/init/lightdm.conf，在第12行附近，原句“ and runlevel [!06]” 改为“ and runlevel [!026]”。
+
+编辑/etc/default/grub
+把
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+改成
+GRUB_CMDLINE_LINUX_DEFAULT="text"
+其实只要把"quiet splash"修改为其它字符就可以了，这是系统启动是ubuntu那个logo和下面那个闪动的小亮点。
+别忘了update一下grub
+
+想进入X，直接startx，绝对装B利器！
+
+15.10 这种方法也不行
+
+http://www.dreamflier.net/blog/user1/3/2134.html
+
+改GRUB 的配置文件：
+
+/etc/default/grub 找到这一行：
+ 
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+改为： 
+GRUB_CMDLINE_LINUX_DEFAULT="text "
+
+保存后 sudo update-grub 即可。
+
+重启
+sudo reboot
+
+http://blog.csdn.net/dlutxie/article/details/8633721
+
+1）在ubuntu10.04版本以下的系统中：
+sudo vim /etc/default/grub
+        找到这一行：GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+        改为：GRUB_CMDLINE_LINUX_DEFAULT="text "或者"quiet splash text"
+        保存后sudo update-grub 重启即可。
+
+quiet  的意思是内核启动时候简化提示信息 
+splash 的意思是启动的时候使用图形化的进度条代替init的字符输出过程
+
+2）在ubuntu10.04以上版本中：
+方法1：
+        Ubuntu安装后默认的run level为2 也就是默认为图形界面启动
+ 
+       Ubuntu之所以能直接启动到图形界面，是由于运行gdm所致。所以，只要把gdm的启动脚本禁用就可以了，方法就是把文件名的第一个字母S改成K：
+       cd /etc/rc2.d
+        sudo mv S30gdm K30gdm
+note：此方法不适用于11.10
+ 
+方法2：
+       ubuntu兼容 inittab ，所以新建一个/etc/inittab文件
+       输入：
+         id:3:initdefault:
+         进入到/etc/rc3.d/中，看看gdm的启动脚本文件名：
+         ls -l *gdm
+         如果是以S打头的，把文件名改成以K打头

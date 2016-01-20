@@ -1,0 +1,24 @@
+https://about.gitlab.com/downloads/#ubuntu1404
+
+2. Add the GitLab package server and install the package
+
+curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+sudo apt-get install gitlab-ce
+
+https://packages.gitlab.com/gitlab/gitlab-ce/install 完整脚本地址
+If you are not comfortable installing the repository through a piped script, you can find the entire script here.
+Alternatively you can select and download the package manually and install using
+https://packages.gitlab.com/gitlab/gitlab-ce - 所有安装包
+
+curl -LJO https://packages.gitlab.com/gitlab/gitlab-ce/packages/ubuntu/trusty/gitlab-ce-XXX.deb/download
+dpkg -i gitlab-ce-XXX.deb
+
+-------------------------------
+安装失败：
+-------------------------------
+
+wx@ubuntu-nc10:~$ sudo apt-get install gitlab-ce
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package gitlab-ce

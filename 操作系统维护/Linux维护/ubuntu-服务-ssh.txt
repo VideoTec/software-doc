@@ -1,0 +1,27 @@
+ssh -p 18683 wx@192.168.1.14
+
+http://www.cnblogs.com/nodot/archive/2011/06/10/2077595.html
+
+确认sshserver是否启动了：
+ps -e |grep ssh
+如果看到sshd那说明ssh-server已经启动了。
+
+如果没有则可以这样启动：
+sudo /etc/init.d/ssh start 
+或者 
+service ssh start
+
+ssh-server配置文件位于/etc/ssh/sshd_config，
+在这里可以定义SSH的服务端口，默认端口是22，
+你可以自己定义成其他端口号，如222。
+
+重启SSH服务：
+sudo /etc/init.d/ssh stop
+sudo /etc/init.d/ssh start
+
+安装openssh-server
+sudo apt-get install openssh-server
+
+式登陆SSH：
+ssh username@192.168.1.112 
+username为192.168.1.112 机器上的用户，需要输入密码。

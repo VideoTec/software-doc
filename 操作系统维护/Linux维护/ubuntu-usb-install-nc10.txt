@@ -1,0 +1,58 @@
+nc10 启动进入 BIOS ： F2
+
+一些重要步骤：
+
+1）Erase disk and install ubuntu
+   默认设置的分区：
+   partition #1 of SCSI1(0,0,0) as ext4
+   partition #5 of SCSI1(0,0,0) as swap
+   
+   这个磁盘叫做： (sda)
+
+2) 设置用户名，机器名，及密码
+   Your Name: wangxiang
+   Your Computer Name: ubuntu-nc10
+   Pick a username: wx
+   psw: y
+   
+   选中：
+   require psw to login and encrypt my home folder
+   
+3) 开始安装复制文件，完成后提示
+   restart now 
+   这个时候，可以拔掉 u 盘吗？ 可以拔掉（而且应该拔掉）
+
+安装完成后重启，设置
+
+1） Record your encryption passphrase : 
+c7dfe97d09d3ca7e1cd2aad47743d0c1
+http://news.softpedia.com/news/How-to-Encrypt-Ubuntu-Home-Folder-After-Installation-290037.shtml
+The following tutorial will teach Ubuntu users 
+how to encrypt their home folder after installation, for enhanced security.
+
+Step 3 – Setting up your passphrase and completing the encryption process
+
+Now hit the CTRL+ALT+F7 key combination to return to the login screen. 
+Log in with your normal user and wait for the encryption passphrase information window to appear. 
+Click the "Run this action now" to record your passphrase, 
+in case you will need to recover your files at a later time. 
+Write your passphrase in your head or somewhere safe!
+
+That's it! You can now safely reboot your machine and log back in into your newly encrypted Ubuntu session.
+
+http://askubuntu.com/questions/219507/encrypted-home-with-ecryptfs-how-to-store-the-key-file-if-i-missed-it-on-first
+I happened to get the Message again now, after an update:
+
+Record your encryption passphrase
+
+To encrypt your home directory or "Private" folder, a strong passphrase has been 
+>automatically generated. Usually your directory is unlocked with your user password, but 
+>if you ever need to manually recover this directory, you will need this passphrase. 
+>Please print or write it down and store it in a safe location. If you click "Run this action now", 
+enter your login password at the "Passphrase" prompt
+
+and you can display your randomly generated passphrase. 
+Otherwise, you will need to run "ecryptfs-unwrap-passphrase" from the command line to 
+>retrieve and record your generated passphrase.
+
+So ecryptfs-unwrap-passphrase is the answer
