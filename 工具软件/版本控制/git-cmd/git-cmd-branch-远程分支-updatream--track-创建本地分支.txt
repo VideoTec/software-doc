@@ -1,0 +1,8 @@
+
+$ git branch --track idea133 origin/idea133
+Branch idea133 set up to track remote branch idea133 from origin.
+
+
+$ git branch -vv
+  idea133 cd29be4 [origin/idea133] am fa7dd751: am 59517317: Merge "Add logic to dynamic dismiss keyguard." into klp-dev
+* master  86a8382 [origin/master] Merge "Fix InCallUI crash when post char dialog is shown"
