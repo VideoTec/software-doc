@@ -1,0 +1,27 @@
+https://en.wikipedia.org/wiki/Windows_Task_Scheduler
+Windows Task Scheduler
+
+Task Scheduler is a component of Microsoft Windows 
+that provides the ability 
+to schedule the launch of programs or scripts 
+at pre-defined times or after specified time intervals: 
+job scheduling (task scheduling). 
+It was first introduced in the Microsoft Plus! for Windows 95 as System Agent[1] 
+but was renamed to Task Scheduler in Windows 98. 
+The Windows Event Log service must be running 
+before the Task Scheduler starts up.
+
+This service should not be confused with the scheduler 
+that allocates CPU resources to processes already in memory.
+
+打开方法：
+控制面板\系统和安全\管理工具\任务计划程序
+
+http://jingyan.baidu.com/article/e5c39bf598958039d6603361.html
+
+Task Scheduler服务，操作系统定义为：
+使用户能在此计算机上配置和制定自动任务的日程。
+如果此服务被终止，这些任务将无法在日程时间里运行。
+如果此服务被禁用，任何依赖它的服务将无法启动。
+一般而言，这个服务不要禁止，即便是手动禁止了，
+也会因为某些服务调用它而自动启动

@@ -1,0 +1,4 @@
+http://news.mydrivers.com/1/468/468275.htm
+今天在Usenix Engima 2016安全大会上，
+Google展示了未使用HTTPS加密的《纽约时报》官网在Chrome浏览器里的样子，
+地址栏里的网址前面出现了一个红叉。

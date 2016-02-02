@@ -1,3 +1,5 @@
+下载时，使用 git --bare 更合适
+
 
 http://blog.plataformatec.com.br/2013/05/how-to-properly-mirror-a-git-repository/
 

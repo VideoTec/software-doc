@@ -1,0 +1,110 @@
+
+http://www.jb51.net/os/windows/267055.html
+Win7默认是开启磁盘碎片整理的，
+如何你装的是Ghost版的Win7，
+这一功能很有可能被取消设置了。
+
+笔记本开机闲置的时候，往往会自动进行磁盘碎片整理。
+太频繁了也不好，尤其是这高温的夏天，很容易造成硬盘温度过高。
+
+点击【开始】-【所有程序】-【附件】-【系统工具】-【磁盘碎片整理程序】，打开磁盘碎片整理程序
+点击【配置计划】，然后取消【按计划动行（推荐）】前面的勾选。
+果你想开启磁盘碎片整理计划，不取消勾选就行了，并在计划配置里面设置好相关的选项就行了
+
+https://en.wikipedia.org/wiki/Windows_Task_Scheduler
+Windows Task Scheduler
+
+Task Scheduler is a component of Microsoft Windows 
+that provides the ability 
+to schedule the launch of programs or scripts 
+at pre-defined times or after specified time intervals: 
+job scheduling (task scheduling). 
+It was first introduced in the Microsoft Plus! for Windows 95 as System Agent[1] 
+but was renamed to Task Scheduler in Windows 98. 
+The Windows Event Log service must be running 
+before the Task Scheduler starts up.
+
+This service should not be confused with the scheduler 
+that allocates CPU resources to processes already in memory.
+
+打开方法：
+控制面板\系统和安全\管理工具\任务计划程序
+控制面板\系统和安全\管理工具\计算机管理  --> 这里也可以打开计划程序
+
+http://jingyan.baidu.com/article/9f7e7ec05bc6ca6f28155437.html
+windows系统如何妙用计划任务定期清理磁盘
+
+http://zhidao.baidu.com/question/5590028.html
+
+1,你禁止了休眠，
+不过你没有禁止硬盘在空闲时间优化硬盘。
+这时他在优化硬盘。你可以禁用这项功能。
+
+2,最可能的是你打开了屏保，
+是屏保程序不断读取你的硬盘，
+金山毒霸6的那个医生拿着锤子杀虫那个屏保就是这样，
+还有一种可能就是开启了硬盘空闲时整理磁盘的计划任务，
+仔细检查一下，是不是这样。 
+
+3,不知道你的电脑配置是怎么样子的~~也许是硬盘出了什么问题~~~
+
+综合了以上各位的观点哈~~嘿嘿!!!
+
+http://xap.coolxap.com/news/wp_news_21824.html
+Windows Defender Cache Maintenance（定期维护任务）、
+Windows Defender Cleanup（定期清理任务）、
+Windows Defender Scheduled Scan（定期扫描任务）、
+Windows Defender Verification（定期验证任务）
+
+https://social.technet.microsoft.com/Forums/systemcenter/en-US/2ed18371-9d5d-4dfa-ae55-9ca9831f8afe/vista?forum=vistazhchs
+在Windows Vista里，
+添加了自动碎片整理的功能,自动在后台进行,
+有时候可能不会留意到，
+Vista中的磁盘碎片整理程序会默认持续运行，
+并在系统空闲的时候自动整理硬盘。
+该进程的优先级是相当低的，只有在系统空闲的时候才整理，
+而一旦运行其他程序，那么整理会自动暂停
+
+https://www.zhihu.com/question/33701435
+怎么找到win8空闲时占用CPU和硬盘的原因？
+
+问题已经解决，
+在任务计划中把
+1）idle mantenance、              win8
+2）RunFullMemoryDiagnostic、      win8
+3）application experience         win7 也有
+等等都禁用就好了
+
+win7开机进程太多，
+用了某优化脚本优化了系统服务，出现了许多莫名其妙的问题！
+
+http://bbs.pcbeta.com/viewthread-596565-1-1.html
+
+Application Experience 应用程序兼容性请求服务，
+禁用此服务后，导致删除.exe文件出现问题！
+
+AppInfo服务   
+使用辅助管理权限便于交互式运行！
+禁用此服务后，打不开帐号控制，
+在应用文件夹权限的时候也会出现问题，
+系统文件下的权限不能更改，syn触摸板驱动程序无法御载！
+BS那些乱发优化服务的软件，
+从来也不严格测试一下，只要暂时没问题就发出来，
+到是我们这些用过的人，系统出现莫名其妙的问题了，却不知道从哪里查！
+win7的一些系统服务请慎禁用，有的服务当时禁用了，
+一时半会儿没有问题，等你正需要某个功能的时候，却半天查不出问题急死人！
+有些服务你可能用不上如打印机服务，不代表别人不用，统统禁了，
+会给其它使用系统的人带来相当大的麻烦！
+
+http://superuser.com/questions/497500/disable-automatic-maintenance-in-windows-8
+Task Scheduler > Microsoft > Windows > Task Scheduler
+
+You can do it by task scheduler. 
+For this open the task scheduler 
+by typing task on the Modern UI under the Apps and 
+you will find the Task Scheduler at the left side click it and open. 
+Now go to following path
+
+Here you have to right click 
+on the Idle Maintenance & Regular Maintenance and 
+select the option disable, that's it!

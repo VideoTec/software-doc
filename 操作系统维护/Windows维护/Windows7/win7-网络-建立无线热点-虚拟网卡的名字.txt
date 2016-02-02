@@ -1,0 +1,16 @@
+2、netsh wlan set hostednetwork mode=allow ssid=热点名字 key=热点密码 
+//mode=allow启用虚拟WiFi网卡；mode=disallow可以直接禁用虚拟WiFi网卡。
+
+这里这个，虚拟网卡的名字是： wifi
+怎么 设置这个名字的？默认是 wifi ？ 默认不是 wifi
+可以修改吗？ 修改成 hotspot 可以修改
+
+注意下面的描述：
+http://wenku.baidu.com/view/3373f7d2a58da0116c174961.html?re=view
+注意：
+1）
+创建虚拟网卡后，需要把连接网络的连接，共享给虚拟网卡
+网络适配器属性 | 共享 | Internet 连接共享 | 允许其它网络用户通过此计算机的Internet连接来连接
+选择：刚创建的无线网络
+2）
+网络适配器属性 | 共享 | 设置 | 选择允许访问的协议类型
