@@ -1,0 +1,11 @@
+/bin/
+/gen/
+/.settings/*.prefs
+/out/
+
+local.properties
+*.iml
+.idea/
+.gradle/
+ASProject/build/
+ASProjectBuild/
