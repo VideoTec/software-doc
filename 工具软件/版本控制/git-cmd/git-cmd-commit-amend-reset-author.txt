@@ -1,0 +1,27 @@
+git commit --amend --reset-author
+
+没有设置全局用户名的情况下，
+会出现下面的提示：
+
+[master b658cf4] init add
+ Committer: 王翔fx <wangxiangfx@feinno.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+    
+先设置用户名和密码：
+wangxiangfx@wangxiangfx MINGW64 /e/java-code-demo (master)
+$ git config --local user.name 'wx'
+
+wangxiangfx@wangxiangfx MINGW64 /e/java-code-demo (master)
+$ git config --local user.email 'wx@gmail.com'
+
+再 git commit --amend --reset-author 修改提交的用户名和邮箱

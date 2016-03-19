@@ -1,0 +1,5 @@
+方法一：
+vim .gitignore
+
+方法二：
+touch /path/to/file for an empty file
