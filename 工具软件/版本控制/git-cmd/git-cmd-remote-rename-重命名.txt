@@ -1,0 +1,6 @@
+http://git-scm.com/book/ch2-5.html
+
+$ git remote rename pb paul
+$ git remote
+origin
+paul

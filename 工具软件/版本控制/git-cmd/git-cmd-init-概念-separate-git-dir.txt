@@ -1,0 +1,7 @@
+--separate-git-dir=<git dir>
+
+Instead of initializing the repository as a directory to either $GIT_DIR or ./.git/, 
+create a text file there containing the path to the actual repository. 
+This file acts as filesystem-agnostic Git symbolic link to the repository.
+
+If this is reinitialization, the repository will be moved to the specified path

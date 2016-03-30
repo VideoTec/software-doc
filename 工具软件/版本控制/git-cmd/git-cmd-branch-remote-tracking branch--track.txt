@@ -1,0 +1,17 @@
+git branch --track l-preview origin/l-preview
+
+会创建一个本地分支 l-preview
+并且 l-preview 的 upstream 是 origin/l-preview
+
+http://gogojimmy.net/2012/02/29/git-scenario/
+
+git branch --track branch名稱 遠端branch 
+
+建立一個 tracking 遠端 branch 的 branch，
+這樣以後 push/pull都會直接對應到該遠端的branch。
+
+-t
+--track
+When creating a new branch, set up branch.<name>.remote and branch.<name>.merge configuration entries to mark the start-point branch as "upstream" from the new branch. This configuration will tell git to show the relationship between the two branches in git status and git branch -v. Furthermore, it directs git pull without arguments to pull from the upstream when the new branch is checked out.
+
+This behavior is the default when the start point is a remote-tracking branch. Set the branch.autoSetupMerge configuration variable to false if you want git checkout and git branch to always behave as if --no-track were given. Set it to always if you want this behavior when the start-point is either a local or remote-tracking branch.

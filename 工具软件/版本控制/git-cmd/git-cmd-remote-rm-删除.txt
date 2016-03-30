@@ -1,0 +1,5 @@
+http://git-scm.com/book/ch2-5.html
+
+$ git remote rm paul
+$ git remote
+origin

@@ -1,0 +1,9 @@
+使用 shell 脚本来实现
+
+1. 写个 bash 文件
+2. 在 .bash_profile 中写个方法
+
+#!/bin/bash
+for b_name in `git branch -a | grep remotes | grep -v HEAD | grep -v master`; do
+    git branch --track ${b_name##*/} $b_name
+done
