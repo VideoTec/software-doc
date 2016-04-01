@@ -1,0 +1,10 @@
+git-tag - Create, list, delete or verify a tag object signed with GPG
+
+SYNOPSIS
+
+git tag [-a | -s | -u <keyid>] [-f] [-m <msg> | -F <file>]
+	<tagname> [<commit> | <object>]
+git tag -d <tagname>…​
+git tag [-n[<num>]] -l [--contains <commit>] [--points-at <object>]
+	[--column[=<options>] | --no-column] [--create-reflog] [<pattern>…​]
+git tag -v <tagname>…​

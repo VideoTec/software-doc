@@ -1,0 +1,18 @@
+https://www.mediawiki.org/wiki/Gerrit/Tutorial
+
+This tutorial helps you with:
+
+step-by-step instructions and screenshots for getting Gerrit access
+setting up Git on your machine
+configuring Git
+installing git-review
+submitting a patch
+understanding the MediaWiki code review process
+
+https://www.mediawiki.org/wiki/Gerrit/TortoiseGit_tutorial
+
+http://renxifeng.is-programmer.com/posts/45306.html
+apache + gerrit + gitweb on windows 的配置
+
+http://scn.sap.com/docs/DOC-42271
+Install Gerrit in Tomcat under Windows

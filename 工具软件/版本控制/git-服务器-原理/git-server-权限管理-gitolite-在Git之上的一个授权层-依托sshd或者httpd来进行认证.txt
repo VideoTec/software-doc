@@ -1,0 +1,19 @@
+https://git-scm.com/book/zh/v1/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-Gitolite
+
+本节作为Gitolite的一个快速指南，指导基本的安装和设置。
+不能完全替代随Gitolite自带的大量文档。
+而且可能会随时改变本节内容，
+因此你也许想看看最新的版本。
+
+Gitolite是在Git之上的一个授权层，
+依托sshd或者httpd来进行认证。
+（概括：认证是确定用户是谁，授权是决定该用户是否被允许做他想做的事情）。
+
+Gitolite允许你定义访问许可而不只作用于仓库，
+而同样于仓库中的每个branch和tag name。
+你可以定义确切的人(或一组人)只能push特定的"refs"(或者branches或者tags)而不是其他人。
+
+https://en.wikipedia.org/wiki/Git_(software)
+Gitolite is an access control layer on top of Git, 
+providing fine access control to Git repositories. 
+It relies on other software to remotely view the repositories on the server.

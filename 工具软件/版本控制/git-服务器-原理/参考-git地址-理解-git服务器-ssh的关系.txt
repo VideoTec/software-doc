@@ -1,0 +1,3 @@
+git@git.feinno.com:ngcc-v2/v6sdk.git
+
+正常的 ssh 地址：

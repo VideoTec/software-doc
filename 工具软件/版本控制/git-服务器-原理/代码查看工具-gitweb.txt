@@ -1,0 +1,39 @@
+https://git-scm.com/docs/git-instaweb
+
+git-instaweb - Instantly browse your working repository in gitweb
+
+git instaweb [--local] [--httpd=<httpd>] [--port=<port>]
+               [--browser=<browser>]
+git instaweb [--start] [--stop] [--restart]
+
+A simple script to set up gitweb and a web server for browsing the local repository.
+
+https://git-scm.com/docs/gitweb
+
+gitweb - Git web interface (web frontend to Git repositories)
+
+Gitweb provides a web interface to Git repositories. 
+Its features include:
+
+1 Viewing multiple Git repositories with common root.
+
+2 Browsing every revision of the repository.
+
+3 Viewing the contents of files in the repository at any revision.
+
+4 Viewing the revision log of branches, 
+history of files and directories, 
+see what was changed when, by who.
+
+5 Viewing the blame/annotation details of any file (if enabled).
+
+6 Generating RSS and Atom feeds of commits, for any branch. 
+The feeds are auto-discoverable in modern web browsers.
+
+7 Viewing everything that was changed in a revision, 
+and step through revisions one at a time, 
+viewing the history of the repository.
+
+8 Finding commits which commit messages matches given search term.
+
+See http://git.kernel.org/?p=git/git.git;a=tree;f=gitweb or http://repo.or.cz/w/git.git/tree/HEAD:/gitweb/ for gitweb source code, browsed using gitweb itself.

@@ -1,0 +1,36 @@
+https://en.wikipedia.org/wiki/Git_(software)
+
+Git daemon, instaweb
+Git daemon allows users to share their own repository to colleagues quickly. 
+Git instaweb allows users to provide web view to the repository.
+As of 2014-04 instaweb does not work on Windows. 
+Both can be seen in the line of Mercurial's "hg serve"
+
+https://git-scm.com/book/zh/v1/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-Git-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B
+
+对于提供公共的，非授权的只读访问，
+我们可以抛弃 HTTP 协议，
+改用 Git 自己的协议，这主要是出于性能和速度的考虑。
+Git 协议远比 HTTP 协议高效，
+因而访问速度也快，所以它能节省很多用户的时间。
+
+重申一下，这一点只适用于非授权的只读访问。
+如果建在防火墙之外的服务器上，
+那么它所提供的服务应该只是那些公开的只读项目。
+如果是在防火墙之内的服务器上，
+可用于支撑大量参与人员或自动系统（用于持续集成或编译的主机）只读访问的项目，
+这样可以省去逐一配置 SSH 公钥的麻烦。
+
+但不管哪种情形，Git 协议的配置设定都很简单。
+基本上，只要以守护进程的形式运行该命令即可：
+
+git daemon --reuseaddr --base-path=/opt/git/ /opt/git/
+
+这里的 
+
+--reuseaddr 选项表示在重启服务前，
+不等之前的连接超时就立即重启。而 
+
+--base-path 选项则允许克隆项目时不必给出完整路径。
+最后面的路径告诉 Git 守护进程允许开放给用户访问的仓库目录。
+假如有防火墙，则需要为该主机的 9418 端口设置为允许通信。

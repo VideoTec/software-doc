@@ -1,0 +1,35 @@
+http://blog.csdn.net/zwhfyy/article/details/8634561
+
+Git现在如日中天，在企业中最好用的服务器是Gerrit。
+它不仅提供了极强的认证和权限控制，
+而且它的代码审阅功能也极其出色。
+
+https://en.wikipedia.org/wiki/Git_(software)
+Gerrit
+Gerrit provides two out of three functionalities:
+access control, and 
+managing repositories. 
+It uses jGit. 
+To view repositories 
+it is combined e.g. with Gitiles or GitBlit.
+
+https://en.wikipedia.org/wiki/Gerrit_(software)
+Gerrit，一种开放源代码的代码审查软件，使用网页界面。
+利用网页浏览器，
+同一个团队的软件程序员，
+可以相互审阅彼此修改后的代码，
+决定是否能够提交，退回或是继续修改。
+它使用版本控制系统，Git作为底层。
+
+它分支自Rietveld，
+作者为Google公司的Shawn Pearce，
+原先是为了管理Android项目而产生。
+这个软件的名称，来自于荷兰设计师赫里特·里特费尔德（Gerrit Rietveld）。
+
+因为对访问控制表（ACL）相关的修正，
+没有被集成进Rietveld，
+之后Gerrit就由Rietveld分支出来，形成独立软件项目。
+
+最早它是由Python写成，
+在第二版后，改成用Java与SQL。
+使用Google Web Toolkit来产生前端的JavaScript。

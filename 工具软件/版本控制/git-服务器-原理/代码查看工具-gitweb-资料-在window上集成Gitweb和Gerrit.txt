@@ -1,0 +1,10 @@
+http://blog.csdn.net/zwhfyy/article/details/8634561
+
+在window上集成Gitweb和Gerrit
+
+Gitweb实际上是用perl写的CGI脚本，一般都是在Apache中使用。
+在Gerrit中，它也可以直接被调用转换成HTML显示。
+
+但是如果你用“Git for Windows”(mingsys)来安装Git环境的话有两个问题：
+1）它的安装中没有CGI模块，因此不能正确启动Gitweb脚本。
+2）在windows上，Gerrit要调用能执行的Windows命令，gitweb.cgi不能直接被执行。

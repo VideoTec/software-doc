@@ -1,0 +1,9 @@
+https://zh.wikipedia.org/wiki/Git
+
+库结构
+hooks：存储钩子的文件夹
+logs：存储日志的文件夹 ------------- git log （本地提交的日志）
+refs：存储指向各个分支的指针（SHA-1标识）文件
+objects：存放git对象
+config：存放各种设置文档
+HEAD：指向当前所在分支的指针文件路径，一般指向refs下的某文件

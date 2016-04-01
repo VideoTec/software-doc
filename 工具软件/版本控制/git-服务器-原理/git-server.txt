@@ -1,0 +1,14 @@
+https://en.wikipedia.org/wiki/Git_(software)
+Git servers typically listen on TCP port 9418.
+
+Remote file store and shell access
+A Git repository can be cloned to a shared file system, 
+and accessed by other persons. 
+It can also be accessed via remote shell 
+just by having the Git software installed and allowing a user to log in.
+
+Git daemon, instaweb
+Git daemon allows users to share their own repository to colleagues quickly. 
+Git instaweb allows users to provide web view to the repository. 
+As of 2014-04 instaweb does not work on Windows. 
+Both can be seen in the line of Mercurial's "hg serve".
