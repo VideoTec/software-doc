@@ -1,0 +1,26 @@
+http://stackoverflow.com/questions/10523849/changing-capitalization-of-filenames-in-git
+
+Starting git 2.0.1 (June 25th, 2014), a git mv will just work on case insensitive OS.
+
+See commit baa37bf by David Turner (dturner-tw)
+
+mv: allow renaming to fix case on case insensitive filesystems
+"git mv hello.txt Hello.txt" on a case insensitive filesystem always triggers "destination already exists" error, because these two names refer to the same path from the filesystem's point of view, and requires the user to give "--force" when correcting the case of the path recorded in the index and in the next commit.
+
+Detect this case and allow it without requiring "--force".
+git mv hello.txt Hello.txt just works (no --force required anymore).
+
+例子：
+
+wangxiangfx@wangxiangfx MINGW64 /e/testgit2 (master)
+$ git mv Lowcase.txt lowcase.txt
+
+wangxiangfx@wangxiangfx MINGW64 /e/testgit2 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        renamed:    Lowcase.txt -> lowcase.txt
