@@ -1,0 +1,9 @@
+19:19 2016/4/18
+不知道是那个程序占用的那个文件，只好重启电脑解决的。
+
+http://stackoverflow.com/questions/10181057/unlink-of-file-failed
+
+That usually means a process is still using that specific file (still has an handle on it)
+(on Windows, ProcessExplorer is good at tracking that kind of process)
+
+Try closing your other programs, and try again your git pull.

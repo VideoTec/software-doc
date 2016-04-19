@@ -1,3 +1,4 @@
+http://matrixzk.github.io/blog/20141104/git-flow-model/
 http://www.15yan.com/story/6yueHxcgD9Z/
 
 主要分支：
