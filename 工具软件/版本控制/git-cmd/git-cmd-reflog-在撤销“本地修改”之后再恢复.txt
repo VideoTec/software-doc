@@ -1,0 +1,9 @@
+http://blog.jobbole.com/87700/
+
+在撤销“本地修改”之后再恢复
+
+场景: 你提交了几个 commit，然后用 git reset --hard 撤销了这些修改（见上一段），接着你又意识到：你希望还原这些修改！
+
+方法: git reflog 和 git reset 或 git checkout
+
+原理: git reflog 对于恢复项目历史是一个超棒的资源。你可以恢复几乎 任何东西 — 任何你 commit 过的东西 — 只要通过 reflog。

@@ -14,3 +14,9 @@ windows 下: TortoiseSVN软件,右键出TortoiseSVN菜单Settings->Saved Data->A
 
              win7: C:\Users\hjj\AppData\Roaming\Subversion\auth
 linux 下： 删除 ~/.subversion/auth （命令：rm -rf ~/.subversion/auth）
+
+11:45 2016/5/25
+登录 svn.feinno.com 时，checkout，输入一次密码，再也不提示输入密码。
+错误的操作，把所能保存的 认证信息全部删除，也不行。
+后来发现，Repo-browser 打开时会提示输入用户名和密码。
+          从浏览器中打开地址，需要输入用户名和密码。
