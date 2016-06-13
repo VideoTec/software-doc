@@ -1,0 +1,14 @@
+https://support.google.com/chrome/answer/2390059?hl=en
+
+Sign out of Chrome remotely
+
+You can remove access to Google services on your stolen device 
+through the My Account page. 
+This should stop the stolen machine from having access to everything 
+that's connected to your Google account, including Chrome. 
+However, your locally saved Chrome profile data will still be available, 
+so remove your browsing data before signing out. 
+
+从远程登出设备：
+https://myaccount.google.com/security#activity
+https://myaccount.google.com/security

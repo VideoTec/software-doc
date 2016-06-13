@@ -1,0 +1,22 @@
+https://www.google.com/settings/chrome/sync
+可能通过 reset-sync data 来实现这个需求。
+
+Having trouble with sync or your passphrase?
+Reset sync to clear your data from the server and remove your passphrase. 
+This will not clear data from your devices.
+Sign back in to Chrome to start syncing.
+
+重置同步数据时，会登出浏览器。
+再次登录，会把本地的数据同步到服务器
+
+http://superuser.com/questions/456809/how-do-i-remove-a-device-from-the-other-devices-list-on-the-new-tab-page
+
+Google hasn't fixed this issue yet, but there is one way around it.
+
+So far, this is the only way to remove a device from the “Other Devices” 
+list on the new tab page. You'll have to use Google Chrome for Android to achieve your goal:
+
+Launch Google Chrome on an Android device.
+Go to "Other Devices".
+Long press on the device you wish to remove.
+Click the "Remove" button.

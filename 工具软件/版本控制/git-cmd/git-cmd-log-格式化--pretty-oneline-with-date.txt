@@ -1,0 +1,10 @@
+http://stackoverflow.com/questions/1441010/the-shortest-possible-output-from-git-log-containing-author-and-date
+
+git log --pretty=format:"%h%x09%an%x09%ad%x09%s"
+
+%x00: print a byte from a hex code
+
+%h --     缩短的commit hash
+%x09%an   作者名字
+%x09%ad   日期 (--date= 制定的格式)
+%x09%s    commit信息标题

@@ -1,0 +1,8 @@
+--author=<pattern>
+--committer=<pattern>
+
+Limit the commits output to ones with author/committer header lines 
+that match the specified pattern (regular expression). 
+With more than one --author=<pattern>, 
+commits whose author matches any of the given patterns are chosen 
+(similarly for multiple --committer=<pattern>).
