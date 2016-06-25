@@ -1,2 +1,4 @@
-http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/
+﻿http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/
 从 windows 制作 unbuntu 安装盘 - USB
+
+must be  FAT 分区
