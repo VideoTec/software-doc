@@ -1,0 +1,18 @@
+---------------------------------------
+使用 shell 脚本挂载共享文件
+---------------------------------------
+
+http://hints.macworld.com/article.php?story=20020610225855377
+
+例子：
+
+yanlina$ mount -t smbfs //release:rcsrelease@10.10.206.150/Release ~/Release
+mount_smbfs: mount error: /Users/yanlina/Release: File exists
+【已经用Finder打开了，再运行脚本会出错】
+
+yanlina$ mount -t smbfs //release:rcsrelease@10.10.206.150/Release ~/Release2
+mount: realpath /Users/yanlina/Release2: No such file or directory
+【没有目录造成的错误】
+
+https://discussions.apple.com/thread/2757089?tstart=0
+mount -t smbfs //user:password@server/sharename /local/mount/point

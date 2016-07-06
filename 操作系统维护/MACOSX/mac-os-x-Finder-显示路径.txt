@@ -1,0 +1,21 @@
+
+--------------------------------
+复制路径：
+--------------------------------
+http://osxdaily.com/2015/11/05/copy-file-path-name-text-mac-os-x-finder/
+1. Right-click
+2. While in the right-click menu, hold down the OPTION key 
+to reveal the “Copy (item name) as Pathname” option, it replaces the standard Copy option
+
+注： 苹果键盘的 option 对应 
+     IBM-PC键盘的 ctrl + alt
+
+--------------------------------
+显示路径：
+--------------------------------
+https://www.tekrevue.com/tip/show-path-finder-title-bar/
+
+View > Show Path Bar in the OS X menu bar
+
+可显示在顶部，需要配置文件
+Show the Path in the Finder Title Bar

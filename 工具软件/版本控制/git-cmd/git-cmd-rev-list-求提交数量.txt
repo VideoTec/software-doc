@@ -1,0 +1,13 @@
+http://www.race604.com/android-auto-version/
+
+`git rev-list HEAD --first-parent --count`，
+在多分支发布情况下VERSION CODE会有重复问题
+
+原文直接使用了 6 tips to speed up your Gradle build 中的命令 
+git rev-list HEAD --first-parent --count，
+也就是带了 --first-parent 选项。
+发现使用此选项并不合理，
+比如 这篇文章 中提到的，first-parent 可能会出现不稳定的情况，
+这就可能导致获得的 commit 数量并不保证是递增的。
+
+git rev-list HEAD --count

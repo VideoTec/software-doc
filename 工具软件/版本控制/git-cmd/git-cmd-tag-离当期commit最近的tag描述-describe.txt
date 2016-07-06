@@ -1,0 +1,11 @@
+http://www.race604.com/android-auto-version/
+git 早就提供了命令 git describe，它的功能就是获取从当期 commit 到距离它最近的 tag 的描述。
+默认都是 annoted tag，
+如果要指所有的类型的 tag 的话，就加 --tags 参数
+
+git describe 的结果是：
+v1.1-1-gXXXXXX，
+其中 1 表示当前代码距离最近的 tag v1.1 一个 commit，
+最新的 commit 的 id 是 XXXXXX
+
+【如果，在tag所在提交，会不会有后缀。】

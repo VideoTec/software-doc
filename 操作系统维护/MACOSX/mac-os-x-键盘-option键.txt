@@ -1,0 +1,15 @@
+Option键是苹果标准键盘中的按键，
+一般位于Control键与Command键之间。
+现代的苹果台式机和笔记本的键盘上有两个Option键，分别位于空格键两侧。
+
+苹果通常使用 ⌥（U+2325）来代表Option键。[1][2]
+
+从20世纪90年代开始，
+苹果电脑的Option键上也有“Alt”字样[3]，
+但实现的功能与类Unix系统或Windows系统的Alt键不同。
+特别要注意它不是用来访问菜单或快捷键，
+而是用作其他命令代码的修饰键，也有助于访问附加符号。
+从这个角度说它类似IBM PC兼容机键盘上的Alt Gr键
+
+http://blog.csdn.net/devday/article/details/7236146
+option   对应 ctrl + alt

@@ -1,0 +1,7 @@
+参考：
+E:\doc\linux\Linux平台\Linux-ShellScript\资料-macosx-Shell Scripting Primer-doc.txt
+
+示例：
+#!/bin/sh
+cd ~/jenkins
+java -jar jenkins.war

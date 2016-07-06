@@ -1,0 +1,26 @@
+bogon:androidrongflysip ganshoucong$ git log
+dyld: lazy symbol binding failed: Symbol not found: ___strlcpy_chk
+  Referenced from: /usr/local/bin/git
+  Expected in: /usr/lib/libSystem.B.dylib
+
+dyld: Symbol not found: ___strlcpy_chk
+  Referenced from: /usr/local/bin/git
+  Expected in: /usr/lib/libSystem.B.dylib
+
+Trace/BPT trap: 5
+
+http://stackoverflow.com/questions/22920497/git-mountain-lion-dyld-lazy-symbol-binding-failed-symbol-not-found-str
+
+git-2.2.1-intel-universal-snow-leopard
+git-2.3.5-intel-universal-snow-leopard
+
+I came up with this issue because 
+I installed git-2.2.1-intel-universal-mavericks.dmg, 
+actually mavericks(10.9.x) is latter version than mountain lion(10.8.x), 
+and snow-leopard is earlier than mountain lion, 
+after I installed  git-2.2.1-intel-universal-snow-leopard, this issue had gone.
+
+A bit of an old topic, 
+but had the same issue with downloading the newest version of git 
+and then trying to use autocomplete. 
+Reinstalling using git-2.3.5-intel-universal-snow-leopard from SourceForge fixed the issue! 

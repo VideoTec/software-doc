@@ -2,3 +2,8 @@ If you're having problems downloading Chrome on your Windows computer,
 you can try the alternate links below to download and install Chrome.
 
 https://support.google.com/chrome/answer/126299?hl=en
+
+https://www.tekrevue.com/tip/download-chrome-offline-installer/
+https://www.google.com/chrome/browser/desktop/index.html?system=true&standalone=1&platform=win64
+https://www.google.com/chrome/browser/desktop/index.html?system=true&standalone=1&platform=linux
+https://www.google.com/chrome/browser/desktop/index.html?system=true&standalone=1&platform=mac

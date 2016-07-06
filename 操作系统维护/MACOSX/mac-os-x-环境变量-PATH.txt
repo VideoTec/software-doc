@@ -1,0 +1,35 @@
+http://www.flakor.cn/2014-09-14-714.html
+
+mac 一般使用bash作为默认shell
+
+Mac系统的环境变量，加载顺序为：
+/etc/profile 
+/etc/paths      一行一个路径
+
+~/.bash_profile  export PATH=/opt/local/bin:/opt/local/sbin:$PATH 
+~/.bash_login    有可能会被忽略不读
+~/.profile       有可能会被忽略不读
+
+~/.bashrc        是bash shell打开的时候载入的
+
+当然
+/etc/profile和
+/etc/paths是系统级别的，
+系统启动就会加载，后面几个是当前用户级的环境变量。
+
+后面3个按照从前往后的顺序读取，
+如果~/.bash_profile文件存在，则后面的几个文件就会被忽略不读了，
+如果~/.bash_profile文件不存在，才会以此类推读取后面的文件。
+~/.bashrc没有上述规则，它是bash shell打开的时候载入的
+
+-----------------------------------------------
+除此之外，还有个设置path路径的方法
+-----------------------------------------------
+sudo touch /etc/paths.d/mysql
+sudo vim /etc/paths.d/mysql
+编辑该文件 /usr/local/mysql/bin，键入路径并保存
+（关闭该 Terminal 窗口并重新打开一个，就能使用 mysql 命令了）
+
+http://zodiacg.net/2015/04/set-environment-variables-on-yosemite/
+在Mac OS X 10.10 Yosemite下可以使用3个文件配合2条命令来修改环境变量。
+包含有环境变量定义的主要文件是/etc/environment

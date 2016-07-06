@@ -1,0 +1,46 @@
+http://www.tanhao.me/talk/1287.html/
+
+---------------------------------------------------------------------------
+1. 在系统偏好设置 | 用户与群组 | 登录项 【mac osx ei capitan 10.11.3】
+---------------------------------------------------------------------------
+可以删除、添加、开启和关闭;
+
+---------------------------------------------------------------------------
+2. StartupItems，
+---------------------------------------------------------------------------
+顾名思义，就是在系统启动过程中运行的程序，
+它们可以是运行完就立即终止的程序（比如，开机清空废纸篓），
+也可以是一直持续在系统运行周期的后台进程
+
+StartupItems一般存放在以下两个路径下：
+1）/System/Library/StartupItems  与系统相关的StartupItem
+2）/Library/StartupItems         默认情况下是不存在的，需要自己手动创建
+
+https://www.baidufe.com/item/30852e46371406e29198.html
+通过清理StartupItems的方式搞定，
+StartupItems的目录：/Library/StartupItems
+一些系统级别的，可以到这里去清理：/System/Library/StartupItems
+
+---------------------------------------------------------------------------
+3. Launchd Daemon
+---------------------------------------------------------------------------
+launchd是Mac OS下用于初始化系统环境的关键进程，
+它是内核装载成功之后在OS环境下启动的第一个进程。
+
+采用这种方式来配置自启动项很简单，
+只需要一个plist文件，
+通常（同时也是系统推荐）是将plist放在~/Library/LaunchAgents路径下。
+
+---------------------------------------------------------------------------
+4. /Library/LaunchDaemons/
+---------------------------------------------------------------------------
+https://www.baidufe.com/item/30852e46371406e29198.html
+http://hushicai.com/2014/02/18/mac-os-x-xia-shan-chu-kai-ji-zi-qi-dong-ren-wu.html
+mac os x系统中，自启动任务一般都会在以下某个目录生成一个或多个plist文件：
+/Library/LaunchDaemons/
+/Library/LaunchAgents/
+~/Library/LaunchAgents/
+
+/Library/LaunchDaemons/ 
+例子，安装 jenkins-1.651.3.pkg 后，会创建下面的启动项
+/Library/LaunchDaemons/org.jenkins-ci.plist

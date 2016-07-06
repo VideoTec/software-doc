@@ -1,0 +1,67 @@
+OS X Yosemite（10.10版本）
+http://zodiacg.net/2015/04/set-environment-variables-on-yosemite/
+/etc/launchd.conf文件完全失效了。该文件在Yosemite下完全被抛弃了，不会被读取
+为用户程序（GUI程序）加载环境变量的服务定义文件为
+/Library/LaunchAgents/environment.user.plist
+
+osx10.8.5 为GUI程序设置环境变量的方法（PATH也有效）
+修改 /etc/launchd.conf 文件，添加下面的代码：
+setenv PATH /usr/bin:/bin:/usr/sbin:/sbin:/Users/leoliu/.nvm/v0.8.22/bin
+
+注意一：这个文件 /etc/launchd.conf 默认并不存在，可以自己建立
+注意二：代码里不能用 环境变量的引用 如： $PATH 等等，需要全部输入
+注意三：环境变量的内容中也不允许出现空格
+注意四：PATH 变量只有重启系统才生效
+
+http://zodiacg.net/2013/05/set-path-under-mac/
+
+Mac是一个类Unix环境（BSD based），
+但是终究是有所不同……尤其是在环境变量的设置这一点上，
+其操作比起Windows甚至都略有不如。
+
+在Linux下如果想设置环境变量，
+只要在用户主目录下的profile文件或者bash_profile里设置响应的export语句即可。
+而在Mac下，其GUI程序和终端程序使用了两套不同的环境变量设置。
+修改profile文件仅仅在使用终端的时候生效，
+如果想要GUI程序也能继承相应的环境变量设置，
+则需要从终端启动应用程序才可以。
+想要为从LauncherPad或Finder中启动的GUI程序设置环境变量的话，则需要额外的步骤。
+
+在网络上能找到的方法也很多，但是随着Mac OSX版本的升级，
+很多方法在Mountain Lion下已经无效了。
+经过很多尝试和折腾之后，我总算是基本弄清楚了在Mac下设置环境变量的方法。下
+面将分两个部分进行说明：
+普通环境变量的设置方法，和PATH的设置方法。
+
+或许是出于安全方面的考虑，PATH的设置方法比普通的环境变量的设置复杂的多。
+有几个方法是传的比较广的，但是我自己尝试均无效。
+比如/etc/paths.d/目录下建立文件的方法，对GUI程序也是无效的，仅在终端下生效。
+上面提到的 launchctl 命令临时设置的方法，对其他环境变量有效，但是对PATH无效。
+我在Sublime Text 2里进行尝试，
+能够获取到我随意设置的测试用环境变量，
+但是PATH始终是/usr/bin:/bin:/usr/sbin:/sbin的默认设置。
+
+有效的方法只有一个，那就是上面提到的重启不失效的方法，
+直接修改 /etc/launchd.conf 文件。
+并且重启后才能生效。而能够即时设置即时生效的方法是没有的……
+
+setenv PATH /Users/leoliu/.nvm/v0.8.22/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+上面就是我安装了node和brew后的PATH设置。
+在Sublime Text 2里用Python的API测试后发现终于生效了……
+这样想要使用Sublime Text 2的Nodejs插件的一些功能就不需要手动从终端启动程序了。 
+
+在/etc/launchd.conf中添加指令设置环境变量。 
+这个文件默认并不存在，可以自己建立
+在/etc/launchd.conf中添加如下内容：
+
+setenv JAVA_VERSION 1.6
+
+需要注意的是，在launchd.conf中的命令有一些限制。
+首先是不能进行环境变量的引用。
+比如再设置JAVA_HOME环境变量的话，
+不能使用类似
+/System/Library/Frameworks/JavaVM.Framework/$JAVA_VERSION/Home
+的方式来引用之前设置的JAVA_VERSION环境变量，
+必须明确写出1.6。同时环境变量的内容中也不允许出现空格。
+

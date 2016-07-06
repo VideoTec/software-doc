@@ -1,0 +1,16 @@
+http://stackoverflow.com/questions/12165385/how-to-set-environment-variables-to-an-application-on-osx-mountain-lion/14285335#14285335
+Unfortunately, this seems to be the best option 
+for setting a global environment variable in OS X 10.8.x Mountain Lion:
+
+http://stackoverflow.com/questions/135688/setting-environment-variables-in-os-x/588442#588442
+
+Bruno is right on track. I've done extensive research and if you want to set variables that are available in all GUI apps, your only option is /etc/launchd.conf
+
+http://zodiacg.net/2013/05/set-path-under-mac/
+或许是出于安全方面的考虑，PATH的设置方法比普通的环境变量的设置复杂的多。
+有几个方法是传的比较广的，但是我自己尝试均无效。
+比如/etc/paths.d/目录下建立文件的方法，对GUI程序也是无效的，仅在终端下生效。
+上面提到的launchctl命令临时设置的方法，对其他环境变量有效，但是对PATH无效。
+我在Sublime Text 2里进行尝试，
+能够获取到我随意设置的测试用环境变量，
+但是PATH始终是/usr/bin:/bin:/usr/sbin:/sbin的默认设置。 

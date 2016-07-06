@@ -1,0 +1,76 @@
+------------------------------------------------------------
+安装 jenkins-1.651.3.pkg
+会创建下面的启动项
+/Library/LaunchDaemons/org.jenkins-ci.plist
+------------------------------------------------------------
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>StandardOutPath</key>
+    <string>/var/log/jenkins/jenkins.log</string>
+    <key>StandardErrorPath</key>
+    <string>/var/log/jenkins/jenkins.log</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>JENKINS_HOME</key>
+      <string>/Users/Shared/Jenkins/Home</string>
+    </dict>
+    <key>GroupName</key>
+    <string>daemon</string>
+    <key>KeepAlive</key>
+    <true/>
+    <key>Label</key>
+    <string>org.jenkins-ci</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/bin/bash</string>
+      <string>/Library/Application Support/Jenkins/jenkins-runner.sh</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>UserName</key>
+    <string>jenkins</string>
+    <key>SessionCreate</key>
+    <true/>
+  </dict>
+</plist>
+
+------------------------------------------------------------
+安装 jetty 后
+会创建下面的启动项
+/Library/LaunchDaemons/org.jetty-ci.plist
+------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>StandardOutPath</key>
+    <string>/var/log/jetty/jetty.log</string>
+    <key>StandardErrorPath</key>
+    <string>/var/log/jetty/jetty.log</string>
+    <!--key>EnvironmentVariables</key>
+    <dict>
+      <key>JETTY_HOME</key>
+      <string>/usr/local/jetty-9.3.6/</string>
+    </dict>
+    <key>GroupName</key>
+    <string>admin</string-->
+    <key>KeepAlive</key>
+    <true/>
+    <key>Label</key>
+    <string>org.jetty-ci</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/bin/bash</string>
+      <string>/usr/local/jetty-9.3.6/bin/jetty.sh start</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <!--key>UserName</key>
+    <string>yanlina</string>
+    <key>SessionCreate</key>
+    <true/-->
+  </dict>
+</plist>
