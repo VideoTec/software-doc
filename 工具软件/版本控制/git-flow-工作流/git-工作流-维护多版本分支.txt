@@ -1,0 +1,34 @@
+http://programmers.stackexchange.com/questions/270321/appropriate-git-workflow-for-multiple-active-releases-while-handling-hotfixes
+
+提出问题的原因：
+I suppose GitFlow was also modeled more for products 
+that maintain a single live release while developing the next.
+
+解决方法：
+I would stick with GitFlow and make a few amendments
+Don't throw away the release branches after you merge them back to develop. 
+Instead keep them around for the next minor release and possible hot fixes. 
+If you ever stop supporting a release, I suppose it's fine to delete them. 
+
+另一个解决方法：
+support   Manage your support branches.
+https://yakiloo.com/getting-started-git-flow/
+git flow support
+
+发布版本，可修复BUG，但是不应该添加新的功能
+You mentioned that you are familiar with gitflow. 
+I suggest to addopt it for your scenario. 
+You will need to create branches from your development branch to support older versions. 
+These older versions will also need to have their own release/master branches and hotfix branches. 
+You will need to periodically merge your support branches into the newer support branches and 
+the develop branch.
+
+As the development of the major versions diverges this will keep getting harder. 
+There is no silver bullet for this. 
+Sometimes it will be easier to make changes manually. 
+The cost of maintaining the older versions will increase, 
+and at some point it won't worth it anymore.
+
+It all depends an what kind of changes you are making in your older versions. 
+If only bugfixing, thats relatively easy to merge. 
+If you try adding new features, that will be hard.

@@ -1,6 +1,10 @@
 https://sandofsky.com/blog/git-workflow.html
 
-If you don’t understand the motivation behind Git’s design, you’re in for a world of hurt. With enough flags you can force Git to act the way you think it should instead of the way it wants to. But that’s like using a screwdriver like a hammer; it gets the job done, but it’s done poorly, takes longer, and damages the screwdriver.
+If you don’t understand the motivation behind Git’s design, 
+you’re in for a world of hurt. With enough flags 
+you can force Git to act the way you think it should instead of the way it wants to. 
+But that’s like using a screwdriver like a hammer; 
+it gets the job done, but it’s done poorly, takes longer, and damages the screwdriver.
 
 Consider how a common Git workflow falls apart.
 

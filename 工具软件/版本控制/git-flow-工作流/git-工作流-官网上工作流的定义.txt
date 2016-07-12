@@ -1,0 +1,5 @@
+https://git-scm.com/about/distributed
+
+Subversion-Style Workflow
+Integration Manager Workflow
+Dictator and Lieutenants Workflow
