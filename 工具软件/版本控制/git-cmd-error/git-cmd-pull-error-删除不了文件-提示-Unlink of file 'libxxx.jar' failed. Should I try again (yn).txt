@@ -10,7 +10,6 @@ Total 65800 (delta 39073), reused 65800 (delta 39073)
 Unlink of file '.git/objects/pack/old-53564d31e7e67290f48a6b950b15c88232f373c5.pack' failed. Should I try again? (y/n)
 
 重启电脑后还出问题
-使用 git gc 解决了这个问题
 
 I had this issue and solved it by the command : git gc 
 The above command remove temp and unnecessary files. (Garbage collector.)

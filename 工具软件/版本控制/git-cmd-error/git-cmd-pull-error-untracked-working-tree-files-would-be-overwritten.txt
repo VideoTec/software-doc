@@ -1,0 +1,17 @@
+2015.03.09 libav pull 时发生下面的错误提示
+
+error: The following untracked working tree files would be overwritten by merge:
+
+        libavutil/thread.h
+        tests/reference.pnm
+Please move or remove them before you can merge.
+Aborting
+
+原因不明：
+
+解决方法：
+git clean  -d  -fx ""  或以直接写成 git clean -dfx
+解释：
+-f, --force           force
+-d                    remove whole directories
+-x                    remove ignored files, too
