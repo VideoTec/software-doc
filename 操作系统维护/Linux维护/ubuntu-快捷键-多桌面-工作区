@@ -1,0 +1,11 @@
+设置 | 外观 | 行为
+
+开启工作区
+
+http://people.ubuntu.com/~happyaron/ubuntu-docs/precise-html/shell-workspaces-movewindow.html
+选择您想切换到的窗口。
+
+按 Ctrl+Alt+Shift+→ 将窗口移动到工作区切换器里右侧的工作区。
+按 Ctrl+Alt+Shift+← 将窗口移动到工作区切换器里左侧的工作区。
+按 Ctrl+Alt+Shift+↓ 将窗口移动到工作区切换器里下方的工作区。
+按 Ctrl+Alt+Shift+↑ 将窗口移动到工作区切换器里上方的工作区。
