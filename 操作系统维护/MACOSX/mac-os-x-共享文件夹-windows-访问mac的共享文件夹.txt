@@ -1,0 +1,18 @@
+用非登录用户，复制过去后，在MAC机器上的文件有权限问题
+
+http://stackoverflow.com/questions/3740152/how-to-set-chmod-for-a-folder-and-all-of-its-subfolders-and-files-in-linux-ubunt
+
+To change all the directories to 755 (-rwxr-xr-x):
+
+find /opt/lampp/htdocs -type d -exec chmod 755 {} \; 这个分号是必须写的
+
+To change all the files to 644 (-rw-r--r--):
+
+find /opt/lampp/htdocs -type f -exec chmod 644 {} \;
+
+http://www.cppblog.com/biao/archive/2011/05/21/146880.html
+
+二：Windows访问Mac(Mac设置共享文件，Windows访问)
+1. 系统设置－>共享：增加共享文件夹
+2. 点击Options...，在出现的容器里选中 using SMB共享方式  【关键是这一步】
+3. 在Windows里打开网上邻居－>查看工作组计算机，打开目标机器，输入用户名和密码即可访问(Mac的用户名和密码)

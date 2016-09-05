@@ -1,3 +1,71 @@
 conflict[英][ˈkɒnflɪkt] [美][ˈkɑ:nflɪkt]
 n.冲突；战斗；相互干扰；矛盾
 
+调用 git mergetool 会弹出设置好的合并工具。
+
+指定 mergetool 的路径：
+
+You can explicitly provide a full path to the tool 
+by setting the configuration variable mergetool.<tool>.path. 
+For example, 
+you can configure the absolute path to kdiff3 by setting mergetool.kdiff3.path. 
+Otherwise, git mergetool assumes the tool is available in PATH.
+
+-----------------------------------------
+git pull --rebase 时的冲突理解
+-----------------------------------------
+
+别人修改了这个文件A ---- git pull --rebase 把这个修改拉回来
+自己本地提交也修改了文件A 
+
+这时 git pull --rebase 先应用别人的修改，再应用本地的修改。
+这样就产生了，冲突，别人修改的地方，和自己修改的时候不一样了，就冲突了。
+【即使没有修改同一行】
+
+解决冲突的办法，把别的修改应用到本地，并且，保留自己的修改。
+
+local 文件是'应用'一个提交后的文件
+remote 文件是'应用'
+
+-----------------------------------------
+https://git-scm.com/docs/git-mergetool
+-----------------------------------------
+
+git mergetool [--tool=<tool>] [-y | --[no-]prompt] [<file>…​]
+
+-----------------------------------------
+--tool-help
+-----------------------------------------
+
+Print a list of merge tools that may be used with --tool
+
+$ git mergetool --tool-help
+'git mergetool --tool=<tool>' may be set to one of the following:
+                tortoisemerge
+                vimdiff
+                vimdiff2
+                vimdiff3
+                winmerge
+
+The following tools are valid, but not currently available:
+                araxis
+                bc
+                bc3
+                codecompare
+                deltawalker
+                diffmerge
+                diffuse
+                ecmerge
+                emerge
+                gvimdiff
+                gvimdiff2
+                gvimdiff3
+                kdiff3
+                meld
+                opendiff
+                p4merge
+                tkdiff
+                xxdiff
+
+Some of the tools listed above only work in a windowed
+environment. If run in a terminal-only session, they will fail.
