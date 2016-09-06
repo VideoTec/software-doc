@@ -1,0 +1,30 @@
+http://blog.csdn.net/zheng911209/article/details/47147483
+
+git gc –-auto
+
+这个代码百度谷歌都没查到，
+但是基于git gc的作用可以理解为
+git gc –-auto
+是自动清理了本地的文件
+
+-----------------------------------------
+错误记录
+-----------------------------------------
+
+wangxiangfx@wangxiangfx MINGW64 /d/work/androidrongflysip (mqtt)
+$ git pull --rebase
+remote: Counting objects: 215, done.
+remote: Compressing objects: 100% (178/178), done.
+delta 0)
+Receiving objects: 100% (215/215), 84.83 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (131/131), completed with 52 local objects.
+From git.feinno.com:rongfly/androidrongflysip
+   097e364..2d47672  mqtt       -> origin/mqtt
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+Counting objects: 85018, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (24429/24429), done.
+Writing objects: 100% (85018/85018), done.
+Total 85018 (delta 49840), reused 81853 (delta 46994)
+Unlink of file '.git/objects/pack/pack-03998c292a120f6ab31e24d565d6145d21df66a8.pack' failed. Should I try again? (y/n)
