@@ -1,0 +1,36 @@
+https://git-scm.com/book/zh/v1/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-%E9%85%8D%E7%BD%AE-Git
+
+core.whitespace
+Git预先设置了一些选项来探测和修正空白问题，
+其4种主要选项中的2个默认被打开，另2个被关闭，你可以自由地打开或关闭它们。
+
+默认被打开的2个选项是
+trailing-space和space-before-tab，
+trailing-space会查找每行结尾的空格，
+space-before-tab会查找每行开头的制表符前的空格。
+
+默认被关闭的2个选项是indent-with-non-tab和cr-at-eol，
+indent-with-non-tab会查找8个以上空格（非制表符）开头的行，
+cr-at-eol让 Git 知道行尾回车符是合法的。
+
+设置core.whitespace，按照你的意图来打开或关闭选项，选项以逗号分割。
+通过逗号分割的链中去掉选项或在选项前加-来关闭，
+
+例如，如果你想要打开除了cr-at-eol之外的所有选项：
+
+$ git config --global core.whitespace \
+    trailing-space,space-before-tab,indent-with-non-tab
+
+当你运行git diff命令且为输出着色时，Git 探测到这些问题，因此你也许在提交前能修复它们，
+当你用git apply打补丁时同样也会从中受益。
+如果正准备运用的补丁有特别的空白问题，你可以让 Git 发警告：
+
+$ git apply --whitespace=warn <patch>
+
+或者让 Git 在打上补丁前自动修正此问题：
+
+$ git apply --whitespace=fix <patch>
+
+这些选项也能运用于衍合。
+如果提交了有空白问题的文件但还没推送到上游，
+你可以运行带有--whitespace=fix选项的rebase来让Git在重写补丁时自动修正它们。

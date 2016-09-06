@@ -1,0 +1,31 @@
+-----------------------------------------------------------------
+查看所有配置所在文件 --show-origin 是 2.9 之后添加的功能
+-----------------------------------------------------------------
+http://stackoverflow.com/questions/17756753/where-do-the-settings-in-my-git-configuration-come-from/35670933#35670933
+
+wangxiang@wangxiang-PC MINGW64 /z/code/v6sdk (master)
+$ git config --list --show-origin
+file:"C:\\ProgramData/Git/config"       core.symlinks=false
+file:"C:\\ProgramData/Git/config"       core.autocrlf=false
+file:"C:\\ProgramData/Git/config"       core.fscache=true
+file:"C:\\ProgramData/Git/config"       color.diff=auto
+file:"C:\\ProgramData/Git/config"       color.status=auto
+file:"C:\\ProgramData/Git/config"       color.branch=auto
+file:"C:\\ProgramData/Git/config"       color.interactive=true
+file:"C:\\ProgramData/Git/config"       help.format=html
+file:"C:\\ProgramData/Git/config"       http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+file:"C:\\ProgramData/Git/config"       diff.astextplain.textconv=astextplain
+file:"C:\\ProgramData/Git/config"       rebase.autosquash=true
+file:C:/Users/wangxiang/.gitconfig      core.autocrlf=false
+file:.git/config        core.repositoryformatversion=0
+file:.git/config        core.filemode=false
+file:.git/config        core.bare=false
+file:.git/config        core.logallrefupdates=true
+file:.git/config        core.symlinks=false
+file:.git/config        core.ignorecase=true
+file:.git/config        core.hidedotfiles=dotGitOnly
+file:.git/config        core.autocrlf=false
+file:.git/config        remote.origin.url=git@git.feinno.com:ngcc-v2/v6sdk.git
+file:.git/config        remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config        branch.master.remote=origin
+file:.git/config        branch.master.merge=refs/heads/master

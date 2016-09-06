@@ -1,0 +1,60 @@
+忽略的配置
+
+wangxiang@wangxiang-PC MINGW64 /z/code/v6sdk (master)
+$ git config --list --show-origin
+file:"C:\\ProgramData/Git/config"       core.symlinks=false
+file:"C:\\ProgramData/Git/config"       core.autocrlf=false
+file:"C:\\ProgramData/Git/config"       core.fscache=true
+file:"C:\\ProgramData/Git/config"       color.diff=auto
+file:"C:\\ProgramData/Git/config"       color.status=auto
+file:"C:\\ProgramData/Git/config"       color.branch=auto
+file:"C:\\ProgramData/Git/config"       color.interactive=true
+file:"C:\\ProgramData/Git/config"       help.format=html
+file:"C:\\ProgramData/Git/config"       http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+file:"C:\\ProgramData/Git/config"       diff.astextplain.textconv=astextplain
+file:"C:\\ProgramData/Git/config"       rebase.autosquash=true
+file:C:/Users/wangxiang/.gitconfig      core.autocrlf=false
+file:.git/config        core.repositoryformatversion=0
+file:.git/config        core.filemode=false
+file:.git/config        core.bare=false
+file:.git/config        core.logallrefupdates=true
+file:.git/config        core.symlinks=false
+file:.git/config        core.ignorecase=true
+file:.git/config        core.hidedotfiles=dotGitOnly
+file:.git/config        core.autocrlf=false
+file:.git/config        remote.origin.url=git@git.feinno.com:ngcc-v2/v6sdk.git
+file:.git/config        remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config        branch.master.remote=origin
+file:.git/config        branch.master.merge=refs/heads/master
+
+未忽略的配置
+
+wangxiang@wangxiang-M68MT-S2P:~/code/feinno/code/v6sdk$ git config --list
+core.quotepath=false
+push.default=simple
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+core.hidedotfiles=dotGitOnly
+core.autocrlf=false
+remote.origin.url=git@git.feinno.com:ngcc-v2/v6sdk.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+
+
+第一点：core.autocrlf=false 会显示换行符的修改
+修改这个配置后，从TRUE到FLASE，需要过一段时间，再 git status 才会显示出区别来。
+
+---------------------------------------------------------------
+http://blog.csdn.net/csfreebird/article/details/10448493
+---------------------------------------------------------------
+
+下面简单的方法可以让git diff的时候忽略换行符的差异：
+git config --global core.whitespace cr-at-eol  
+
+更好的方法是每个项目都有一个.gitattributes文件，里面配好了换行符的设置，参考
+https://help.github.com/articles/dealing-with-line-endings

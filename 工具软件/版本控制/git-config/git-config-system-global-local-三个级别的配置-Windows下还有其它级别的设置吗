@@ -1,0 +1,73 @@
+查看结果
+
+不是 git 工作目录下 没有 --local 级别的配置
+wangxiang@wangxiang-PC MINGW64 /
+$ git config --list
+core.symlinks=false
+core.autocrlf=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+diff.astextplain.textconv=astextplain
+rebase.autosquash=true
+core.autocrlf=false
+
+--global 全局下的配置只有一个
+wangxiang@wangxiang-PC MINGW64 /
+$ git config --list --global
+core.autocrlf=false
+
+--system 系统下的配置没有
+wangxiang@wangxiang-PC MINGW64 /
+$ git config --list --system
+fatal: unable to read config file 'C:\Program Files\Git\mingw64/etc/gitconfig': No such file or directory
+
+wangxiang@wangxiang-PC MINGW64 /
+$ git --version
+git version 2.6.2.windows.1
+
+最终找到三个配置之外的地方：
+C:\\ProgramData/Git/config - 这个配置优先级最低
+
+[core]
+	symlinks = false
+	autocrlf = false
+	fscache = true
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = true
+[pack]
+[help]
+	format = html
+[http]
+	sslCAInfo = C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+[diff "astextplain"]
+	textconv = astextplain
+[rebase]
+	autosquash = true
+
+-----------------------------------------------------------------
+查看所有配置所在文件 --show-origin 是 2.9 之后添加的功能
+-----------------------------------------------------------------
+http://stackoverflow.com/questions/17756753/where-do-the-settings-in-my-git-configuration-come-from/35670933#35670933
+
+wangxiang@wangxiang-PC MINGW64 /
+$ git config --list --show-origin
+file:"C:\\ProgramData/Git/config"       core.symlinks=false
+file:"C:\\ProgramData/Git/config"       core.autocrlf=true
+file:"C:\\ProgramData/Git/config"       core.fscache=true
+file:"C:\\ProgramData/Git/config"       color.diff=auto
+file:"C:\\ProgramData/Git/config"       color.status=auto
+file:"C:\\ProgramData/Git/config"       color.branch=auto
+file:"C:\\ProgramData/Git/config"       color.interactive=true
+file:"C:\\ProgramData/Git/config"       help.format=html
+file:"C:\\ProgramData/Git/config"       http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+file:"C:\\ProgramData/Git/config"       diff.astextplain.textconv=astextplain
+file:"C:\\ProgramData/Git/config"       rebase.autosquash=true
+file:C:/Users/wangxiang/.gitconfig      core.autocrlf=false
+

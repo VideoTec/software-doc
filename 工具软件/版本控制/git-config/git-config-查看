@@ -1,0 +1,44 @@
+
+-------------------------------------------------------------------------------------------
+wangxiang@wangxiang-M68MT-S2P:~/code/feinno/code/v6sdk$ git config --list
+-------------------------------------------------------------------------------------------
+core.quotepath=false
+push.default=simple
+user.email=wangxiangc@gmail.com
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+core.hidedotfiles=dotGitOnly
+remote.origin.url=git@git.feinno.com:ngcc-v2/v6sdk.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+
+-------------------------------------------------------------------------------------------
+wangxiang@wangxiang-M68MT-S2P:~/code/feinno/code/v6sdk$ git config --list --system
+-------------------------------------------------------------------------------------------
+fatal: unable to read config file '/etc/gitconfig': 没有那个文件或目录
+
+-------------------------------------------------------------------------------------------
+wangxiang@wangxiang-M68MT-S2P:~/code/feinno/code/v6sdk$ git config --list --local
+-------------------------------------------------------------------------------------------
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+core.hidedotfiles=dotGitOnly
+remote.origin.url=git@git.feinno.com:ngcc-v2/v6sdk.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+wangxiang@wangxiang-M68MT-S2P:~/code/feinno/code/v6sdk$ git config --list --global
+core.quotepath=false
+push.default=simple
+user.email=wangxiangc@gmail.com
+wangxiang@wangxiang-M68MT-S2P:~/code/feinno/code/v6sdk$ 
+

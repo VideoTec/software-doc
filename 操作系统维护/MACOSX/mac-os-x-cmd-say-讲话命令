@@ -1,0 +1,45 @@
+
+say: option requires an argument -- o
+Usage: say [-v voice] [-o out] [-f in | message]
+
+http://www.techradar.com/how-to/computing/apple/terminal-101-making-your-mac-talk-with-say-1305649
+
+-------------------------------------------------------------
+say -v "voice name" "text to say"
+-------------------------------------------------------------
+替换 voice-name 为 the list above
+
+Female Voices
+- Agnes
+- Kathy
+- Princess
+- Vicki
+- Victoria 
+
+Male Voices
+- Alex
+- Bruce
+- Fred
+- Junior
+- Ralph
+
+Novelty Voices
+- Albert
+- Bad News
+- Bahh
+- Bells
+- Boing
+- Bubbles
+- Cellos
+- Deranged 
+- Good News
+- Hysterical 
+- Pipe Organ 
+- Trinoids 
+- Whisper 
+- Zarvox
+
+-------------------------------------------------------------
+say -v "Cellos" "Lalalalalalalalala" -o recording.aiff
+-------------------------------------------------------------
+Outputting the Audio to a File for Playback Later

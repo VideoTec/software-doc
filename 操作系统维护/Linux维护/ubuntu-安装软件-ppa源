@@ -1,0 +1,72 @@
+http://wowubuntu.com/ppa.html
+
+PPA 全称为 Personal Package Archives（个人软件包档案），
+是 Ubuntu Launchpad 网站提供的一项服务，当然不仅限于 Launchpad 。
+它允许个人用户上传软件源代码，通过 Launchpad 进行编译并发布为二进制软件包，
+作为 apt/新立得源供其他用户下载和更新。
+在Launchpad网站上的每一个用户和团队都可以拥有一个或多个PPA
+
+通常 PPA 源里的软件是官方源里没有的，或者是最新版本的软件。
+相对于通过 Deb 包安装来说，使用 PPA 的好处是，一旦软件有更新，
+通过 sudo apt-get upgrade 这样命令就可以直接升级到新版本
+
+通常我们可以通过 Google 来搜索一些常用软件的 PPA 源，通常的搜索方法是软件名称关键字 + PPA ，
+或者也可直接到 launchpad.net 上去搜索，
+搜索到后我们就可以直接用 sudo apt-add-repository 命令把 PPA 源添加到 Source list 中了。
+
+比如 
+FireFox PPA 源：https://launchpad.net/~ubuntu-mozilla-daily/+archive/ppa ，
+我们可以在这里找到 ppa:ubuntu-mozilla-daily/ppa 的字样，
+然后我们通过以下命令把这个源加入到 source list 中
+
+sudo apt-add-repository ppa:ubuntu-mozilla-daily/ppa
+
+---------------------------------------
+ppa 源官网
+---------------------------------------
+https://launchpad.net/ubuntu
+
+例子：
+提供 jdk 的用户 AlinAndrei
+https://launchpad.net/~webupd8team
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+
+---------------------------------------
+https://en.wikipedia.org/wiki/Personal_Package_Archive
+---------------------------------------
+
+A Personal Package Archive (PPA) is a special software repository 
+for uploading source packages to be built and published as an APT repository by Launchpad.[1] 
+While the term is used exclusively within Ubuntu, 
+Launchpad host Canonical envisions adoption beyond the Ubuntu community.
+
+---------------------------------------
+http://wiki.ubuntu.org.cn/PPA
+---------------------------------------
+PPA是Personal Package Archives首字母简写
+sudo add-apt-repository ppa:shnatsel/dnscrypt 
+sudo apt-get update 
+sudo apt-get install dnscrypt-proxy
+
+https://launchpad.net/~chromium-daily
+
+四个频道：
+chromium daily
+chromium dev
+chromium stable
+chromium beta
+
+https://launchpad.net/~chromium-daily/+archive/stable
+ sudo add-apt-repository ppa:chromium-daily/stable
+
+https://launchpad.net/~chromium-daily/+archive/daily
+ sudo add-apt-repository ppa:chromium-daily/daily
+
+
+常用 PPA
+Ubuntu使用ailurus或ubuntu-tweak即可，如果是其他ubuntu衍生版本，考虑收集更多实用PPA于此。
+
+
+
+

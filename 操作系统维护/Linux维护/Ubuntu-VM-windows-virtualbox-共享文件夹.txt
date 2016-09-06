@@ -1,0 +1,16 @@
+1. 安装扩展包
+   会自动加载一个镜像
+   到镜像下，用 sudo 运行一个脚本
+解决：（C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso）
+sudo sh VBoxLunuxAdditions.run 这样可以运行。不带sh运行失败。这里sh有什么用处？
+
+2. 加载共享文件夹 命令行
+mount -t vboxsf share /mnt/share_windows  //加载 virtual-box 的共享目录
+                                           //共享名称 share 不区分大小写
+
+
+----------------------------------------
+----------------------------------------
+1. 共享文件夹，在 虚拟机-windows 系统中，共享的文件，在网络共享里可以查看
+2. winows7 可把网络共享的文件夹映射成本地磁盘  [计算机|映射网络驱动器]
+http://jingyan.baidu.com/article/63f23628f4f34e0208ab3df3.html

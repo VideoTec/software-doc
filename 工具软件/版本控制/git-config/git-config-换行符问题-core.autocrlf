@@ -1,0 +1,113 @@
+core.autocrlf 由 true 变为 false 立刻
+git status --- 应该能看到修改的，（也会看不到修改），
+这时 git checkout otherbranch 这时会提示有修改的。
+
+http://www.cnblogs.com/flying_bat/p/3324769.html
+
+---------------------------------------
+一、AutoCRLF
+---------------------------------------
+#提交时转换为LF，检出时转换为CRLF
+git config --global core.autocrlf true   
+
+#提交时转换为LF，检出时不转换
+git config --global core.autocrlf input   
+
+#提交检出均不转换
+git config --global core.autocrlf false
+
+windows 下，库已经下载完成，更改 core.autocrlf true 为 false
+怎么重新，checkout 代码呢？
+
+修改后，没有效果，如：
+wangxiang@wangxiang-PC MINGW64 /z/code/v6sdk (master)
+$ git config core.autocrlf false
+
+wangxiang@wangxiang-PC MINGW64 /z/code/v6sdk (master)
+$ git config --list
+core.symlinks=false
+core.autocrlf=true  -- 这个为什么不变化呢？这个不是 --local 级别的设置
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+diff.astextplain.textconv=astextplain
+rebase.autosquash=true
+core.autocrlf=false   --local 级别的设置
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+core.hidedotfiles=dotGitOnly
+core.autocrlf=false   --global 级别的设置
+remote.origin.url=git@git.feinno.com:ngcc-v2/v6sdk.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+
+检查是那个级别的设置：
+wangxiang@wangxiang-PC MINGW64 /z/code/v6sdk (master)
+$ git config --list --local
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+core.hidedotfiles=dotGitOnly
+core.autocrlf=false
+remote.origin.url=git@git.feinno.com:ngcc-v2/v6sdk.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+
+
+---------------------------------------
+二、SafeCRLF
+---------------------------------------
+
+#拒绝提交包含混合换行符的文件
+git config --global core.safecrlf true   
+
+#允许提交包含混合换行符的文件
+git config --global core.safecrlf false   
+
+#提交包含混合换行符的文件时给出警告
+git config --global core.safecrlf warn
+
+---------------------------------------
+https://git-scm.com/book/zh/v1/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-%E9%85%8D%E7%BD%AE-Git
+---------------------------------------
+
+core.autocrlf  
+总结：
+只有当设置为 false 时， crlf 换行符才会提交到仓库里。
+
+假如你正在Windows上写程序，又或者你正在和其他人合作，他们在Windows上编程，而你却在其他系统上，
+在这些情况下，你可能会遇到行尾结束符问题。
+这是因为Windows使用回车和换行两个字符来结束一行，而Mac和Linux只使用换行一个字符。
+虽然这是小问题，但它会极大地扰乱跨平台协作。
+
+Git可以在你提交时自动地把行结束符CRLF转换成LF，而在签出代码时把LF转换成CRLF。
+用core.autocrlf来打开此项功能，
+如果是在Windows系统上，把它设置成true，这样当签出代码时，LF会被转换成CRLF：
+
+$ git config --global core.autocrlf true
+
+Linux或Mac系统使用LF作为行结束符，因此你不想 Git 在签出文件时进行自动的转换；
+当一个以CRLF为行结束符的文件不小心被引入时你肯定想进行修正，
+把core.autocrlf设置成input来告诉 Git 在提交时把CRLF转换成LF，签出时不转换：
+
+$ git config --global core.autocrlf input
+
+这样会在Windows系统上的签出文件中保留CRLF，
+会在Mac和Linux系统上，包括仓库中保留LF。
+
+如果你是Windows程序员，且正在开发仅运行在Windows上的项目，
+可以设置false取消此功能，把回车符记录在库中：
+
+$ git config --global core.autocrlf false

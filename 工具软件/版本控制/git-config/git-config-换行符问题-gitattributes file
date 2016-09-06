@@ -1,0 +1,48 @@
+http://stackoverflow.com/questions/11534035/git-crlf-for-windows-users
+
+If you don't want the eol style of your files changed back to windows, 
+don't ask git to perform any "automagic" transformation.
+So, contrary to the "best practices from GitHub":
+
+git config --global core.autocrlf true
+
+If you really (I mean really) need one 
+specific set of files in one specific directory to get a particular eol style, 
+add it in your .gitattributes file within said directory, 
+meaning not using text=auto, only "text eol=lf or crlf"
+
+https://git-scm.com/book/zh/v1/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git%E5%B1%9E%E6%80%A7
+
+自定义 Git - Git属性
+
+一些设置项也能被运用于特定的路径中，
+这样，Git 以对一个特定的子目录或子文件集运用那些设置项。
+
+这些设置项被称为 Git 属性，
+可以在你目录中的.gitattributes文件内进行设置（通常是你项目的根目录），
+也可以当你不想让这些属性文件和项目文件一同提交时，
+在.git/info/attributes进行设置。
+
+使用属性，你可以对个别文件或目录定义不同的合并策略，
+让 Git 知道怎样比较非文本文件，在你提交或签出前让 Git 过滤内容。
+你将在这部分了解到能在自己的项目中使用的属性，以及一些实例。
+
+一些文件看起来像是文本文件，但其实是作为二进制数据被对待。
+
+例如，
+在Mac上的Xcode项目含有一个以.pbxproj结尾的文件，
+它是由记录设置项的IDE写到磁盘的JSON数据集（纯文本javascript数据类型）。
+虽然技术上看它是由ASCII字符组成的文本文件，但你并不认为如此，
+因为它确实是一个轻量级数据库 — 如果有2人改变了它，你通常无法合并和比较内容，
+只有机器才能进行识别和操作，于是，你想把它当成二进制文件。
+
+让 Git 把所有pbxproj文件当成二进制文件，在.gitattributes文件中设置如下：
+
+*.pbxproj -crlf -diff
+
+现在，Git 会尝试转换和修正CRLF（回车换行）问题，
+也不会当你在项目中运行git show或git diff时，比较不同的内容。
+在Git 1.6及之后的版本中，可以用一个宏代替-crlf -diff：
+
+*.pbxproj binary
+

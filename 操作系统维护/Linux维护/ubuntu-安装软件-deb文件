@@ -1,0 +1,5 @@
+Ubuntu软件包格式为deb，安装方法如下：
+
+   sudo  dpkg  -i  package.deb
+
+双击也可以安装。

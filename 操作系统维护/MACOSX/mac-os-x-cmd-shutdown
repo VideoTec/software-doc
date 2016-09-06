@@ -1,0 +1,25 @@
+zhaoqiangdeMac-mini:~ wangxiang$ sudo shutdown
+usage: shutdown [-] [-h [-u] [-n] | -r [-n] | -s | -k] time [warning-message ...]
+
+-c：当执行“shutdown -h 11:50”指令时，只要按+键就可以中断关机的指令； 
+-f：重新启动时不执行fsck； 
+-F：重新启动时执行fsck； 
+-h：将系统关机； 
+-k：只是送出信息给所有用户，但不会实际关机； 
+-n：不调用init程序进行关机，而由shutdown自己进行； 
+-r：shutdown之后重新启动； 
+-t<秒数>：送出警告信息和删除信息之间要延迟多少秒。
+
+sudo shutdown -r now 立刻重启
+sudo shutdown -h now 立刻关机
+
+http://apple.stackexchange.com/questions/103571/using-the-terminal-command-to-shutdown-restart-and-sleep-my-mac
+
+The command you are after is shutdown. 
+This informs all users that the machine is going to be shutdown and tells all apps to close files etc.
+
+The command takes a parameter -h, -r or -s to shut down, restart or sleep the Mac.
+The command has to be run as root so you need to use sudo.
+
+e.g. to reboot the machine immediately
+sudo shutdown -r now

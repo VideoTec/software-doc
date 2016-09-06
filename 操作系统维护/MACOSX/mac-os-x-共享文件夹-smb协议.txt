@@ -1,3 +1,9 @@
+zhaoqiangdeMac-mini:~ wangxiang$ mount_smbfs //wangxiang@192.168.3.5/code ./netshare
+Password for 192.168.3.5: 
+mount_smbfs: server rejected the connection: Authentication error
+zhaoqiangdeMac-mini:~ wangxiang$ 
+
+
 ---------------------------------------
 使用 shell 脚本挂载共享文件
 ---------------------------------------
