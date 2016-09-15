@@ -1,0 +1,19 @@
+http://osxdaily.com/2011/09/29/start-an-ftp-or-sftp-server-in-mac-os-x-lion/
+
+启动 ftp
+sudo -s launchctl load -w /System/Library/LaunchDaemons/ftp.plist
+
+关闭 ftp
+sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist
+
+检查是否已经开启：
+
+zhaoqiangdeMac-mini:launchagents wangxiang$ ftp 127.0.0.1
+Connected to 127.0.0.1.
+220 127.0.0.1 FTP server (tnftpd 20100324+GSSAPI) ready.
+Name (127.0.0.1:wangxiang): wangxiang
+331 User wangxiang accepted, provide password.
+Password: 
+230 User wangxiang logged in.
+Remote system type is UNIX.
+Using binary mode to transfer files.

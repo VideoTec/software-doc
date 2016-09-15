@@ -1,0 +1,10 @@
+http://osxdaily.com/2011/09/29/start-an-ftp-or-sftp-server-in-mac-os-x-lion/
+
+系统偏好 | 共享 | 启动远程登录 (remote login)
+
+这样就启动了 sftp
+
+验证： sftp 127.0.0.1
+
+问题，怎么限制 ftp 的根目录？
+默认是能访问整个系统的目录。
