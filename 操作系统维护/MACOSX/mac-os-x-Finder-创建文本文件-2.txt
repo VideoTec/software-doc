@@ -1,0 +1,6 @@
+http://stackoverflow.com/questions/12183967/creating-an-automator-service-to-create-a-new-document-in-the-current-directory
+
+http://apple.stackexchange.com/questions/94755/right-click-create-a-new-text-file-how
+
+Automator service
+AppleScript 

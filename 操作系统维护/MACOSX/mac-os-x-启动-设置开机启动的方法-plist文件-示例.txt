@@ -74,3 +74,79 @@
     <true/-->
   </dict>
 </plist>
+
+
+------------------------------------------------------------
+adobe 启动项示例
+------------------------------------------------------------
+zhaoqiangdeMac-mini:Launchdaemons wangxiang$ cat com.adobe.SwitchBoard.plist 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GroupName</key>
+	<string>nobody</string>
+	<key>KeepAlive</key>
+	<false/>
+	<key>Label</key>
+	<string>com.adobe.SwitchBoard</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Library/Application Support/Adobe/SwitchBoard/SwitchBoard.app/Contents/MacOS/launch.switchboard</string>
+	</array>
+	<key>RunAtLoad</key>
+	<false/>
+	<key>ServiceDescription</key>
+	<string></string>
+	<key>UserName</key>
+	<string>nobody</string>
+</dict>
+</plist>
+
+------------------------------------------------------------
+com.teamviewer 启动项示例
+------------------------------------------------------------
+zhaoqiangdeMac-mini:Launchdaemons wangxiang$ cat com.teamviewer.Helper.plist 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.teamviewer.Helper</string>
+  <key>MachServices</key>
+  <dict>
+    <key>com.teamviewer.Helper</key>
+    <true/>
+    </dict>
+  <key>Program</key>
+  <string>/Library/PrivilegedHelperTools/com.teamviewer.Helper</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Library/PrivilegedHelperTools/com.teamviewer.Helper</string>
+    </array>
+</dict>
+</plist>
+
+zhaoqiangdeMac-mini:Launchdaemons wangxiang$ cat com.teamviewer.teamviewer_service.plist 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Disabled</key>
+	<false/>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>com.teamviewer.service</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Applications/TeamViewerHost.app/Contents/MacOS/TeamViewer_Service</string>
+		<string>-Module</string>
+		<string>Host</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>WorkingDirectory</key>
+	<string>/Applications/TeamViewerHost.app/Contents/MacOS</string>
+</dict>
+</plist>

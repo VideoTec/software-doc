@@ -1,0 +1,114 @@
+https://forums.adobe.com/thread/1618590
+
+I am getting the same thing since I updated to Yosemite last week
+At EVERY restart and boot I get the message, 
+"To Open 'CS5ServiceManager' you need to install the legacy Java SE 6 runtime.
+
+http://forums.macrumors.com/threads/how-to-disable-cs5service-manager.1153590/
+
+/Library/Application Support/Adobe/CS4ServiceManager/CS4ServiceManager.app/Contents/MacOS/CS4ServiceManager
+
+Thanks a bunch :] I deleted the file and it doesn't ask anymore :}
+
+查找他的启动项：
+
+---------------------------------------------------------------------------
+zhaoqiangdeMac-mini:Launchdaemons wangxiang$ ls -l 
+
+/library/Launchdaemons
+这个启动项不是负责启动这个对话框的
+---------------------------------------------------------------------------
+total 64
+-rw-r--r--  1 root  wheel  617  9 26  2011 com.adobe.SwitchBoard.plist
+-rw-r--r--  1 root  wheel  462  6 29 08:37 com.adobe.fpsaud.plist
+-rw-r--r--  1 root  wheel  518  9  4  2014 com.baidu.netdiskmac.BDYunFinderInstaller.plist
+-rw-r--r--@ 1 root  wheel  818  9  3 09:08 com.google.keystone.daemon.plist
+-rw-r--r--  1 root  wheel  568  8 25  2010 com.microsoft.office.licensing.helper.plist
+-rw-r--r--  1 root  wheel  435  6  3  2014 com.realvnc.vncserver.plist
+-rw-r--r--  1 root  wheel  564  9 30  2015 com.teamviewer.Helper.plist
+-rwxr-xr-x  1 root  wheel  620 12 19  2015 com.teamviewer.teamviewer_service.plist
+zhaoqiangdeMac-mini:Launchdaemons wangxiang$ pwd
+/library/Launchdaemons
+
+zhaoqiangdeMac-mini:Launchdaemons wangxiang$ cat com.adobe.SwitchBoard.plist 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GroupName</key>
+	<string>nobody</string>
+	<key>KeepAlive</key>
+	<false/>
+	<key>Label</key>
+	<string>com.adobe.SwitchBoard</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Library/Application Support/Adobe/SwitchBoard/SwitchBoard.app/Contents/MacOS/launch.switchboard</string>
+	</array>
+	<key>RunAtLoad</key>
+	<false/>
+	<key>ServiceDescription</key>
+	<string></string>
+	<key>UserName</key>
+	<string>nobody</string>
+</dict>
+</plist>
+
+
+zhaoqiangdeMac-mini:Launchdaemons wangxiang$ cat com.adobe.fpsaud.plist 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.adobe.fpsaud</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Library/Application Support/Adobe/Flash Player Install Manager/fpsaud</string>
+	</array>
+	<key>StartInterval</key>
+	<integer>3600</integer>
+	<key>KeepAlive</key>
+	<false/>
+</dict>
+</plist>
+
+
+---------------------------------------------------------------------------
+zhaoqiangdeMac-mini:launchagents wangxiang$ ls -l
+
+/library/launchagents
+---------------------------------------------------------------------------
+zhaoqiangdeMac-mini:launchagents wangxiang$ ls -l
+total 64
+-rw-r--r--  1 root  wheel  612  9 26  2011 com.adobe.AAM.Updater-1.0.plist
+-r-xr-xr-x  1 root  wheel  582  9 26  2011 com.adobe.CS5ServiceManager.plist
+-rw-r--r--@ 1 root  wheel  792  8 31 20:37 com.google.keystone.agent.plist
+-rw-r--r--  1 root  wheel  615  6  3  2014 com.realvnc.vncserver.peruser.plist
+-rw-r--r--  1 root  wheel  611  6  3  2014 com.realvnc.vncserver.prelogin.plist
+-rwxr-xr-x  1 root  wheel  700 12 19  2015 com.teamviewer.teamviewer.plist
+-rwxr-xr-x  1 root  wheel  787 12 19  2015 com.teamviewer.teamviewer_desktop.plist
+-rw-r--r--  1 root  wheel  630  2  9  2010 org.tigris.scplugin.launch.plist
+
+zhaoqiangdeMac-mini:launchagents wangxiang$ cat com.adobe.CS5ServiceManager.plist 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.adobe.CS5ServiceManager</string>
+	<key>LimitLoadToSessionType</key>
+	<string>Aqua</string>
+	<key>OnDemand</key>
+	<true/>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Library/Application Support/Adobe/CS5ServiceManager/CS5ServiceManager.app/Contents/MacOS/CS5ServiceManager</string>
+		<string>-launchedbylogin</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+</dict>
+</plist>
+
+

@@ -1,0 +1,28 @@
+应用程序 | Automator.app
+
+https://zh.wikipedia.org/wiki/Automator
+
+Automator是苹果公司为他们的Mac OS X系统开发的一款软件。
+只要通过点击拖拽鼠标等操作就可以将一系列动作组合成一个工作流，
+从而帮助你自动的（可重复的）完成一些复杂的工作。
+
+Automator还能横跨很多不同种类的程序，
+包括：查找器、Safari网络浏览器、iCal、地址簿或者其他的一些程序。
+它还能和一些第三方的程序一起工作，如
+微软的Office、Adobe公司的Photoshop或者Pixelmator等。
+Automator第一次发布是在Mac OS X Tiger（10.4）系统。
+
+Automator提供了图形化的界面用来建立工作流，
+所以你不需要熟悉编程或者脚本语言。
+任务可以在操作的时候被记录下来，也可以从列表里选择。
+上一个动作的输出可以是下一个动作的输入。
+
+Automator提供了图形化的界面用来建立工作流，
+所以你不需要熟悉编程或者脚本语言。
+任务可以在操作的时候被记录下来，也可以从列表里选择。
+上一个动作的输出可以是下一个动作的输入。
+
+http://automator.us/examples.html - 一些例子
+
+https://www.zhihu.com/question/19805756
+Automator 有什么妙用，哪些 action 或 workflow 值得分享？

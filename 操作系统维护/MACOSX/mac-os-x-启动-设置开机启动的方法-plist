@@ -1,0 +1,34 @@
+https://zh.wikipedia.org/zh-cn/Plist
+
+在OS X的Cocoa，NeXTSTEP和GNUstep编程框架中，
+属性列表（Property List）文件是一种用来存储序列化后的对象的文件。
+属性列表文件的文件扩展名为.plist，因此通常被称为plist文件。
+
+Plist文件通常用于储存用户设置，
+也可以用于存储捆绑的信息，该功能在旧式的Mac OS中是由资源分支提供的。
+
+由于Plist中存储的数据是抽象的，其采用的文件格式可以不止一种。
+NeXTSTEP只使用一种格式，而稍晚的GNUstep和OS X框架导入了不同的文件格式。
+
+NeXTSTEP系统中，Plist被设计为人类可读的，并可以手工修改，
+故采用了类似于编程语言的语法将数据序列化为ASCII数据。
+
+GNUstep采用了NeXTSTEP的格式，并添加了少许特性。
+它支持NSValue对象（以普通ASCII码表示），
+支持NSDate（序列化成<*DYYYY-MM-DD HH:MM:SS timezone>的格式）。
+GNUstep也可以读写OS X使用的Plist格式
+
+Mac OS X 10.0中，NeXTSTEP的格式被认为是不被推荐的，
+并导入了一种新的XML格式，其由Apple定义的公开DTD所规范化。
+
+由于XML文件在储存时不是最有空间效率的，Mac OS X 10.2导入了一种新的格式，
+它将plist文件存储为二进制文件。
+从Mac OS X 10.4开始，这是偏好设置文件的默认格式
+
+plutil工具（在Mac OS X 10.2中导入）可以用来检查plist的语法，或者对plist文件进行格式转换
+
+Apple提供了“Property List Editor”应用程序（作为Apple Developer Tools的一部分安装），
+它是一个树状的查看器与编辑器，并可以处理二进制格式的plist
+
+从Mac OS X 10.4开始，Apple提供了通过System Events应用程序读写plist文件的AppleScript接口，
+而从Mac OS X 10.5开始，Apple也提供了用于编辑，创建和写入plist文件的接口

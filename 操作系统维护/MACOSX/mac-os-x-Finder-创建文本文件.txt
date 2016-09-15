@@ -8,3 +8,16 @@ touch file.txt
 Or redirect 'nothing' to a text file
 
 > file.txt
+
+http://apple.stackexchange.com/questions/84309/how-to-create-a-text-file-in-a-folder
+
+You can also do this in Terminal. Go to the directory where you want to create the file, then run the following:
+
+touch file.txt
+
+Or redirect 'nothing' to a text file
+
+> file.txt
+
+问题：怎么方便cd到指定目录？
+In 10.8 and later you can also drag the folder on a Terminal window while holding command. Or if you copy the folder, ⌘V inserts its path in Terminal. 
