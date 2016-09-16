@@ -1,0 +1,23 @@
+http://stackoverflow.com/questions/4565700/specify-private-ssh-key-to-use-when-executing-shell-command-with-or-without-ruby
+
+With git 2.10 (Q3 2016), you also have a new config: 
+git config core.sshCommand 'ssh -i private_key_file'
+
+http://superuser.com/questions/232373/how-to-tell-git-which-private-key-to-use
+
+为不同的服务器指定不同的私钥
+
+In ~/.ssh/config, add:
+
+host github.com
+ HostName github.com
+ IdentityFile ~/.ssh/id_rsa_github
+ User git
+
+Now you can do git clone git@github.com:username/repo.git.
+
+NOTE: Verify that the permissions on IdentityFile are 400.SSH will reject, 
+in a not clearly explicit manner, SSH keys that are too readable. 
+It will just look like a credential rejection. The solution, in this case, is:
+
+chmod 400 ~/.ssh/id_rsa_github
