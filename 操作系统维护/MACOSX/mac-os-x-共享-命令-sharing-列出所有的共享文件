@@ -1,0 +1,43 @@
+mac-mini:~ wangxiang$ sudo sharing -l
+Password:
+
+			List of Share Points
+name:		sharedir
+path:		/Users/wangxiang/sharedir
+	afp:	{
+    		name:	sharedir
+    		shared:	1
+    		guest access:	1
+    		inherit perms:	0
+	}
+	ftp:	{
+    		name:	sharedir
+    		shared:	0
+    		guest access:	0
+	}
+	smb:	{
+    		name:	sharedir
+    		shared:	1
+    		guest access:	1
+	}
+
+name:		“git”的公共文件夹
+path:		/Users/git/Public
+	afp:	{
+    		name:	“git”的公共文件夹
+    		shared:	1
+    		guest access:	1
+    		inherit perms:	0
+	}
+	ftp:	{
+    		name:	“git”的公共文件夹
+    		shared:	0
+    		guest access:	0
+	}
+	smb:	{
+    		name:	“git”的公共文件夹
+    		shared:	1
+    		guest access:	1
+	}
+
+

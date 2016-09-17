@@ -1,0 +1,60 @@
+ubuntu 查看网络共享：
+
+2. "文件" | 网络 | mac-mini(文件分享) -- 从这里可以打开，可能是 afp 吧
+3. “文件” | 网络 | Windows 网络 | 工作组 | 计算名（netbios name）
+
+https://linux.cn/article-5466-2.html
+
+分两种情况：
+
+1. 匿名用户可见 - 直接在“文件”程序中操作就可以了
+2. 允许指定用户可访问 - 需要安装 Samba服务器
+
+http://forum.ubuntu.org.cn/viewtopic.php?t=100691
+
+设置samba服务要注意以下两点（即两个两次）： 
+1.添加两次用户：一次添加系统用户#useradd user1；再一次是添加samba用户#smbpasswd -a user1; 
+2.设置两次权限：一次是在smb.conf中设置共享文件夹的权限：再一次是在系统中设置共享文件夹的权限#chmod 777 文件夹名。 
+
+只要注意以上两个两次，samba设置基本没问题了。
+
+https://wiki.ubuntu.com.cn/Samba
+
+---------------------------------------
+smbclient
+---------------------------------------
+
+访问 windows 机器的
+wangxiang@wangxiang-M68MT-S2P:~$ smbclient -L //wangxiang-pc
+WARNING: The "syslog" option is deprecated
+Enter wangxiang's password: 
+Domain=[WANGXIANG-PC] OS=[Windows 7 Ultimate 7601 Service Pack 1] Server=[Windows 7 Ultimate 6.1]
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	ADMIN$          Disk      远程管理
+	C$              Disk      默认共享
+	IPC$            IPC       远程 IPC
+	Users           Disk      
+Domain=[WANGXIANG-PC] OS=[Windows 7 Ultimate 7601 Service Pack 1] Server=[Windows 7 Ultimate 6.1]
+
+	Server               Comment
+	---------            -------
+
+	Workgroup            Master
+	---------            -------
+
+访问 mac 机器
+wangxiang@wangxiang-M68MT-S2P:~$ smbclient -L //wangxiang-bios
+WARNING: The "syslog" option is deprecated
+Enter wangxiang's password: 
+NTLMSSP packet check failed due to short signature (0 bytes)!
+NTLMSSP NTLM2 packet check failed due to invalid signature!
+session setup failed: NT_STATUS_ACCESS_DENIED
+
+http://askubuntu.com/questions/758860/samba-share-user-password-error-after-update/763436
+
+client use spnego = no
+添加到 /etc/samba/smb.conf
+placed the line near the beginning of the file
+

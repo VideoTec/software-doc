@@ -1,0 +1,35 @@
+http://askubuntu.com/questions/63046/how-to-mount-mac-os-x-lion-fileshare
+http://adrianmejia.com/blog/2011/07/12/how-to-set-up-samba-in-ubuntu-linux-and-access-it-in-mac-os-and-windows/
+
+sudo apt-get install samba smbfs
+vi /etc/samba/smb.conf
+
+http://www.xiaozhou.net/share_movie_between_archlinux_and_win7_via_samba-2012-04-20.html
+最好把工作组和我的Win7设成通一个工作组，这样方便Win7通过网络发现来找到我的下载机。
+这里，我的win7工作组名字，就叫做：WORKGROUP了
+
+linux 下修改 /etc/sabma/smb.conf 中 workgroup 的值。
+mac 下修改 System Preferences->Network->Advanced->WINS
+
+使用 ubuntu 文件工具，连接 mac 共享的文件夹，问题登录不上，密码不对
+1. 以为是工作组不一样造成的，修改相同的工作组，还是不行。
+2. "文件" | 网络 | mac-mini(文件分享) -- 从这里可以打开，可能是 afp 吧
+3. “文件” | 网络 | Windows 网络 | 工作组 | 计算名（netbios name）
+4. smb://192.168.3.24 不对，应该是 smb://wangxiang-bios -- 
+
+-------------------------------------
+问题：
+-------------------------------------
+wangxiang@wangxiang-M68MT-S2P:~$ sudo apt-get install samba smbfs
+[sudo] wangxiang 的密码： 
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+没有可用的软件包 smbfs，但是它被其它的软件包引用了。
+这可能意味着这个缺失的软件包可能已被废弃，
+或者只能在其他发布源中找到
+然而下列软件包会取代它：
+  cifs-utils:i386 cifs-utils
+
+E: 软件包 smbfs 没有可安装候选
+

@@ -1,0 +1,64 @@
+ 可选的远程文件访问协议有 
+Network File System，缩写为NFS
+Server Message Block (SMB, also termed CIFS), 
+Apple Filing Protocol (AFP), 
+NetWare Core Protocol (NCP) 和 
+OS/400 File Server file system (QFileSvr.400).
+
+------------------------------------------------------------------------------------------------------
+https://zh.wikipedia.org/wiki/Samba
+samba 协议
+------------------------------------------------------------------------------------------------------
+
+Samba是许多服务以及协议的实现，其包括
+1）TCP/IP上的NetBIOS（NBT）、
+2）SMB、CIFS（SMB的增强版本）、 - 微软Windows操作系统
+Server Message Block/Common Internet File System
+3）DCE/RPC或者更具体来说MSRPC（網絡鄰居协议包）、
+4）一种WINS服务器（也被称作NetBIOS Name Server（NBNS））、
+5）NT域协议包（包括NT Domain Logons、Secure Accounts Manager（SAM）数据库、
+6）Local Security Authority（LSA）服务、NT-style打印服务（SPOOLSS）、
+7）NTLM以及近来出现的包括一种改进的Kerberos协议与改进的轻型目录访问协议（LDAP）在内的Active Directory Logon服务）
+
+Samba能够为选定的Unix目录（包括所有子目录）创建网络共享。
+该功能使得Windows用户可以像访问普通Windows下的文件夹那样来通过网络访问这些Unix目录
+
+------------------------------------------------------------------------------------------------------
+https://zh.wikipedia.org/wiki/%E4%BC%BA%E6%9C%8D%E5%99%A8%E8%A8%8A%E6%81%AF%E5%8D%80%E5%A1%8A
+smb / cifs 协议 
+------------------------------------------------------------------------------------------------------
+
+服务器消息区块（英语：Server Message Block，缩写为SMB，服务器消息区块），
+又称网络文件共享系统（英语：Common Internet File System，缩写为CIFS），
+一种应用层网络传输协议，由微软开发，
+主要功能用是使网络上的机器能够共享计算机文件、打印机、串行端口和通讯等资源。
+它也提供认证的进程间通信机能。
+它主要用在装有Microsoft Windows的机器上，在这样的机器上被称为Microsoft Windows Network。
+
+经过Unix服务器厂商重新开发后，
+它可以用于连接Unix服务器和Windows客户机，执行打印和文件共享等任务。
+
+与功能类似的NFS相比，NFS的消息格式是固定长度，而CIFS的消息格式大多数是可变长度，这增加了协议的复杂性。
+CIFS消息一般使用NetBIOS或TCP协议发送，分别使用不同的端口139或445，目前倾向于使用445端口。
+CIFS的消息包括一个信头（32字节）和消息体（1个或多个，可变长）。
+
+------------------------------------------------------------------------------------------------------
+https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F
+nfs 协议
+------------------------------------------------------------------------------------------------------
+
+网络文件系统（英语：Network File System，缩写为NFS）是一种分布式文件系统协议，
+最初由Sun Microsystems公司开发，并于1984[1]年发布。
+其功能旨在允许客户端主机可以像访问本地存储一样通过网络访问服务器端文件。 
+NFS和其他许多协议一样，是基于开放网络运算远程过程调用(ONC RPC) 协议之上的。
+
+NFS是一个开放、标准的RFC协议，任何人或组织都可以依据标准实现它。
+
+NFS 通常用在 Unix 操作系统上 (比如 Solaris, AIX and HP-UX) 和其他 Unix-like 的操作系统 (例如 Linux and FreeBSD). 
+同时在其他一些操作系统也提供了NFS实现 例如经典的 
+Mac OS, OpenVMS, Microsoft Windows,[来源请求] Novell NetWare 还有 IBM AS/400
+
+在Microsoft Windows系统上 SMB 和 NetWare Core Protocol (NCP) 的使用比 NFS 更广泛; 
+在Apple Macintosh 操作系统上则 AFP 的使用更广泛; 而
+在 AS/400 系统上 QFileSvr.400 更为常用。
+Haiku 最近(2013年3月) 添加了 NFSv4 支持（作为Google Summer of Code project一部分）
