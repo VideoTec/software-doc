@@ -1,5 +1,10 @@
 git push origin 11  (如果没有对应的远程分支， 就新建远程分支)，并建立pull关系
+
 git push origin 11:11
+这样创建远程分支，但是本地分支并没有 track 创建的远程分支
+使用下面的命令，来 track 远程分支
+$ git branch -u origin/br554
+
 git push origin :11 (删除远程分支)
 
 http://stackoverflow.com/questions/2003505/delete-a-git-branch-both-locally-and-remotely

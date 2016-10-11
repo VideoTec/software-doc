@@ -10,3 +10,6 @@ NAT 网络
 通用驱动
 
 连接设置改变后，需要重启虚拟机？
+
+参考：
+E:\doc\software\操作系统维护\Linux维护\Ubuntu-VM-网络设置

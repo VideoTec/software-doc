@@ -1,1 +1,25 @@
 虚拟机会安装一些增强软件，安装好了之后，记得重启虚拟机
+
+-------------------------------------------------
+windows 中虚拟的 ubuntu 共享文件夹
+-------------------------------------------------
+
+怎么共享的，ubuntu 怎么挂载？
+http://blog.csdn.net/longerzone/article/details/32119457
+
+sudo /sbin/mount.vboxsf public_dir /mnt/
+
+错误信息：因为没有 ~/sharedir目录？创建后，就不提示这个了
+wangxiang@wangxiang-VirtualBox:/mnt$ sudo mount -t vboxsf sharedir ~/sharedir
+/sbin/mount.vboxsf: mounting failed with the error: No such file or directory
+
+错误信息：
+wangxiang@wangxiang-VirtualBox:/media$ sudo mount -t vboxsf sharedir ~/sharedir
+/sbin/mount.vboxsf: mounting failed with the error: Protocol error
+共享文件夹的名称千万不要和挂载点的名称相同。
+比如，上面的挂载点是/mnt/shared，如果共享文件夹的名字也是shared的话，
+在挂载的时候就会出现如下的错误信息
+
+17:41 2016/10/10 经确认，mount -t vboxsf sharedir ~/sharedir 这两个名字相同没有问题
+【注意】virtual box | 设备 | 设置共享文件 时，
+共享文件夹名称 和 共享文件夹路径中的文件名称不能相同

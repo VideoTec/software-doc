@@ -1,0 +1,19 @@
+http://blog.sina.com.cn/s/blog_4d3559c70100wmla.html
+
+wangxiang@wangxiang-VirtualBox:~$ sudo ufw status
+[sudo] wangxiang 的密码： 
+状态：不活动
+wangxiang@wangxiang-VirtualBox:~$ sudo ufw enable
+在系统启动时启用和激活防火墙
+wangxiang@wangxiang-VirtualBox:~$ sudo ufw status
+状态： 激活
+wangxiang@wangxiang-VirtualBox:~$ sudo ufw allow 8899
+规则已添加
+规则已添加 (v6)
+wangxiang@wangxiang-VirtualBox:~$ sudo ufw status
+状态： 激活
+
+至                          动作          来自
+-                          --          --
+8899                       ALLOW       Anywhere                  
+8899 (v6)                  ALLOW       Anywhere (v6)      
