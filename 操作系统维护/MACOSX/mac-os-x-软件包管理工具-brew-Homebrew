@@ -1,0 +1,62 @@
+http://www.cnblogs.com/TankXiao/p/3247113.html
+
+
+官网
+http://brew.sh/index_zh-cn.html
+
+获取 Homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+sudo brew install wget
+sudo brew install homebrew/dupes/libiconv
+Homebrew 会将套件安装到独立目录，并将文件软链接至 /usr/local 。
+
+Homebrew 使 macOS 更完美。
+使用 gem 来安装 gems、用 brew 来搞定那些依赖包。
+
+注意 ： brew update 会很长时间，没有输出信息。
+
+注意 ： 不建议使用 root 权限运行 brew
+mac-mini:php-5.6.26 wangxiang$ sudo brew install openssl
+Error: Running Homebrew as root is extremely dangerous. As Homebrew does not
+drop privileges on installation you are giving all build scripts full access
+to your system. As a result of the macOS sandbox not handling the root user
+correctly HOMEBREW_NO_SANDBOX has been set so the sandbox will not be used. If
+we have not merged a pull request to add privilege dropping by November 1st
+2016 running Homebrew as root will be disabled. No Homebrew maintainers plan
+to work on this functionality.
+
+命令行帮助：
+mac-mini:php-5.6.26 wangxiang$ brew --help
+Example usage:
+  brew search [TEXT|/REGEX/]
+  brew (info|home|options) [FORMULA...]  查看，软件包信息
+  brew install FORMULA...
+  brew update
+  brew upgrade [FORMULA...]
+  brew uninstall FORMULA...
+  brew list [FORMULA...]
+
+Troubleshooting:
+  brew config
+  brew doctor
+  brew install -vd FORMULA
+
+Developers:
+  brew create [URL [--no-fetch]]
+  brew edit [FORMULA...]
+  https://github.com/Homebrew/brew/blob/master/docs/Formula-Cookbook.md
+
+Further help:
+  man brew
+  brew help [COMMAND]
+  brew home
+
+查看，软件包信息
+mac-mini:php-5.6.26 wangxiang$ brew info curl
+curl: stable 7.50.3 (bottled) [keg-only]
+Get a file from an HTTP, HTTPS or FTP server
+https://curl.haxx.se/
+Not installed
+
+
