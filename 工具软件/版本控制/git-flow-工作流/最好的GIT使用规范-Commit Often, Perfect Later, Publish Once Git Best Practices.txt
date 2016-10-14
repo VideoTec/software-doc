@@ -1,0 +1,6 @@
+https://sethrobertson.github.io/GitBestPractices/
+
+Best Practices vary from environment to environment, 
+and there is no One True Answer, but still, 
+this represents a consensus from #git and in some cases 
+helps you frame the discussion for the generation of your very own best practices.
