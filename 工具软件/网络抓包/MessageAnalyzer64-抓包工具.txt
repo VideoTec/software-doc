@@ -1,0 +1,14 @@
+http://www.cnblogs.com/mannyzhoug/p/3341206.html
+
+简单的说一下MMA的发展历程：经过了之前的Windows server 2003 中的Network Monitor，
+独立出来的“网络抓包工具 - Network Monitor”，现在的“Microsoft Message Analyzer”。
+从名字上已经能够了解到新版的软件已经不仅仅是网络抓包器，
+强大的已经升级到了消息分析器，那抓包与捕获这些事情已经被默认的集中到了新版之中真的是一个新的开始
+
+http://www.cnblogs.com/shanyou/p/3551735.html
+
+MMA的发展历程：经过了之前的Windows server 2003 中的Network Monitor，独立出来的“网络抓包工具 - Network Monitor”，
+现在的“Microsoft Message Analyzer”。从名字上已经能够了解到新版的软件已经不仅仅是网络抓包器，
+强大的已经升级到了消息分析器，那抓包与捕获这些事情已经被默认的集中到了新版之中真的是一个新的开始。
+
+视频教程

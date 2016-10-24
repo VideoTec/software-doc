@@ -7,8 +7,10 @@
 https://believeinmiraclesx.wordpress.com/2012/06/27/notepad-missing-from-context-menu/
 Type ‘regedit’ in run prompt
 
-HKEY_CLASSES_ROOT\*\shell\Edit With Notepad++\command 默认值
-"D:\My Program Files\npp.6.7.4.bin\notepad++.exe" "%1"
+HKEY_CLASSES_ROOT\*\shell\Edit With Notepad++\command 
+默认值 "D:\My Program Files\npp.6.7.4.bin\notepad++.exe" "%1"
+问题：command 是什么？
+notepad-注册表修改-添加到上下文菜单.png
 
 语言设置： settings -> preferences -> General -> Localization -> language
 

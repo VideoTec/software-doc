@@ -1,5 +1,5 @@
 创建虚拟WIFI网卡
-netsh wlan set hostednetwork mode=allow ssid=wxiang key=feinno@83
+netsh wlan set hostednetwork mode=allow ssid=wxiang key=feinno83
 创建出来的虚拟网卡是：
 Microsoft Virtual WiFi Miniport Adapter
 
