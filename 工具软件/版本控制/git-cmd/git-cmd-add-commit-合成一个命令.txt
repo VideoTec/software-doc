@@ -1,0 +1,9 @@
+http://stackoverflow.com/questions/4298960/git-add-a-git-commit-in-one-command
+
+git add -A && git commit'
+
+You can use git aliases, e.g.
+
+git config --global alias.add-commit '!git add -A && git commit'
+and use it with
+git add-commit -m 'My commit message'

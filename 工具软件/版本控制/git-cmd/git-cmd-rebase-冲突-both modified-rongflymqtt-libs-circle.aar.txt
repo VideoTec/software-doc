@@ -1,0 +1,32 @@
+wangxiangfx@wangxiangfx MINGW64 /d/work/androidrongflysip (for3th|REBASE 4/4)
+$ git status
+rebase in progress; onto 4685f40
+You are currently rebasing branch 'for3th' on '4685f40'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git reset HEAD <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   rongflymqtt/libs/circle.aar
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+执行了， git add .
+结果，什么也没有修改。因为，文件没有修改。
+这里的问题，解决二进制文件冲突的问题：
+
+http://stackoverflow.com/questions/278081/resolving-a-git-conflict-with-binary-files
+
+git checkout accepts a --ours or --theirs option for cases like this. 
+So if you have a merge conflict, 
+and you know you just want the file from the branch you are merging, you can do:
+
+$ git checkout --theirs -- path/to/conflicted-file.txt
+
+to use that version of the file. 
+Likewise, if you know you want your version (not the one being merged in) you can use
+
+$ git checkout --ours -- path/to/conflicted-file.txt

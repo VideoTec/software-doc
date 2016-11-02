@@ -1,0 +1,9 @@
+wangxiangfx@wangxiangfx MINGW64 /d/work/androidrongflysip (1030)
+$ git push
+error: src refspec 1030 matches more than one.
+error: failed to push some refs to 'git@git.feinno.com:rongfly/androidrongflysip.git'
+
+解决方法：删除同名的 tag
+git branch -d 1030
+
+http://blog.csdn.net/wzy_1988/article/details/35569191

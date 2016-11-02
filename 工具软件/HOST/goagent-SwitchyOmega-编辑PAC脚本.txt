@@ -1,0 +1,60 @@
+https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%90%86%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE
+
+代理自动配置（英语：Proxy auto-config，简称PAC）是一种网页浏览器技术，
+用于定义浏览器该如何自动选择适当的代理服务器来访问一个网址。
+
+一个PAC文件包含一个JavaScript形式的函数“FindProxyForURL(url, host)”。
+这个函数返回一个包含一个或多个访问规则的字符串。
+用户代理根据这些规则适用一个特定的代理器或者直接访问。
+当一个代理服务器无法响应的时候，多个访问规则提供了其他的后备访问方法。
+浏览器在访问其他页面以前，首先访问这个PAC文件。
+PAC文件中的URL可能是手工配置的，
+也可能是是通过网页的网络代理自发现协议（WPAD）自动配置的。
+
+现代的浏览器实现了几个级别的自动化；
+用户可以选择最适合他们需要的级别。下面的这些方法被普遍的实现：
+
+手动代理配置：
+为所有的URLs规定一个主机名和端口作为代理。
+大多数浏览器允许用户规定一个域名的列表（例如localhost），
+访问这个列表里面的域名的时候不通过代理服务器。
+
+代理自动配置（PAC）：
+规定一个指向PAC文件的URL，
+这个文件中包括一个JavaScript函数来确定访问每个URL时所选用的合适代理。
+这个方法更加适合需要几个不同代理配置的笔记本电脑用户，
+或者有很多不同代理服务器的复杂的企业级设置。
+这个就是我们在本文中所要讨论的。
+
+网络代理自发现协议（WPAD）：
+浏览器通过DHCP和DNS的查询来搜索PAC文件的位置。
+
+示例：
+
+var FindProxyForURL = function(init, profiles) {
+    return function(url, host) {
+        "use strict";
+        var result = init, scheme = url.substr(0, url.indexOf(":"));
+        do {
+            result = profiles[result];
+            if (typeof result === "function") result = result(url, host, scheme);
+        } while (typeof result !== "string" || result.charCodeAt(0) === 43);
+        return result;
+    };
+}("+ssh-vive", {
+    "+ssh-vive": function(url, host, scheme) {
+        "use strict";
+        if (/^127\.0\.0\.1$/.test(host) || /^[^:]+:\/\/::1\//.test(url) || /^localhost$/.test(host)) return "DIRECT";
+        return "SOCKS5 127.0.0.1:8088; SOCKS 127.0.0.1:8088";
+    }
+});
+
+问题，怎么指定黑名单
+
+开放资源
+https://github.com/breakwa11/gfw_whitelist
+https://github.com/n0wa11/gfw_whitelist
+
+https://github.com/breakwa11/gfw_whitelist/blob/master/proxy.pac
+
+switchyOmega 可发建立 pac 代理规则。
