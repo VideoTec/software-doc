@@ -1,0 +1,10 @@
+http://stackoverflow.com/questions/835501/how-do-you-stash-an-untracked-file
+
+Warning, doing this will permanently 
+delete your files if you have any directory/* entries in your gitignore file.
+
+Add (git add) the file and start tracking it. 
+Then stash. Since the entire contents of the file are new, 
+they will be stashed, and you can manipulate it as necessary.
+
+As of version 1.7.7 you can use git stash save -u to stash untracked files without staging them.
