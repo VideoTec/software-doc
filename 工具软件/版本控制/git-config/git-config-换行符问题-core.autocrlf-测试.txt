@@ -1,0 +1,13 @@
+windows 系统， core.autocrlf = true
+
+warning: LF will be replaced by CRLF in android-sdk/android.media/android.media.MediaPlayer/android.media.MediaPlayer-方法-流类型-setAudioStreamType.txt.
+The file will have its original line endings in your working directory.
+
+注意：这个文本的行结束符为 lf
+这里的意思非常明显，提交到库里时，会把 lf 转成 crlf
+工作目录里的文件结束符不变
+
+但是，结果，库里的文本，还是 lf 结束符
+
+参考：
+e:\TestGit                                git@github.com:VideoTec/TestGit.git

@@ -1,0 +1,17 @@
+http://stackoverflow.com/questions/26881441/can-you-get-the-number-of-lines-of-code-from-a-github-repository
+
+http://cloc.sourceforge.net v 1.62  T=1.13 s (134.1 files/s, 9764.6 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Perl                           149           2795           1425           6382
+JSON                             1              0              0            270
+YAML                             2              0              0            198
+-------------------------------------------------------------------------------
+SUM:                           152           2795           1425           6850
+-------------------------------------------------------------------------------
+
+http://stackoverflow.com/questions/4822471/count-number-of-lines-in-a-git-repository
+https://github.com/AlDanial/cloc
+参考：
+D:\doc\lang\工具\统计代码行数.txt

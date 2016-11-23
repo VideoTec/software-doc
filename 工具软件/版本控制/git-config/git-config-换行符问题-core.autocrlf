@@ -3,6 +3,12 @@ git status --- 应该能看到修改的，（也会看不到修改），
 这时 git checkout otherbranch 这时会提示有修改的。
 
 http://www.cnblogs.com/flying_bat/p/3324769.html
+http://www.cnblogs.com/flying_bat/p/3324769.html
+
+正确的结论：
+
+总结：
+只有当设置为 core.autocrlf = false 时， crlf 换行符才会提交到仓库里。
 
 ---------------------------------------
 一、AutoCRLF
