@@ -83,4 +83,5 @@ http://zhidao.baidu.com/link?url=L5JGRHGiOCnoTKGxUijigXMDUftKV7DKTgzeVXR8kUu2ATU
 linux基本分区，一个根分区，/boot分区，swap分区就可以了 swap一般是内存的1.5-2倍，不要超过8G
 
 http://zhidao.baidu.com/link?url=TTUi6B3AqmXroPWwdJ3i5HXblLxNj__i6eUK1Ehcuj6uDzQC9tLQm_6wRPB5zKSjUHuf2TdvjeRmlWjuo7CRxa
+
 Linux中Swap（即：交换分区），类似于Windows的虚拟内存，就是当内存不足的时候，把一部分硬盘空间虚拟成内存使用,从而解决内存容量不足的情况。它是一段连续的磁盘空间，并且对用户不可见。在分区中一般将Swap分区定为主分区而不是扩展分区。
