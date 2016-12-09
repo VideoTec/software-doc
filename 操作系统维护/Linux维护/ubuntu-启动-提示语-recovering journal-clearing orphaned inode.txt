@@ -1,0 +1,18 @@
+情景：
+安装了双系统，
+先启动了 ubuntu 鼠标闪，进不去系统，关电源重启。
+进 windows 系统，又返回 ubuntu，结果出现下面的提示:
+
+orphan[英][ˈɔ:fn] [美][ˈɔrfn]
+n.孤儿
+vt.使成为孤儿
+adj.孤儿的；无双亲的
+
+/dev/sda1: recovering journal
+/dev/sda1: Clearing orphaned inode 1429...  孤立的文件结点
+
+http://www.linuxquestions.org/questions/linux-newbie-8/clearing-orphaned-inode-347503/
+
+I did a little research about the clearing inode... 
+seems to do it when a system isn't shutdown correctly, 
+but in my case my system was shutdown correctly, what else could cause this? Thanks.

@@ -1,8 +1,7 @@
 http://stackoverflow.com/questions/6591213/how-do-you-rename-the-local-branch
 
 If you want to rename a branch while pointed to any branch, simply do :
-
 git branch -m <oldname> <newname>
-If you want to rename the current branch, you can simply do:
 
+If you want to rename the current branch, you can simply do:
 git branch -m <newname>
