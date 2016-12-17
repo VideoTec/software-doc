@@ -1,0 +1,45 @@
+https://chrome.google.com/webstore/detail/dhc-restlet-client/aejoelaoggembcahagimdiliamlcdmfm
+
+REST & HTTP API developer's pocket knife. Easy to use and configurable. HATEOAS, Hypermedia, Requests History+Repository, and more.
+[Please scroll down for permissions explanation]
+
+DHC by Restlet is designed and developed by developers for developers to make direct HTTP/REST resource discovery, manipulation and testing easier. DHC by Restlet’s main functions include: 
+
+API invocation and interaction
+Through an intuitive browser interface, make calls to APIs to validate their functional behavior, testing different parameters and values without writing a program or script.
+
+API testing
+Create and run unit tests as well as complete testing scenarios for APIs, with conditional logic and parametrization. These tests can be added to a Maven or Jenkins CI/CD toolchain.
+
+Key features:
+  - Call web APIs through a visual tool
+  - Save calls history, locally or to the cloud, and organize it in projects
+  - Build dynamic requests with custom variables, security and authentication 
+  - Analyze and validate responses, compare them to history
+  - Combine multiple API requests into test scenarios with conditional logic and variables
+  - Share work with colleagues
+  - Integrate API testing to CI/CD toolchain through plugins for Maven and Jenkins
+
+Stay tuned for updates and drop us a message if you like it (or not). Your feedback is most appreciated and welcomed! (support@restlet.com)
+
+DHC by Restlet is part of the Restlet platform: the first API Platform as a Service with a comprehensive and integrated set of capabilities for API developers.
+
+
+Why DHC requires "Read and change all your data on the websites you visit" and "Communicate with cooperating websites" permissions?
+
+Chrome applications which need access to internet resources must declare it in their manifest. It can be a list of URLs or URL mask; e.g. http://*/* allowing access to any URL. 
+
+Allowing access to any URL is a primary function of DHC, and the URL mask with wildcards is in interpreted by Chrome Store as:
+
+This app can access:
+Read and change all your data on the websites you visit
+
+Which is true, but doesn't mean that the app is doing something bad. DHC doesn't collect your data.
+
+Why 'Communicate with cooperating websites' permission? 
+
+DHC is available also as a service. This permission allows data exchange  between DHC Service and DHC Chrome. This feature is disabled by default.
+
+DHC Service: http://dhc.restlet.com
+
+Follow us on Twitter: https://twitter.com/restlet 

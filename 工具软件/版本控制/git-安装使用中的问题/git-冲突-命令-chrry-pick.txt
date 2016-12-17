@@ -1,0 +1,18 @@
+wangxiangfx@wangxiangfx MINGW64 /d/work/androidrongflysip (fetion|CHERRY-PICKING)
+$ git status
+On branch fetion
+Your branch is up-to-date with 'origin/fetion'.
+You are currently cherry-picking commit e86a2e6.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   rongflymqtt/libs/circle.aar
+
+正确的解决过程：
+
+git checkout --theirs rongflymqtt/libs/circle.aar
+git add .
+git cherry-pick --continue
